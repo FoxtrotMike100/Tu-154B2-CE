@@ -708,7 +708,7 @@ function kskv_xol_CMDhandler(phase, duration)
         simDR_right_sys_mode_set = 2
         simDR_left_vvr_mode_set = 2
         simDR_right_vvr_mode_set = 2
-        if vr == 0 then
+        if simDR_vr == 0 then
             simDR_cockpit_mode_set = 2
             simDR_cabin1_mode_set = 2
             simDR_cabin2_mode_set = 2
@@ -718,7 +718,7 @@ function kskv_xol_CMDhandler(phase, duration)
         simDR_right_sys_mode_set = 0
         simDR_left_vvr_mode_set = 0
         simDR_right_vvr_mode_set = 0
-        if vr == 0 then
+        if simDR_vr == 0 then
             simDR_cockpit_mode_set = 0
             simDR_cabin1_mode_set = 0
             simDR_cabin2_mode_set = 0
