@@ -689,6 +689,51 @@ function tks_align_CMDhandler(phase, duration)
     end
 end
 
+cockpit_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cockpit_mode_set") -- становка режима обогрева. 0 - нейтр. 1 - авто, 2 - хол, 3 - гор
+cabin1_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin1_mode_set") -- установка режима обогрева
+cabin2_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin2_mode_set") -- установка режима обогрева
+
+left_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/left_sys_mode_set") -- установка режима левой магистрали
+right_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/right_sys_mode_set") -- установка режима правой магистрали
+left_vvr_mode_set = find_dataref("sim/custom/b2/vvr_1")
+right_vvr_mode_set = find_dataref("sim/custom/b2/vvr_2")
+
+vr = find_dataref("sim/graphics/VR/enabled")
+
+function kskv_xol_CMDhandler(phase, duration)
+    if phase == 1 then
+        left_sys_mode_set = 2
+        right_sys_mode_set = 2
+        left_vvr_mode_set = 2
+        right_vvr_mode_set = 2
+        if vr == 0 then
+            cockpit_mode_set = 2
+            cabin1_mode_set = 2
+            cabin2_mode_set = 2
+        end
+    elseif phase == 2 then
+        left_sys_mode_set = 0
+        right_sys_mode_set = 0
+        left_vvr_mode_set = 0
+        right_vvr_mode_set = 0
+        if vr == 0 then
+            cockpit_mode_set = 0
+            cabin1_mode_set = 0
+            cabin2_mode_set = 0
+        end
+    end
+end
+
+accum_fill = find_dataref("tu154b2/custom/buttons/hydro/accum_fill")
+
+function accum_fill_CMDhandler(phase, duration)
+    if phase == 1 then
+        accum_fill=1
+	elseif phase==2 then
+		accum_fill=0
+    end
+end
+
 
 
 checklist_next_cmnd	= create_command("t154/checklist_next", " Checklist next", checklist_next_CMDhandler)
@@ -747,6 +792,10 @@ TKS_right_CMD	= create_command("t154/tks/TKS_set_right", "TKS_set_right", tks_ri
 TKS_corr_main_CMD	= create_command("t154/tks/TKS_correct_main", "TKS_correct_main", tks_corr_main_CMDhandler)
 TKS_corr_backup_CMD	= create_command("t154/tks/TKS_correct_control", "TKS_correct_control", tks_corr_backup_CMDhandler)
 TKS_align_CMD	= create_command("t154/tks/TKS_sync", "TKS_sync button", tks_align_CMDhandler)
+
+KSKV_xol_CMD = create_command("t154/kskv/switches_xol", "Hold KSKV Switches in XOL.", kskv_xol_CMDhandler)
+
+accum_fill_CMD = create_command("t154/hydro/accum_fill", "Accum fill", accum_fill_CMDhandler)
 
 function systems()
 
