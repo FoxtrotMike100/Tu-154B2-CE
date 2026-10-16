@@ -143,6 +143,19 @@ simDR_stu_toga = find_dataref("tu154b2/custom/lights/small/stu_toga")
 simDR_at1 = find_dataref("tu154b2/custom/lights/small/at_1")
 simDR_at2 = find_dataref("tu154b2/custom/lights/small/at_2")
 
+simDR_cockpit_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cockpit_mode_set") -- становка режима обогрева. 0 - нейтр. 1 - авто, 2 - хол, 3 - гор
+simDR_cabin1_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin1_mode_set") -- установка режима обогрева
+simDR_cabin2_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin2_mode_set") -- установка режима обогрева
+
+simDR_left_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/left_sys_mode_set") -- установка режима левой магистрали
+simDR_right_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/right_sys_mode_set") -- установка режима правой магистрали
+simDR_left_vvr_mode_set = find_dataref("sim/custom/b2/vvr_1")
+simDR_right_vvr_mode_set = find_dataref("sim/custom/b2/vvr_2")
+
+simDR_vr = find_dataref("sim/graphics/VR/enabled")
+
+simDR_accum_fill = find_dataref("tu154b2/custom/buttons/hydro/accum_fill")
+
 local zk_lit = 0
 local reset_lit = 0
 local nvu_lit = 0
@@ -689,48 +702,35 @@ function tks_align_CMDhandler(phase, duration)
     end
 end
 
-cockpit_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cockpit_mode_set") -- становка режима обогрева. 0 - нейтр. 1 - авто, 2 - хол, 3 - гор
-cabin1_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin1_mode_set") -- установка режима обогрева
-cabin2_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/cabin2_mode_set") -- установка режима обогрева
-
-left_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/left_sys_mode_set") -- установка режима левой магистрали
-right_sys_mode_set = find_dataref("tu154b2/custom/switchers/airbleed/right_sys_mode_set") -- установка режима правой магистрали
-left_vvr_mode_set = find_dataref("sim/custom/b2/vvr_1")
-right_vvr_mode_set = find_dataref("sim/custom/b2/vvr_2")
-
-vr = find_dataref("sim/graphics/VR/enabled")
-
 function kskv_xol_CMDhandler(phase, duration)
     if phase == 1 then
-        left_sys_mode_set = 2
-        right_sys_mode_set = 2
-        left_vvr_mode_set = 2
-        right_vvr_mode_set = 2
+        simDR_left_sys_mode_set = 2
+        simDR_right_sys_mode_set = 2
+        simDR_left_vvr_mode_set = 2
+        simDR_right_vvr_mode_set = 2
         if vr == 0 then
-            cockpit_mode_set = 2
-            cabin1_mode_set = 2
-            cabin2_mode_set = 2
+            simDR_cockpit_mode_set = 2
+            simDR_cabin1_mode_set = 2
+            simDR_cabin2_mode_set = 2
         end
     elseif phase == 2 then
-        left_sys_mode_set = 0
-        right_sys_mode_set = 0
-        left_vvr_mode_set = 0
-        right_vvr_mode_set = 0
+        simDR_left_sys_mode_set = 0
+        simDR_right_sys_mode_set = 0
+        simDR_left_vvr_mode_set = 0
+        simDR_right_vvr_mode_set = 0
         if vr == 0 then
-            cockpit_mode_set = 0
-            cabin1_mode_set = 0
-            cabin2_mode_set = 0
+            simDR_cockpit_mode_set = 0
+            simDR_cabin1_mode_set = 0
+            simDR_cabin2_mode_set = 0
         end
     end
 end
 
-accum_fill = find_dataref("tu154b2/custom/buttons/hydro/accum_fill")
-
 function accum_fill_CMDhandler(phase, duration)
     if phase == 1 then
-        accum_fill=1
+        simDR_accum_fill=1
 	elseif phase==2 then
-		accum_fill=0
+		simDR_accum_fill=0
     end
 end
 
