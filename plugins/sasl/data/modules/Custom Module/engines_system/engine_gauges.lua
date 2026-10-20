@@ -13,9 +13,9 @@ vibro_sel_3 = globalPropertyi("tu154b2/custom/switchers/eng/vibro_sel_3") -- п�
 
 fuel_meter_on = globalPropertyi("tu154b2/custom/switchers/fuel/fuel_meter_mech_on") -- расходомер
 
-gauges_on_1 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1") -- приборы контроля двигателей
-gauges_on_2 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2") -- приборы контроля двигателей
-gauges_on_3 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3") -- приборы контроля двигателей
+-- gauges_on_1 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1") -- приборы контроля двигателей
+-- gauges_on_2 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2") -- приборы контроля двигателей
+-- gauges_on_3 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3") -- приборы контроля двигателей
 
 -- gauges
 rpm_low_1 = globalPropertyf("tu154b2/custom/gauges/engine/rpm_low_1") -- обороты турбины низкого давления №1
@@ -260,9 +260,9 @@ local power_36_R = get(bus36_volt_right) > 30
 local power_115 = get(bus115_1_volt) > 110
 local power_115_prev = get(bus115_1_volt) > 110
 
-local gau_1_on = get(gauges_on_1)
-local gau_2_on = get(gauges_on_2)
-local gau_3_on = get(gauges_on_3)
+local gau_1_on = 1
+local gau_2_on = 1
+local gau_3_on = 1
 
 local rna1=0
 local rna2=0
@@ -471,85 +471,89 @@ local function emi3()
 	local oilT_1 = -50
 	local oilT_2 = -50
 	local oilT_3 = -50
-	
-	local rep_mode=get(replay)
-	sys_data_tbl.eng_oil_p_1 = math.min(oil_press(get(eng1_N2),oil_tmp_1) * (1 - get(oil_pump_otk_1) / 6),4.0)-- * gau_1_on 
-	sys_data_tbl.eng_oil_p_2 = math.min(oil_press(get(eng2_N2),oil_tmp_2) * (1 - get(oil_pump_otk_2) / 6),4.1)-- * gau_2_on
-	sys_data_tbl.eng_oil_p_3 = math.min(oil_press(get(eng3_N2),oil_tmp_3) * (1 - get(oil_pump_otk_3) / 6),4.05)-- * gau_3_on
-	if power_36_L then 
-		fuelP_1 = sys_data_tbl.eng_nozzle_pressure_1
-		oilP_gauge_1 = sys_data_tbl.eng_oil_p_1
-	end	
-	
-	if power_36_R then
-		fuelP_2 = sys_data_tbl.eng_nozzle_pressure_2
-		fuelP_3 = sys_data_tbl.eng_nozzle_pressure_3
-		oilP_gauge_2 = sys_data_tbl.eng_oil_p_2
-		oilP_gauge_3 = sys_data_tbl.eng_oil_p_3
+	if MASTER then
+		sys_data_tbl.eng_oil_p_1 = math.min(oil_press(get(eng1_N2),oil_tmp_1) * (1 - get(oil_pump_otk_1) / 6),4.0)-- * gau_1_on 
+		sys_data_tbl.eng_oil_p_2 = math.min(oil_press(get(eng2_N2),oil_tmp_2) * (1 - get(oil_pump_otk_2) / 6),4.1)-- * gau_2_on
+		sys_data_tbl.eng_oil_p_3 = math.min(oil_press(get(eng3_N2),oil_tmp_3) * (1 - get(oil_pump_otk_3) / 6),4.05)-- * gau_3_on
+		if power_36_L then 
+			fuelP_1 = sys_data_tbl.eng_nozzle_pressure_1
+			oilP_gauge_1 = sys_data_tbl.eng_oil_p_1
+		end	
+		
+		if power_36_R then
+			fuelP_2 = sys_data_tbl.eng_nozzle_pressure_2
+			fuelP_3 = sys_data_tbl.eng_nozzle_pressure_3
+			oilP_gauge_2 = sys_data_tbl.eng_oil_p_2
+			oilP_gauge_3 = sys_data_tbl.eng_oil_p_3
+		end
+		--Oil and case temperatures
+		local fuel_temp=(get(fuel_temp_1)+get(fuel_temp_2))/2
+		if get(replay) == 0 then
+			-- oil temps
+			oil_tmp_1,case_temp_1,brg_temp_1 = oil_temp(get(ENGN_FF_1),get(nk8_temp1),get(rpm_high_1),get(rpm_low_1),sys_data_tbl.eng_oil_p_1,oil_tmp_1,case_temp_1,brg_temp_1,get(thermo),fuel_temp,passed)
+			oil_tmp_2,case_temp_2,brg_temp_2 = oil_temp(get(ENGN_FF_2),get(nk8_temp2),get(rpm_high_2),get(rpm_low_2),sys_data_tbl.eng_oil_p_2,oil_tmp_2,case_temp_2,brg_temp_2,get(thermo),fuel_temp,passed)
+			oil_tmp_3,case_temp_3,brg_temp_3 = oil_temp(get(ENGN_FF_3),get(nk8_temp3),get(rpm_high_3),get(rpm_low_3),sys_data_tbl.eng_oil_p_3,oil_tmp_3,case_temp_3,brg_temp_3,get(thermo),fuel_temp,passed)
+			if start_timer<10 then
+				oil_tmp_1 = get(thermo)
+				oil_tmp_2 = get(thermo)
+				oil_tmp_3 = get(thermo)
+			end
+			-- middle/rear end case temp for APU oil heat
+			local case_heat_spd_22= get(nk8_temp2)*7.5
+			local case_cool_spd_22=(case_temp_22-get(thermo))*40*1.003*math.exp(-2.922e-05*get(rpm_low_2)) -0.9027*math.exp(-0.1749*get(rpm_low_2))
+
+			case_temp_22= case_temp_22+(case_heat_spd_22-case_cool_spd_22)*passed*0.000125
+		end
+			if power_27_L then --and gau_1_on == 1 then
+				oilT_1 = oil_tmp_1
+			end
+
+			if power_27_R then --and gau_2_on == 1 then
+				oilT_2 = oil_tmp_2
+			end
+
+			if power_27_R then --and gau_3_on == 1 then
+				oilT_3 = oil_tmp_3
+			end
+		set(eng2_case_temp,case_temp_22)
+		set(bearing_1_temp,brg_temp_1)
+		set(bearing_2_temp,brg_temp_2)
+		set(bearing_3_temp,brg_temp_3)
+		--oilP_2 = get(oil_p_2) * 0.1
+		-- smooth movements
+		fuelP_1_actual = fuelP_1_actual + (fuelP_1 - fuelP_1_actual) * passed * 3
+		fuelP_2_actual = fuelP_2_actual + (fuelP_2 - fuelP_2_actual) * passed * 3
+		fuelP_3_actual = fuelP_3_actual + (fuelP_3 - fuelP_3_actual) * passed * 3
+		
+		oilP_1_actual = oilP_1_actual + (oilP_gauge_1 - oilP_1_actual) * passed * 3
+		oilP_2_actual = oilP_2_actual + (oilP_gauge_2 - oilP_2_actual) * passed * 3
+		oilP_3_actual = oilP_3_actual + (oilP_gauge_3 - oilP_3_actual) * passed * 3
+		
+		oilT_1_actual = oilT_1_actual + (oilT_1 - oilT_1_actual) * passed * 3
+		oilT_2_actual = oilT_2_actual + (oilT_2 - oilT_2_actual) * passed * 3
+		oilT_3_actual = oilT_3_actual + (oilT_3 - oilT_3_actual) * passed * 3
+
+		-- set results
+		set(fuel_press_1, fuelP_1_actual)
+		set(fuel_press_2, fuelP_2_actual)
+		set(fuel_press_3, fuelP_3_actual)
+		
+		set(oil_press_1, oilP_1_actual)
+		set(oil_press_2, oilP_2_actual)
+		set(oil_press_3, oilP_3_actual)
+		
+		set(oil_temp_1, oilT_1_actual)
+		set(oil_temp_2, oilT_2_actual)
+		set(oil_temp_3, oilT_3_actual)
+		
+		set(oil_t_1,oil_tmp_1)
+		set(oil_t_2,oil_tmp_2)
+		set(oil_t_3,oil_tmp_3)
+	else
+		sys_data_tbl.eng_oil_p_1 = math.min(oil_press(get(eng1_N2),get(oil_t_1)) * (1 - get(oil_pump_otk_1) / 6),4.0)-- * gau_1_on 
+		sys_data_tbl.eng_oil_p_2 = math.min(oil_press(get(eng2_N2),get(oil_t_2)) * (1 - get(oil_pump_otk_2) / 6),4.1)-- * gau_2_on
+		sys_data_tbl.eng_oil_p_3 = math.min(oil_press(get(eng3_N2),get(oil_t_3)) * (1 - get(oil_pump_otk_3) / 6),4.05)-- * gau_3_on
 	end
-	--Oil and case temperatures
-	local fuel_temp=(get(fuel_temp_1)+get(fuel_temp_2))/2
-	if rep_mode==0 then
-		-- oil temps
-		oil_tmp_1,case_temp_1,brg_temp_1 = oil_temp(get(ENGN_FF_1),get(nk8_temp1),get(rpm_high_1),get(rpm_low_1),sys_data_tbl.eng_oil_p_1,oil_tmp_1,case_temp_1,brg_temp_1,get(thermo),fuel_temp,passed)
-		oil_tmp_2,case_temp_2,brg_temp_2 = oil_temp(get(ENGN_FF_2),get(nk8_temp2),get(rpm_high_2),get(rpm_low_2),sys_data_tbl.eng_oil_p_2,oil_tmp_2,case_temp_2,brg_temp_2,get(thermo),fuel_temp,passed)
-		oil_tmp_3,case_temp_3,brg_temp_3 = oil_temp(get(ENGN_FF_3),get(nk8_temp3),get(rpm_high_3),get(rpm_low_3),sys_data_tbl.eng_oil_p_3,oil_tmp_3,case_temp_3,brg_temp_3,get(thermo),fuel_temp,passed)
-		if start_timer<10 then
-			oil_tmp_1 = get(thermo)
-			oil_tmp_2 = get(thermo)
-			oil_tmp_3 = get(thermo)
-		end
-		-- middle/rear end case temp for APU oil heat
-		local case_heat_spd_22= get(nk8_temp2)*7.5
-		local case_cool_spd_22=(case_temp_22-get(thermo))*40*1.003*math.exp(-2.922e-05*get(rpm_low_2)) -0.9027*math.exp(-0.1749*get(rpm_low_2))
-
-		case_temp_22= case_temp_22+(case_heat_spd_22-case_cool_spd_22)*passed*0.000125
-	end
-		if power_27_L then --and gau_1_on == 1 then
-			oilT_1 = oil_tmp_1
-		end
-
-		if power_27_R then --and gau_2_on == 1 then
-			oilT_2 = oil_tmp_2
-		end
-
-		if power_27_R then --and gau_3_on == 1 then
-			oilT_3 = oil_tmp_3
-		end
-	set(eng2_case_temp,case_temp_22)
-	set(bearing_1_temp,brg_temp_1)
-	set(bearing_2_temp,brg_temp_2)
-	set(bearing_3_temp,brg_temp_3)
-	--oilP_2 = get(oil_p_2) * 0.1
-	-- smooth movements
-	fuelP_1_actual = fuelP_1_actual + (fuelP_1 - fuelP_1_actual) * passed * 3
-	fuelP_2_actual = fuelP_2_actual + (fuelP_2 - fuelP_2_actual) * passed * 3
-	fuelP_3_actual = fuelP_3_actual + (fuelP_3 - fuelP_3_actual) * passed * 3
-	
-	oilP_1_actual = oilP_1_actual + (oilP_gauge_1 - oilP_1_actual) * passed * 3
-	oilP_2_actual = oilP_2_actual + (oilP_gauge_2 - oilP_2_actual) * passed * 3
-	oilP_3_actual = oilP_3_actual + (oilP_gauge_3 - oilP_3_actual) * passed * 3
-	
-	oilT_1_actual = oilT_1_actual + (oilT_1 - oilT_1_actual) * passed * 3
-	oilT_2_actual = oilT_2_actual + (oilT_2 - oilT_2_actual) * passed * 3
-	oilT_3_actual = oilT_3_actual + (oilT_3 - oilT_3_actual) * passed * 3
-
-	-- set results
-	set(fuel_press_1, fuelP_1_actual)
-	set(fuel_press_2, fuelP_2_actual)
-	set(fuel_press_3, fuelP_3_actual)
-	
-	set(oil_press_1, oilP_1_actual)
-	set(oil_press_2, oilP_2_actual)
-	set(oil_press_3, oilP_3_actual)
-	
-	set(oil_temp_1, oilT_1_actual)
-	set(oil_temp_2, oilT_2_actual)
-	set(oil_temp_3, oilT_3_actual)
-	
-	set(oil_t_1,oil_tmp_1)
-	set(oil_t_2,oil_tmp_2)
-	set(oil_t_3,oil_tmp_3)
 
 
 end
@@ -1325,14 +1329,14 @@ function update()
 	power_36_L = get(bus36_volt_left) > 30
 	power_36_R = get(bus36_volt_right) > 30
 	
-	gau_1_on = get(gauges_on_1)
-	gau_2_on = get(gauges_on_2) 
-	gau_3_on = get(gauges_on_3)
+	gau_1_on = 1
+	gau_2_on = 1 
+	gau_3_on = 1
 	
+	emi3()	
 	if MASTER then
 		tachometers()
-		egt_gauges()
-		emi3()	
+		egt_gauges()		
 		fuel_flow()
 		vibra_gau()
 		oil_qty_gau()

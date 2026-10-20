@@ -56,12 +56,12 @@ simDR_bus27_volt = find_dataref("tu154b2/custom/elec/bus27_volt_right")
 simDR_bus27_vu1 = find_dataref("tu154b2/custom/switchers/eng/bus27_vu1")
 simDR_bus27_vu2 = find_dataref("tu154b2/custom/switchers/eng/bus27_vu2")
 
-simDR_gauges1_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_1_cap")
-simDR_gauges2_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_2_cap")
-simDR_gauges3_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_3_cap")
-simDR_gauges1 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_1")
-simDR_gauges2 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_2")
-simDR_gauges3 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_3")
+-- simDR_gauges1_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_1_cap")
+-- simDR_gauges2_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_2_cap")
+-- simDR_gauges3_cap = find_dataref("tu154b2/custom/switchers/eng/gauges_on_3_cap")
+-- simDR_gauges1 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_1")
+-- simDR_gauges2 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_2")
+-- simDR_gauges3 = find_dataref("tu154b2/custom/switchers/eng/gauges_on_3")
 
 simDR_left_pnppkp_light = find_dataref("tu154b2/custom/lights/left_pkp_set")
 simDR_right_pnppkp_light = find_dataref("tu154b2/custom/lights/right_pkp_set")
@@ -2046,12 +2046,12 @@ end
   
 function data()
     
-        simDR_gauges1_cap = 0
-        simDR_gauges2_cap = 0
-        simDR_gauges3_cap = 0
-        simDR_gauges1 = 1
-        simDR_gauges2 = 1
-        simDR_gauges3 = 1
+        -- simDR_gauges1_cap = 0
+        -- simDR_gauges2_cap = 0
+        -- simDR_gauges3_cap = 0
+        -- simDR_gauges1 = 1
+        -- simDR_gauges2 = 1
+        -- simDR_gauges3 = 1
     
     if aircraft_loaded > 0 then
         -- simDR_left_pnppkp_light = 5

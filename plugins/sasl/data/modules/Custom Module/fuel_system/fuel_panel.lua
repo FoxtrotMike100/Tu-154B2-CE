@@ -660,7 +660,10 @@ local function mech_fuel_meter(gain_L,gain_R,dist)
 		playSample(click_sound_R, false) 
 		click_timer=0
 	end
-	set(fuel_meter_mech, fuel_summ_calc)
+	local MASTER = get(ismaster) ~= 1	
+	if MASTER then	
+		set(fuel_meter_mech, fuel_summ_calc)
+	end
 
 end
 
@@ -858,12 +861,8 @@ function update()
 		check_switchers(gain_L, gain_R,dist)
 		caps_check(gain_L, gain_R,dist)
 	end
-local MASTER = get(ismaster) ~= 1	
-	
 
-if MASTER then	
 	mech_fuel_meter(gain_L,gain_R,dist)
-end
 	electric_meters()
 	lamps()
 	

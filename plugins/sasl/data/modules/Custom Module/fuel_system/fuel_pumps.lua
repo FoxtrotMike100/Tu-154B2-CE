@@ -445,7 +445,7 @@ function update()
 		tank_level_3_start = 0
 	end
 	
-	sys_data_tbl.fuel_level_on = bool2int(fuel_level_bool and not fuel_level_exceedance)
+	sys_data_tbl.fuel_level_on = bool2int(fuel_level_power and get(fuel_level) == 1 and get(fuel_meter_on) == 1 and auto_fuel_power and get(fuel_level_fail) == 0 and not fuel_level_exceedance)
 	
 	-- pumps 1 works separately from atomatics
 	if fuel_1 then

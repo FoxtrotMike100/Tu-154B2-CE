@@ -274,8 +274,8 @@ if get(ismaster) ~= 1 then
 			if get(fuel_flowmeter_3_fail) ~= 1 then set(fuel_flowmeter_3_fail, bool2int(math.random() < 0.00001 * FAIL * 0.3) * 1) end
 			
 			if get(eng_fail_1) ~= 6 then set(eng_fail_1, bool2int(math.random() < 0.00001 * FAIL * 0.3 + bool2int(engToCounter1 > 300) * 0.0001) * 6) end
-			if get(eng_fail_2) ~= 6 then set(eng_fail_2, bool2int(math.random() < 0.00001 * FAIL * 0.3 + bool2int(engToCounter2 > 300) * 0.0001) * 6) end
-			if get(eng_fail_3) ~= 6 then set(eng_fail_3, bool2int(math.random() < 0.00001 * FAIL * 0.3 + bool2int(engToCounter3 > 300) * 0.0001) * 6) end
+			if get(eng_fail_2) ~= 6 then set(eng_fail_2, bool2int(math.random() < 0.00001 * FAIL * 0.3 + bool2int(engToCounter2 > 350) * 0.0001) * 6) end
+			if get(eng_fail_3) ~= 6 then set(eng_fail_3, bool2int(math.random() < 0.00001 * FAIL * 0.3 + bool2int(engToCounter3 > 420) * 0.0001) * 6) end
 			
 			if get(eng_work_1) == 1 then
 				if get(eng_fire_1) ~= 6 then set(eng_fire_1,math.max( bool2int(math.random() < 0.00001 * FAIL * 0.3) * 6, bool2int(math.random(270,350)<get(bearing_1_temp))* 6)) end
@@ -391,22 +391,22 @@ if get(ismaster) ~= 1 then
 		end
 		
 		-- TakeOff mode limits
-		if get(rpm_high_1) > 98 or get(engn_oil_qty_1) < 4 then engToCounter1 = engToCounter1 + passed
-		else engToCounter1 = engToCounter1 - passed end
-		if engToCounter1 < 0 then engToCounter1 = 0 end
+		-- if get(rpm_high_1) > 98 or get(engn_oil_qty_1) < 4 then engToCounter1 = engToCounter1 + passed
+		-- else engToCounter1 = engToCounter1 - passed end
+		-- if engToCounter1 < 0 then engToCounter1 = 0 end
 		
-		if get(rpm_high_2) > 98 or get(engn_oil_qty_2) < 4 then engToCounter2 = engToCounter2 + passed
-		else engToCounter2 = engToCounter2 - passed end
-		if engToCounter2 < 0 then engToCounter2 = 0 end
+		-- if get(rpm_high_2) > 98 or get(engn_oil_qty_2) < 4 then engToCounter2 = engToCounter2 + passed
+		-- else engToCounter2 = engToCounter2 - passed end
+		-- if engToCounter2 < 0 then engToCounter2 = 0 end
 		
-		if get(rpm_high_3) > 98 or get(engn_oil_qty_3) < 4 then engToCounter3 = engToCounter3 + passed
-		else engToCounter3 = engToCounter3 - passed end
-		if engToCounter3 < 0 then engToCounter3 = 0 end
+		-- if get(rpm_high_3) > 98 or get(engn_oil_qty_3) < 4 then engToCounter3 = engToCounter3 + passed
+		-- else engToCounter3 = engToCounter3 - passed end
+		-- if engToCounter3 < 0 then engToCounter3 = 0 end
 		
 		-- fuel fluctuation
-		set(fuel_fluct_1, get(eng_filter_1))
-		set(fuel_fluct_2, get(eng_filter_2))
-		set(fuel_fluct_3, get(eng_filter_3))
+		-- set(fuel_fluct_1, get(eng_filter_1))
+		-- set(fuel_fluct_2, get(eng_filter_2))
+		-- set(fuel_fluct_3, get(eng_filter_3))
 		
 		-- engine fire
 		-- if get(eng_fire_1) == 6 then set(eng_flame_1, 6) end

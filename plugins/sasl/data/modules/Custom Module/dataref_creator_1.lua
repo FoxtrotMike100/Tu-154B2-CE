@@ -784,12 +784,12 @@ createGlobalPropertyi("tu154b2/custom/buttons/eng/starter_stop", 0) -- кноп�
 createGlobalPropertyi("tu154b2/custom/buttons/eng/flight_start_1", 0) -- запуск в полете
 createGlobalPropertyi("tu154b2/custom/buttons/eng/flight_start_2", 0) -- запуск в полете
 createGlobalPropertyi("tu154b2/custom/buttons/eng/flight_start_3", 0) -- запуск в полете
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1", 1) -- приборы контроля двигателей
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2", 1) -- приборы контроля двигателей
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3", 1) -- приборы контроля двигателей
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1_cap", 0) -- приборы контроля двигателей
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2_cap", 0) -- приборы контроля двигателей
-createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3_cap", 0) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1", 1) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2", 1) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3", 1) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1_cap", 0) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2_cap", 0) -- приборы контроля двигателей
+-- createGlobalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3_cap", 0) -- приборы контроля двигателей
 createGlobalPropertyi("tu154b2/custom/buttons/eng/reserv_pump_test", 0) -- проверка резерв топл насоса
 createGlobalPropertyi("tu154b2/custom/buttons/console/absu_zk", 0) -- кнопка ЗК на панели АБСУ
 createGlobalPropertyi("tu154b2/custom/buttons/console/absu_reset", 0) -- кнопка сброс программы на панели АБСУ

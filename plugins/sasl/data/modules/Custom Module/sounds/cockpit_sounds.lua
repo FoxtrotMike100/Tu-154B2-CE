@@ -1,65 +1,65 @@
 -- createGlobalPropertyf("tu154b2/custom/buttons/console/sound_gain_test", 1)
--- defineProperty("gain_test", globalPropertyf("tu154b2/custom/buttons/console/sound_gain_test"))
+-- gain_test = globalPropertyf("tu154b2/custom/buttons/console/sound_gain_test")
 -- createGlobalPropertyf("tu154b2/custom/buttons/console/sound_gain_test2", 27)
--- defineProperty("gain_test2", globalPropertyf("tu154b2/custom/buttons/console/sound_gain_test2"))
+-- gain_test2 = globalPropertyf("tu154b2/custom/buttons/console/sound_gain_test2")
 
 
-defineProperty("frame_time", globalPropertyf("tu154b2/custom/time/frame_time")) -- flight time
+frame_time = globalPropertyf("tu154b2/custom/time/frame_time") -- flight time
 
-defineProperty("external_view", globalPropertyi("sim/graphics/view/view_is_external")) -- enviroment
-defineProperty("vr_outside", globalPropertyi("sim/graphics/VR/teleport_on_ground"))
+external_view = globalPropertyi("sim/graphics/view/view_is_external") -- enviroment
+vr_outside = globalPropertyi("sim/graphics/VR/teleport_on_ground")
 -- power
-defineProperty("bus27_volt_L", globalPropertyf("tu154b2/custom/elec/bus27_volt_left"))
-defineProperty("bus27_volt_R", globalPropertyf("tu154b2/custom/elec/bus27_volt_right"))
-defineProperty("bus36_pts1_work", globalPropertyi("tu154b2/custom/elec/bus36_pts1_work")) -- ПТС250 1 работает
-defineProperty("emerg_inv115", globalPropertyi("tu154b2/custom/switchers/eng/emerg_inv115"))
-defineProperty("inv115_fail", globalPropertyf("tu154b2/custom/failures/inv115_fail"))
-defineProperty("pilot_Z", globalPropertyf("sim/aircraft/view/acf_peZ")) -- Position of pilot's head relative to CG
-defineProperty("pilot_X", globalPropertyf("sim/aircraft/view/acf_peX"))
-defineProperty("pilot_Y", globalPropertyf("sim/aircraft/view/acf_peY"))
-defineProperty("wind_speed", globalProperty("sim/weather/region/wind_speed_msc[0]"))
-defineProperty("on_ground", globalProperty("sim/flightmodel2/gear/on_ground[0]"))
+bus27_volt_L = globalPropertyf("tu154b2/custom/elec/bus27_volt_left")
+bus27_volt_R = globalPropertyf("tu154b2/custom/elec/bus27_volt_right")
+bus36_pts1_work = globalPropertyi("tu154b2/custom/elec/bus36_pts1_work") -- ПТС250 1 работает
+emerg_inv115 = globalPropertyi("tu154b2/custom/switchers/eng/emerg_inv115")
+inv115_fail = globalPropertyf("tu154b2/custom/failures/inv115_fail")
+pilot_Z = globalPropertyf("sim/aircraft/view/acf_peZ") -- Position of pilot's head relative to CG
+pilot_X = globalPropertyf("sim/aircraft/view/acf_peX")
+pilot_Y = globalPropertyf("sim/aircraft/view/acf_peY")
+wind_speed = globalProperty("sim/weather/region/wind_speed_msc[0]")
+on_ground = globalProperty("sim/flightmodel2/gear/on_ground[0]")
 
-defineProperty("cockpit_door", globalPropertyf("tu154b2/custom/anim/cockpit_door")) -- положение правых аварийных дверей
-defineProperty("in_plane", globalPropertyf("sim/custom/t154_camera/in_plane")) -- положение правых аварийных дверей
+cockpit_door = globalPropertyf("tu154b2/custom/anim/cockpit_door") -- положение правых аварийных дверей
+in_plane = globalPropertyf("sim/custom/t154_camera/in_plane") -- положение правых аварийных дверей
 
-defineProperty("pilot_head", globalPropertyi("sim/graphics/view/pilots_head_psi"))
+pilot_head = globalPropertyi("sim/graphics/view/pilots_head_psi")
 
-defineProperty("cockpit_window_left", globalPropertyf("tu154b2/custom/anim/cockpit_window_left")) -- открытие форточки
-defineProperty("cockpit_window_right", globalPropertyf("tu154b2/custom/anim/cockpit_window_right")) -- открытие форточки
+cockpit_window_left = globalPropertyf("tu154b2/custom/anim/cockpit_window_left") -- открытие форточки
+cockpit_window_right = globalPropertyf("tu154b2/custom/anim/cockpit_window_right") -- открытие форточки
 
-defineProperty("pax_door_1", globalPropertyf("tu154b2/custom/anim/pax_door_1")) -- положение передних пасс дверей
-defineProperty("pax_door_2", globalPropertyf("tu154b2/custom/anim/pax_door_2")) -- положение средних пасс дверей
-defineProperty("pax_door_3", globalPropertyf("tu154b2/custom/anim/pax_door_3")) -- положение правых аварийных дверей
+pax_door_1 = globalPropertyf("tu154b2/custom/anim/pax_door_1") -- положение передних пасс дверей
+pax_door_2 = globalPropertyf("tu154b2/custom/anim/pax_door_2") -- положение средних пасс дверей
+pax_door_3 = globalPropertyf("tu154b2/custom/anim/pax_door_3") -- положение правых аварийных дверей
 
-defineProperty("bus36_volt_pts250_1", globalPropertyf("tu154b2/custom/elec/bus36_volt_pts250_1"))
-defineProperty("agr_on", globalPropertyi("tu154b2/custom/switchers/ovhd/agr_on"))
-defineProperty("agr_fail", globalPropertyi("tu154b2/custom/failures/agr_fail"))
+bus36_volt_pts250_1 = globalPropertyf("tu154b2/custom/elec/bus36_volt_pts250_1")
+agr_on = globalPropertyi("tu154b2/custom/switchers/ovhd/agr_on")
+agr_fail = globalPropertyi("tu154b2/custom/failures/agr_fail")
 
-defineProperty("eup_on", globalPropertyi("tu154b2/custom/switchers/ovhd/eup_on"))
-defineProperty("eup_fail", globalPropertyi("sim/operation/failures/rel_ss_tsi"))
+eup_on = globalPropertyi("tu154b2/custom/switchers/ovhd/eup_on")
+eup_fail = globalPropertyi("sim/operation/failures/rel_ss_tsi")
 
 -- landing gears
-defineProperty("gear1_deflect", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[0]"))  -- vertical deflection of front gear
-defineProperty("gear2_deflect", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]"))  -- vertical deflection of left gear
-defineProperty("gear3_deflect", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]"))  -- vertical deflection of right gear
-defineProperty("grnd_spd", globalPropertyf("sim/flightmodel2/position/groundspeed")) --in m/s
-defineProperty("control_force_pos", globalPropertyf("tu154b2/custom/controls/control_force_pos")) -- положение загружателя РВ. 0 - выклчюен, 1 - подключен
-defineProperty("control_force_pos_rud", globalPropertyf("tu154b2/custom/controls/control_force_pos_rud")) -- положение загружателя РН. 0 - выклчюен, 1 - подключен
+gear1_deflect = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[0]")  -- vertical deflection of front gear
+gear2_deflect = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]")  -- vertical deflection of left gear
+gear3_deflect = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]")  -- vertical deflection of right gear
+grnd_spd = globalPropertyf("sim/flightmodel2/position/groundspeed") --in m/s
+control_force_pos = globalPropertyf("tu154b2/custom/controls/control_force_pos") -- положение загружателя РВ. 0 - выклчюен, 1 - подключен
+control_force_pos_rud = globalPropertyf("tu154b2/custom/controls/control_force_pos_rud") -- положение загружателя РН. 0 - выклчюен, 1 - подключен
 
-defineProperty("precip", globalPropertyf("sim/weather/aircraft/precipitation_on_aircraft_ratio"))
+precip = globalPropertyf("sim/weather/aircraft/precipitation_on_aircraft_ratio")
 hail_rat = globalPropertyf("sim/weather/aircraft/hail_on_aircraft_ratio")
-defineProperty("cam_agl", globalPropertyf("sim/graphics/view/view_elevation_agl_mtrs"))
-defineProperty("oat", globalPropertyf("sim/cockpit2/temperature/outside_air_temp_degc"))
-defineProperty("true_airspeed", globalPropertyf("sim/flightmodel/position/true_airspeed"))
-defineProperty("gear1_deploy", globalProperty("sim/aircraft/parts/acf_gear_deploy[0]"))  -- deploy of front gear
-defineProperty("pave", globalPropertyi("sim/flightmodel/ground/surface_texture_type")) -- type of pavement
-defineProperty("shake_on", globalPropertyi("sim/custom/t154cfg/brake_heat"))
+cam_agl = globalPropertyf("sim/graphics/view/view_elevation_agl_mtrs")
+oat = globalPropertyf("sim/cockpit2/temperature/outside_air_temp_degc")
+true_airspeed = globalPropertyf("sim/flightmodel/position/true_airspeed")
+gear1_deploy = globalProperty("sim/aircraft/parts/acf_gear_deploy[0]")  -- deploy of front gear
+pave = globalPropertyi("sim/flightmodel/ground/surface_texture_type") -- type of pavement
+shake_on = globalPropertyi("sim/custom/t154cfg/brake_heat")
 
--- defineProperty("db1", globalPropertyf("tu154b2/custom/controlls/debug1"))
--- defineProperty("db2", globalPropertyf("tu154b2/custom/controlls/debug2"))
--- defineProperty("db3", globalPropertyf("tu154b2/custom/controlls/debug3"))
--- defineProperty("db4", globalPropertyf("tu154b2/custom/controlls/debug4"))
+-- db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
+-- db2 = globalPropertyf("tu154b2/custom/controlls/debug2")
+-- db3 = globalPropertyf("tu154b2/custom/controlls/debug3")
+-- db4 = globalPropertyf("tu154b2/custom/controlls/debug4")
 
 local pts_start = loadSample(moduleDirectory .. '/Custom Sounds/new_snds/pts_start.wav') --
 local pts_run = loadSample(moduleDirectory .. '/Custom Sounds/new_snds/pts_run.wav') --
@@ -496,7 +496,7 @@ function update()
 	--- Rain Sound
 	local rain_gain=get(precip)*500
 	local rain_pitch=get(precip)*300+700
-	setSampleGain(rain, rain_gain*run*math.max(dist_zagr,0.1)*(1-external))
+	setSampleGain(rain, rain_gain*run*math.max(dist_zagr,0.3)*(1-external))
 	setSamplePitch(rain,rain_pitch)
 	tas=math.max(100,get(true_airspeed)*3.6)
 	local rain_gain_fl=0.0025*math.pow(tas,2)-0.25*tas

@@ -196,6 +196,11 @@ function update()
 		stall_set_3 = false
 	end
 	
+
+local MASTER = get(ismaster) ~= 1	
+	
+
+if MASTER then	
 	-- result vibration and engine faulre
 	vibro1 = vibro1 + (fire_counter1 + chip_counter1 + oil_counter1  + stall_vibr_1) * rpm1 / 100
 	if vibro1 > 100 then vibro1 = 100 end
@@ -211,11 +216,6 @@ function update()
 	if vibro3 > 100 then vibro3 = 100 end	
 	--if vibro3 > 70 then set(chip_detect3, 1) end
 	if vibro3 > 90 then set(eng3_fail, 6) end	
-
-local MASTER = get(ismaster) ~= 1	
-	
-
-if MASTER then	
 	
 	-- set results
 	set(vibration_1, vibro1)

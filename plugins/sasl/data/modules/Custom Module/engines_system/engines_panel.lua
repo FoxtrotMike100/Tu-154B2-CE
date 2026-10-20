@@ -21,13 +21,13 @@ lamp_test_fwd = globalPropertyi("tu154b2/custom/buttons/lamp_test_front") -- к�
 
 day_night_set = globalPropertyf("tu154b2/custom/lights/day_night_set") -- переключатель день - ночь. 0 - день, 1 - ночь. приглушает яркость сигнальных ламп.
 
-gauges_on_1 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1") -- приборы контроля двигателей
-gauges_on_2 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2") -- приборы контроля двигателей
-gauges_on_3 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3") -- приборы контроля двигателей
+-- gauges_on_1 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1") -- приборы контроля двигателей
+-- gauges_on_2 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2") -- приборы контроля двигателей
+-- gauges_on_3 = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3") -- приборы контроля двигателей
 
-gauges_on_1_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1_cap") -- приборы контроля двигателей
-gauges_on_2_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2_cap") -- приборы контроля двигателей
-gauges_on_3_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3_cap") -- приборы контроля двигателей
+-- gauges_on_1_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_1_cap") -- приборы контроля двигателей
+-- gauges_on_2_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_2_cap") -- приборы контроля двигателей
+-- gauges_on_3_cap = globalPropertyi("tu154b2/custom/switchers/eng/gauges_on_3_cap") -- приборы контроля двигателей
 
 -- lamps
 eng1_dangerous_vibro = globalPropertyf("tu154b2/custom/lights/engines/eng1_dangerous_vibro") -- опасная вибрация
@@ -288,12 +288,12 @@ end
 
 local function reset_switchers()
 	if get(eng1_N2) < 5 and get(eng2_N2) < 5 and get(eng3_N2) < 5 then
-		set(gauges_on_1, 0)
-		set(gauges_on_2, 0)
-		set(gauges_on_3, 0)
-		set(gauges_on_1_cap, 1)
-		set(gauges_on_2_cap, 1)
-		set(gauges_on_3_cap, 1)
+		-- set(gauges_on_1, 0)
+		-- set(gauges_on_2, 0)
+		-- set(gauges_on_3, 0)
+		-- set(gauges_on_1_cap, 1)
+		-- set(gauges_on_2_cap, 1)
+		-- set(gauges_on_3_cap, 1)
 	end
 	
 	notLoaded = false
@@ -318,13 +318,13 @@ local function small_lamps()
 	fuel_tank1_used_brt = math.max(fuel_tank1_used_brt * lamps_brt, test_btn) 
 	set(fuel_tank1_used, fuel_tank1_used_brt)
 	
-	local oil_meter_qty_1_brt = math.max(get(gauges_on_1) * lamps_brt, test_btn) 
+	local oil_meter_qty_1_brt = math.max( lamps_brt, test_btn) 
 	set(oil_meter_qty_1, oil_meter_qty_1_brt)
 	
-	local oil_meter_qty_2_brt = math.max(get(gauges_on_2) * lamps_brt, test_btn) 
+	local oil_meter_qty_2_brt = math.max(lamps_brt, test_btn) 
 	set(oil_meter_qty_2, oil_meter_qty_2_brt)
 	
-	local oil_meter_qty_3_brt = math.max(get(gauges_on_3) * lamps_brt, test_btn) 
+	local oil_meter_qty_3_brt = math.max(lamps_brt, test_btn) 
 	set(oil_meter_qty_3, oil_meter_qty_3_brt)
 	
 
@@ -348,7 +348,7 @@ local function lamps_eng1()
 	eng1_dangerous_vibro_brt = math.max(eng1_dangerous_vibro_brt * lamps_brt, test_btn)
 	set(eng1_dangerous_vibro, eng1_dangerous_vibro_brt)
 	
-	local eng1_oil_level_brt = math.max(bool2int(get(oil_qty_1) < 10) * get(gauges_on_1) * lamps_brt, test_btn) 
+	local eng1_oil_level_brt = math.max(bool2int(get(oil_qty_1) < 10) * lamps_brt, test_btn) 
 	set(eng1_oil_level, eng1_oil_level_brt)
 	
 	local eng1_oil_p_brt = 0
@@ -445,7 +445,7 @@ local function lamps_eng2()
 	eng2_dangerous_vibro_brt = math.max(eng2_dangerous_vibro_brt * lamps_brt, test_btn)
 	set(eng2_dangerous_vibro, eng2_dangerous_vibro_brt)
 	
-	local eng2_oil_level_brt = math.max(bool2int(get(oil_qty_2) < 10) * get(gauges_on_2) * lamps_brt, test_btn) 
+	local eng2_oil_level_brt = math.max(bool2int(get(oil_qty_2) < 10) * lamps_brt, test_btn) 
 	set(eng2_oil_level, eng2_oil_level_brt)
 	
 	local eng2_oil_p_brt = 0
@@ -538,7 +538,7 @@ local function lamps_eng3()
 	eng3_dangerous_vibro_brt = math.max(eng3_dangerous_vibro_brt * lamps_brt, test_btn)
 	set(eng3_dangerous_vibro, eng3_dangerous_vibro_brt)
 	
-	local eng3_oil_level_brt = math.max(bool2int(get(oil_qty_3) < 10) * get(gauges_on_3) * lamps_brt, test_btn) 
+	local eng3_oil_level_brt = math.max(bool2int(get(oil_qty_3) < 10) * lamps_brt, test_btn) 
 	set(eng3_oil_level, eng3_oil_level_brt)
 	
 	local eng3_oil_p_brt = 0
@@ -682,13 +682,13 @@ local control_vibro_3_last = get(control_vibro_3)
 -- local vibro_sel_3_last = get(vibro_sel_3)
 local test_lamps_last = get(test_lamps)
 
-local gauges_on_1_last = get(gauges_on_1)
-local gauges_on_2_last = get(gauges_on_2)
-local gauges_on_3_last = get(gauges_on_3)
+-- local gauges_on_1_last = get(gauges_on_1)
+-- local gauges_on_2_last = get(gauges_on_2)
+-- local gauges_on_3_last = get(gauges_on_3)
 
-local gauges_on_1_cap_last = get(gauges_on_1_cap)
-local gauges_on_2_cap_last = get(gauges_on_2_cap)
-local gauges_on_3_cap_last = get(gauges_on_3_cap)
+-- local gauges_on_1_cap_last = get(gauges_on_1_cap)
+-- local gauges_on_2_cap_last = get(gauges_on_2_cap)
+-- local gauges_on_3_cap_last = get(gauges_on_3_cap)
 
 local vibro_pow_1_last=get(vibro_pwr_1)
 local vibro_pow_2_last=get(vibro_pwr_2)
@@ -713,13 +713,13 @@ local function check_controls(gain_L, gain_R,dist)
 	-- local vibro_sel_2_sw = get(vibro_sel_2)
 	-- local vibro_sel_3_sw = get(vibro_sel_3)
 	local test_lamps_swt = get(test_lamps)
-	local gauges_on_1_sw = get(gauges_on_1)
-	local gauges_on_2_sw = get(gauges_on_2)
-	local gauges_on_3_sw = get(gauges_on_3)
+	-- local gauges_on_1_sw = get(gauges_on_1)
+	-- local gauges_on_2_sw = get(gauges_on_2)
+	-- local gauges_on_3_sw = get(gauges_on_3)
 	
-	local gauges_on_1_cap_sw = get(gauges_on_1_cap)
-	local gauges_on_2_cap_sw = get(gauges_on_2_cap)
-	local gauges_on_3_cap_sw = get(gauges_on_3_cap)
+	-- local gauges_on_1_cap_sw = get(gauges_on_1_cap)
+	-- local gauges_on_2_cap_sw = get(gauges_on_2_cap)
+	-- local gauges_on_3_cap_sw = get(gauges_on_3_cap)
 	
 	local vibro_pow_1_sw=get(vibro_pwr_1)
 	local vibro_pow_2_sw=get(vibro_pwr_2)
@@ -740,15 +740,15 @@ local function check_controls(gain_L, gain_R,dist)
 	
 	local change_sw2=vibr_bear_sw-vibr_bear_last
 	
-	local caps_change = gauges_on_1_cap_sw + gauges_on_2_cap_sw + gauges_on_3_cap_sw - gauges_on_1_cap_last - gauges_on_2_cap_last - gauges_on_3_cap_last
+	--local caps_change = gauges_on_1_cap_sw + gauges_on_2_cap_sw + gauges_on_3_cap_sw - gauges_on_1_cap_last - gauges_on_2_cap_last - gauges_on_3_cap_last
 	setSampleGain(rotary_sound_L,gain_L*dist)
 	setSampleGain(rotary_sound_R,gain_R*dist)
 	setSampleGain(rotary_sound2_L,gain_L*dist)
 	setSampleGain(rotary_sound2_R,gain_R*dist)
 	setSampleGain(button_sound_L,gain_L*dist)
 	setSampleGain(button_sound_R,gain_R*dist)
-	setSampleGain(cap_sound_L,gain_L*dist)
-	setSampleGain(cap_sound_R,gain_R*dist)
+	-- setSampleGain(cap_sound_L,gain_L*dist)
+	-- setSampleGain(cap_sound_R,gain_R*dist)
 	
 	if change_but ~= 0 then
 		playSample(button_sound_L, false)
@@ -762,14 +762,14 @@ local function check_controls(gain_L, gain_R,dist)
 		playSample(rotary_sound2_L, false)
 		playSample(rotary_sound2_R, false)
 	end
-	if caps_change ~= 0 then 
-		playSample(cap_sound_L, false) 
-		playSample(cap_sound_R, false) 
-	end 
+	-- if caps_change ~= 0 then 
+		-- playSample(cap_sound_L, false) 
+		-- playSample(cap_sound_R, false) 
+	-- end 
 	-- check caps
-	if gauges_on_1_cap_sw == 0 then set(gauges_on_1, 1) end
-	if gauges_on_2_cap_sw == 0 then set(gauges_on_2, 1) end
-	if gauges_on_3_cap_sw == 0 then set(gauges_on_3, 1) end
+	-- if gauges_on_1_cap_sw == 0 then set(gauges_on_1, 1) end
+	-- if gauges_on_2_cap_sw == 0 then set(gauges_on_2, 1) end
+	-- if gauges_on_3_cap_sw == 0 then set(gauges_on_3, 1) end
 	
 	
 	control_ut1_last = get(control_ut1)
@@ -779,12 +779,12 @@ local function check_controls(gain_L, gain_R,dist)
 	control_vibro_2_last = get(control_vibro_2)
 	control_vibro_3_last = get(control_vibro_3)
 	test_lamps_last = get(test_lamps)
-	gauges_on_1_last = gauges_on_1_sw
-	gauges_on_2_last = gauges_on_2_sw
-	gauges_on_3_last = gauges_on_3_sw
-	gauges_on_1_cap_last = gauges_on_1_cap_sw
-	gauges_on_2_cap_last = gauges_on_2_cap_sw
-	gauges_on_3_cap_last = gauges_on_3_cap_sw
+	-- gauges_on_1_last = gauges_on_1_sw
+	-- gauges_on_2_last = gauges_on_2_sw
+	-- gauges_on_3_last = gauges_on_3_sw
+	-- gauges_on_1_cap_last = gauges_on_1_cap_sw
+	-- gauges_on_2_cap_last = gauges_on_2_cap_sw
+	-- gauges_on_3_cap_last = gauges_on_3_cap_sw
 	vibro_pow_1_last=vibro_pow_1_sw
 	vibro_pow_2_last=vibro_pow_2_sw
 	vibro_pow_3_last=vibro_pow_3_sw
