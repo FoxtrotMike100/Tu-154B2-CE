@@ -29,28 +29,28 @@ simDR_vbe_press_r = find_dataref("tu154b2/custom/gauges/alt/vbe_press_right")
 simDR_vbe_fl_r = find_dataref("tu154b2/custom/gauges/alt/vbe_flightlevel_right")
 simDR_brt_r = find_dataref("tu154b2/custom/gauges/alt/vbe_brt_right")
 simDR_vbe_on_r = find_dataref("tu154b2/custom/switchers/ovhd/vbe_2_on")
-altitude_1000_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_alt_1000", "number")
-altitude_100_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_alt_100", "number")
-f_level_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_fl", "number")
-needle_angle_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_needle", "number")
-border_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_border", "number")
-brt_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_brt", "number")
-btn_mode_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_btn_mode", "number")
-vbe_test_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_test", "number")
-vbe_test_l2 = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_test2", "number")
+-- altitude_1000_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_alt_1000", "number")
+-- altitude_100_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_alt_100", "number")
+-- f_level_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_fl", "number")
+-- needle_angle_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_needle", "number")
+-- border_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_border", "number")
+-- brt_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_brt", "number")
+-- btn_mode_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_btn_mode", "number")
+-- vbe_test_l = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_test", "number")
+-- vbe_test_l2 = deferred_dataref("sim/custom/gauges/alt/vbe_cm_l_test2", "number")
 simDR_vbe_mode_l=  find_dataref("tu154b2/custom/gauges/alt/vbe_mode_left", "number")
 simDR_vbe_mode_r=  find_dataref("tu154b2/custom/gauges/alt/vbe_mode_right", "number")
-altitude_1000_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_alt_1000", "number")
-altitude_100_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_alt_100", "number")
-f_level_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_fl", "number")
-needle_angle_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_needle", "number")
-border_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_border", "number")
-brt_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_brt", "number")
-btn_mode_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_btn_mode", "number")
-vbe_test_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_test", "number")
-vbe_test_r2 = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_test2", "number")
-vbe_mode_l= deferred_dataref("sim/custom/gauges/alt/vbe_mode_left_new", "number")
-vbe_mode_r= deferred_dataref("sim/custom/gauges/alt/vbe_mode_right_new", "number")
+-- altitude_1000_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_alt_1000", "number")
+-- altitude_100_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_alt_100", "number")
+-- f_level_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_fl", "number")
+-- needle_angle_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_needle", "number")
+-- border_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_border", "number")
+-- brt_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_brt", "number")
+-- btn_mode_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_btn_mode", "number")
+-- vbe_test_r = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_test", "number")
+-- vbe_test_r2 = deferred_dataref("sim/custom/gauges/alt/vbe_cm_r_test2", "number")
+-- vbe_mode_l= deferred_dataref("sim/custom/gauges/alt/vbe_mode_left_new", "number")
+-- vbe_mode_r= deferred_dataref("sim/custom/gauges/alt/vbe_mode_right_new", "number")
 
 vbe_left_h_rot= deferred_dataref("sim/custom/gauges/alt/vbe_left_h_rot", "number")
 vbe_left_p_rot= deferred_dataref("sim/custom/gauges/alt/vbe_left_p_rot", "number")
@@ -60,7 +60,7 @@ vbe_right_h_rot= deferred_dataref("sim/custom/gauges/alt/vbe_right_h_rot", "numb
 vbe_right_p_rot= deferred_dataref("sim/custom/gauges/alt/vbe_right_p_rot", "number")
 vbe_right_h_push= deferred_dataref("sim/custom/gauges/alt/vbe_right_h_push", "number")
 vbe_right_p_push= deferred_dataref("sim/custom/gauges/alt/vbe_right_p_push", "number")
-
+master = find_dataref("scp/api/ismaster")
 
 ssos_alarm = deferred_dataref("sim/custom/ssos_alarm", "number")
 
@@ -85,238 +85,254 @@ local vbe_mode_r_prev=0
 
 
 function vbe_l_P_plus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-            simDR_vbe_press_l = simDR_vbe_press_l +1
-        end 
-        vbe_left_p_rot = 25  
-        vbe_press_timer = 0 
-    end
-	
-    if phase == 1 then
-        if duration > 0.1 and duration < 3 then
-            vbe_press_timer = vbe_press_timer +0.1
-            if vbe_press_timer > 1 then
-                simDR_vbe_press_l = simDR_vbe_press_l +1
-                vbe_press_timer = 0
-            end
-        elseif duration > 3 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                simDR_vbe_press_l = simDR_vbe_press_l +1
-            end
-            vbe_left_p_rot = 45
-        end
-    end
-    if phase == 2 then
-        vbe_press_timer = 0
-        vbe_left_p_rot = 0
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+				simDR_vbe_press_l = simDR_vbe_press_l +1
+			end 
+			vbe_left_p_rot = 25  
+			vbe_press_timer = 0 
+		end
+		
+		if phase == 1 then
+			if duration > 0.1 and duration < 3 then
+				vbe_press_timer = vbe_press_timer +0.1
+				if vbe_press_timer > 1 then
+					simDR_vbe_press_l = simDR_vbe_press_l +1
+					vbe_press_timer = 0
+				end
+			elseif duration > 3 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					simDR_vbe_press_l = simDR_vbe_press_l +1
+				end
+				vbe_left_p_rot = 45
+			end
+		end
+		if phase == 2 then
+			vbe_press_timer = 0
+			vbe_left_p_rot = 0
+		end
+	end
 end
 
 function vbe_l_P_minus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-            simDR_vbe_press_l = simDR_vbe_press_l -1
-        end    
-        vbe_left_p_rot = -25
-        vbe_press_timer = 0 
-    end
-	
-    if phase == 1 then
-        if duration > 0.1 and duration < 3 then
-            vbe_press_timer = vbe_press_timer +0.1
-            if vbe_press_timer > 1 then
-                simDR_vbe_press_l = simDR_vbe_press_l -1
-                vbe_press_timer = 0
-            end
-        elseif duration > 3 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                simDR_vbe_press_l = simDR_vbe_press_l -1
-            end
-            vbe_left_p_rot = -45
-        end
-    end
-    if phase == 2 then
-        vbe_left_p_rot = 0
-        vbe_press_timer = 0 
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+				simDR_vbe_press_l = simDR_vbe_press_l -1
+			end    
+			vbe_left_p_rot = -25
+			vbe_press_timer = 0 
+		end
+		
+		if phase == 1 then
+			if duration > 0.1 and duration < 3 then
+				vbe_press_timer = vbe_press_timer +0.1
+				if vbe_press_timer > 1 then
+					simDR_vbe_press_l = simDR_vbe_press_l -1
+					vbe_press_timer = 0
+				end
+			elseif duration > 3 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					simDR_vbe_press_l = simDR_vbe_press_l -1
+				end
+				vbe_left_p_rot = -45
+			end
+		end
+		if phase == 2 then
+			vbe_left_p_rot = 0
+			vbe_press_timer = 0 
+		end
+	end
 end	
 
 
 
 
 function vbe_l_H_plus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-            if simDR_vbe_mode_l == 1 then
-                simDR_vbe_fl_l = simDR_vbe_fl_l +30.48
-            else
-                simDR_vbe_fl_l = simDR_vbe_fl_l +100
-            end
-        end    
-        vbe_left_h_rot = 25
-    end
-	
-    if phase == 1 then
-         if duration > 0.7 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                if simDR_vbe_mode_l == 1 then
-                    simDR_vbe_fl_l = simDR_vbe_fl_l +60.96
-                else
-                    simDR_vbe_fl_l = simDR_vbe_fl_l +100
-                end
-            end
-            vbe_left_h_rot = 45
-        end
-    end
-    if phase == 2 then
-        vbe_left_h_rot = 0
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+				if simDR_vbe_mode_l == 1 then
+					simDR_vbe_fl_l = simDR_vbe_fl_l +30.48
+				else
+					simDR_vbe_fl_l = simDR_vbe_fl_l +100
+				end
+			end    
+			vbe_left_h_rot = 25
+		end
+		
+		if phase == 1 then
+			 if duration > 0.7 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					if simDR_vbe_mode_l == 1 then
+						simDR_vbe_fl_l = simDR_vbe_fl_l +60.96
+					else
+						simDR_vbe_fl_l = simDR_vbe_fl_l +100
+					end
+				end
+				vbe_left_h_rot = 45
+			end
+		end
+		if phase == 2 then
+			vbe_left_h_rot = 0
+		end
+	end
 end	
 
 function vbe_l_H_minus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-            if simDR_vbe_mode_l == 1 then
-                simDR_vbe_fl_l = simDR_vbe_fl_l -30.48
-            else
-                simDR_vbe_fl_l = simDR_vbe_fl_l -100
-            end
-        end   
-        vbe_left_h_rot = -25 
-    end
-	
-    if phase == 1 then
-         if duration > 0.7 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                if simDR_vbe_mode_l == 1 then
-                    simDR_vbe_fl_l = simDR_vbe_fl_l -60.96
-                else
-                    simDR_vbe_fl_l = simDR_vbe_fl_l -100
-                end
-            end
-            vbe_left_h_rot = -45 
-        end
-    end
-    if phase == 2 then
-        vbe_left_h_rot = 0
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+				if simDR_vbe_mode_l == 1 then
+					simDR_vbe_fl_l = simDR_vbe_fl_l -30.48
+				else
+					simDR_vbe_fl_l = simDR_vbe_fl_l -100
+				end
+			end   
+			vbe_left_h_rot = -25 
+		end
+		
+		if phase == 1 then
+			 if duration > 0.7 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					if simDR_vbe_mode_l == 1 then
+						simDR_vbe_fl_l = simDR_vbe_fl_l -60.96
+					else
+						simDR_vbe_fl_l = simDR_vbe_fl_l -100
+					end
+				end
+				vbe_left_h_rot = -45 
+			end
+		end
+		if phase == 2 then
+			vbe_left_h_rot = 0
+		end
+	end
 end	
 
 
 function vbe_r_P_plus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-            simDR_vbe_press_r = simDR_vbe_press_r +1
-        end 
-        vbe_right_p_rot = 25   
-        vbe_press_timer = 0 
-    end
-    
-    if phase == 1 then
-        if duration > 0.1 and duration < 3 then
-            vbe_press_timer = vbe_press_timer +0.1
-            if vbe_press_timer > 1 then
-                simDR_vbe_press_r = simDR_vbe_press_r +1
-                vbe_press_timer = 0
-            end
-        elseif duration > 3 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                simDR_vbe_press_r = simDR_vbe_press_r +1
-            end
-            vbe_left_p_rot = 45
-        end
-    end
-    if phase == 2 then
-        vbe_right_p_rot = 0
-        vbe_press_timer = 0 
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+				simDR_vbe_press_r = simDR_vbe_press_r +1
+			end 
+			vbe_right_p_rot = 25   
+			vbe_press_timer = 0 
+		end
+		
+		if phase == 1 then
+			if duration > 0.1 and duration < 3 then
+				vbe_press_timer = vbe_press_timer +0.1
+				if vbe_press_timer > 1 then
+					simDR_vbe_press_r = simDR_vbe_press_r +1
+					vbe_press_timer = 0
+				end
+			elseif duration > 3 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					simDR_vbe_press_r = simDR_vbe_press_r +1
+				end
+				vbe_left_p_rot = 45
+			end
+		end
+		if phase == 2 then
+			vbe_right_p_rot = 0
+			vbe_press_timer = 0 
+		end
+	end
 end
 function vbe_r_P_minus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-            simDR_vbe_press_r = simDR_vbe_press_r -1
-        end   
-        vbe_right_p_rot = -25 
-        vbe_press_timer = 0 
-    end
-    
-    if phase == 1 then
-        if duration > 0.1 and duration < 3 then
-            vbe_press_timer = vbe_press_timer +0.1
-            if vbe_press_timer > 1 then
-                simDR_vbe_press_r = simDR_vbe_press_r -1
-                vbe_press_timer = 0
-            end
-        elseif duration > 3 then
-            if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-                simDR_vbe_press_r = simDR_vbe_press_r -1
-            end
-            vbe_left_p_rot = -45
-        end
-    end
-    if phase == 2 then
-        vbe_right_p_rot = 0
-        vbe_press_timer = 0 
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+				simDR_vbe_press_r = simDR_vbe_press_r -1
+			end   
+			vbe_right_p_rot = -25 
+			vbe_press_timer = 0 
+		end
+		
+		if phase == 1 then
+			if duration > 0.1 and duration < 3 then
+				vbe_press_timer = vbe_press_timer +0.1
+				if vbe_press_timer > 1 then
+					simDR_vbe_press_r = simDR_vbe_press_r -1
+					vbe_press_timer = 0
+				end
+			elseif duration > 3 then
+				if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+					simDR_vbe_press_r = simDR_vbe_press_r -1
+				end
+				vbe_left_p_rot = -45
+			end
+		end
+		if phase == 2 then
+			vbe_right_p_rot = 0
+			vbe_press_timer = 0 
+		end
+	end
 end
 
 function vbe_r_H_plus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-            if simDR_vbe_mode_r == 1 then
-                simDR_vbe_fl_r = simDR_vbe_fl_r +30.48
-            else
-                simDR_vbe_fl_r = simDR_vbe_fl_r +100
-            end
-        end
-        vbe_right_h_rot = 25    
-    end
-	
-    if phase == 1 then
-        if duration > 0.7 then
-            if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-                if simDR_vbe_mode_r == 1 then
-                    simDR_vbe_fl_r = simDR_vbe_fl_r +60.96
-                else
-                    simDR_vbe_fl_r = simDR_vbe_fl_r +100
-                end
-            end
-            vbe_right_h_rot = 45
-        end
-    end
-    if phase == 2 then
-        vbe_right_h_rot = 0
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+				if simDR_vbe_mode_r == 1 then
+					simDR_vbe_fl_r = simDR_vbe_fl_r +30.48
+				else
+					simDR_vbe_fl_r = simDR_vbe_fl_r +100
+				end
+			end
+			vbe_right_h_rot = 25    
+		end
+		
+		if phase == 1 then
+			if duration > 0.7 then
+				if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+					if simDR_vbe_mode_r == 1 then
+						simDR_vbe_fl_r = simDR_vbe_fl_r +60.96
+					else
+						simDR_vbe_fl_r = simDR_vbe_fl_r +100
+					end
+				end
+				vbe_right_h_rot = 45
+			end
+		end
+		if phase == 2 then
+			vbe_right_h_rot = 0
+		end
+	end
 end	
 
 function vbe_r_H_minus_CMDhandler(phase, duration)
-    if phase == 0 then
-        if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-            if simDR_vbe_mode_r == 1 then
-                simDR_vbe_fl_r = simDR_vbe_fl_r -30.48
-            else
-                simDR_vbe_fl_r = simDR_vbe_fl_r -100
-            end
-        end 
-       vbe_right_h_rot = -25   
-    end
-	
-    if phase == 1 then
-         if duration > 0.7 then
-            if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-                if simDR_vbe_mode_r == 1 then
-                    simDR_vbe_fl_r = simDR_vbe_fl_r -60.96
-                else
-                    simDR_vbe_fl_r = simDR_vbe_fl_r -100
-                end
-            end
-            vbe_right_h_rot = -45
-        end
-    end
-    if phase == 2 then
-        vbe_right_h_rot = 0
-    end
+	if master ~= 1 then
+		if phase == 0 then
+			if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+				if simDR_vbe_mode_r == 1 then
+					simDR_vbe_fl_r = simDR_vbe_fl_r -30.48
+				else
+					simDR_vbe_fl_r = simDR_vbe_fl_r -100
+				end
+			end 
+		   vbe_right_h_rot = -25   
+		end
+		
+		if phase == 1 then
+			 if duration > 0.7 then
+				if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+					if simDR_vbe_mode_r == 1 then
+						simDR_vbe_fl_r = simDR_vbe_fl_r -60.96
+					else
+						simDR_vbe_fl_r = simDR_vbe_fl_r -100
+					end
+				end
+				vbe_right_h_rot = -45
+			end
+		end
+		if phase == 2 then
+			vbe_right_h_rot = 0
+		end
+	end
 end	
 
 
@@ -629,31 +645,31 @@ function border_draw()
 end
 
 function after_physics()
-    if T154_kontur_90th > 0 then
-        altitudes_calc()
+    -- if T154_kontur_90th > 0 then
+        -- altitudes_calc()
 
 
-        if simDR_bus27left*simDR_bus27right*simDR_vbe_on_l*simDR_vbe_on_r > 0 and ssos_alarm == 0 and math.abs(simDR_vbe_alt_l-simDR_vbe_alt_r) > 60 then
-            simDR_check_alt_l = 1
-            simDR_check_alt_r = 1
-        end
+        -- if simDR_bus27left*simDR_bus27right*simDR_vbe_on_l*simDR_vbe_on_r > 0 and ssos_alarm == 0 and math.abs(simDR_vbe_alt_l-simDR_vbe_alt_r) > 60 then
+            -- simDR_check_alt_l = 1
+            -- simDR_check_alt_r = 1
+        -- end
 
-        if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
-            if vbe_left_h_push > 0 then
-                simDR_vbe_fl_l = 0
-            end
-            if vbe_left_p_push > 0 then
-                simDR_vbe_press_l = 1013
-            end
-        end 
+        -- if simDR_bus27left > 0 and simDR_vbe_on_l > 0 then
+            -- if vbe_left_h_push > 0 then
+                -- simDR_vbe_fl_l = 0
+            -- end
+            -- if vbe_left_p_push > 0 then
+                -- simDR_vbe_press_l = 1013
+            -- end
+        -- end 
         
-        if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
-            if vbe_right_h_push > 0 then
-                simDR_vbe_fl_r = 0
-            end
-            if vbe_right_p_push > 0 then
-                simDR_vbe_press_r = 1013
-            end
-        end 
-    end
+        -- if simDR_bus27right > 0 and simDR_vbe_on_r > 0 then
+            -- if vbe_right_h_push > 0 then
+                -- simDR_vbe_fl_r = 0
+            -- end
+            -- if vbe_right_p_push > 0 then
+                -- simDR_vbe_press_r = 1013
+            -- end
+        -- end 
+    -- end
 end

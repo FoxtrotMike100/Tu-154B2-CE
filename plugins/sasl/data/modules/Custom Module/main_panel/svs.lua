@@ -302,20 +302,14 @@ function update()
 		end
 		start_timer=start_timer+passed
 	end
-	local MASTER = get(ismaster) ~= 1	
 	
-
-	if MASTER then	
-		
-		
-		-- results
-		set(mach_svs, mach_act)
-		set(alt_svs, alt_act)	
-		set(svs_alt_rel,alt_rel_act)
+	set(alt_svs, alt_act)	
+	set(svs_alt_rel,alt_rel_act)
+	if get(ismaster) ~= 1 then	
+		set(mach_svs, mach_act)´
 		set(tas_svs, tas_act)
 		set(tas_sc,true_AS)
 		set(svs_ready,bool2int(pwr))
-
 	end
 
 

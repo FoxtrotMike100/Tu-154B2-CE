@@ -73,6 +73,10 @@ pedal_right_pos = globalPropertyf("sim/custom/other/pedal_right_pos") --
 pilot_X = globalPropertyf("sim/aircraft/view/acf_peX")
 pilot_head = globalPropertyi("sim/graphics/view/pilots_head_psi")
 
+ail_trim_sim = globalPropertyf("sim/flightmodel2/controls/aileron_trim")
+elev_trim_sim = globalPropertyf("sim/flightmodel2/controls/elevator_trim")
+rud_trim_sim = globalPropertyf("sim/flightmodel2/controls/rudder_trim")
+
 -- sound
 local trimm_up = loadSample(moduleDirectory .. '/Custom Sounds/trimm_up.wav')
 local trimm_down = loadSample(moduleDirectory .. '/Custom Sounds/trimm_down.wav')
@@ -173,6 +177,7 @@ function update()
 
 if MASTER then	
 	set(int_pitch_trim, pitch_trim_pos)
+	set(elev_trim_sim, pitch_trim_pos)
 end
 
 	if pitch_trim_pos ~= trimm_pitch_last then
@@ -211,6 +216,7 @@ end
     
 if MASTER then	
 	set(int_roll_trim, roll_trim_pos)
+	set(ail_trim_sim, roll_trim_pos)
 end
 
 	if roll_trim_pos ~= trimm_roll_last then
@@ -291,6 +297,7 @@ end
 
 if MASTER then	
 	set(int_yaw_trim, yaw_trim_pos)
+	set(rud_trim_sim, yaw_trim_pos)
 end
 	
 	if yaw_trim_pos ~= trimm_yaw_last then

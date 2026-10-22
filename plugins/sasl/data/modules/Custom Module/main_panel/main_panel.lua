@@ -81,10 +81,11 @@ components = {
 		bus115_volt = globalPropertyf("tu154b2/custom/elec/bus115_3_volt"), -- напряжение на сети 115в
 		vbe_on = globalPropertyi("tu154b2/custom/switchers/ovhd/vbe_2_on"),  -- power switcher
 		vbe_mode = globalPropertyi("tu154b2/custom/gauges/alt/vbe_mode_right"),  -- meters/feet mode
-		vbe_std = globalPropertyi("tu154b2/custom/gauges/alt/vbe_std_right"),  -- включение стандартного давления
+		vbe_std = globalPropertyi("sim/custom/gauges/alt/vbe_right_p_push"),  -- включение стандартного давления
 		alt_mtr = globalPropertyf("tu154b2/custom/gauges/alt/vbe_alt_right"),  -- indicated altitude in meters
 		vbe_flightlevel = globalPropertyf("tu154b2/custom/gauges/alt/vbe_flightlevel_right"),  -- эшелон
 		fail = globalPropertyi("sim/operation/failures/rel_cop_alt"), -- 
+		h_push = globalPropertyi("sim/custom/gauges/alt/vbe_right_h_push"),
 	},
 	
 	rv5 {},

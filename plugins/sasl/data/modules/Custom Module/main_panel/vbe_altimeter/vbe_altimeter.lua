@@ -19,6 +19,7 @@ defineProperty("brt_knob", globalPropertyf("tu154b2/custom/gauges/alt/vbe_brt_le
 defineProperty("press_knob", globalPropertyi("tu154b2/custom/gauges/alt/vbe_press_knob_left"))  -- pressure knob
 defineProperty("fl_knob", globalPropertyi("tu154b2/custom/gauges/alt/vbe_fl_knob_left"))  -- flight level knob
 defineProperty("vbe_mode", globalPropertyi("tu154b2/custom/gauges/alt/vbe_mode_left"))  -- meters/feet mode
+defineProperty("h_push", globalPropertyi("sim/custom/gauges/alt/vbe_left_h_push"))
 
 defineProperty("vbe_flightlevel", globalPropertyf("tu154b2/custom/gauges/alt/vbe_flightlevel_left"))  -- эшелон
 
@@ -29,7 +30,7 @@ defineProperty("bus115_volt", globalPropertyf("tu154b2/custom/elec/bus115_1_volt
 
 defineProperty("vbe_on", globalPropertyi("tu154b2/custom/switchers/ovhd/vbe_1_on"))  -- power switcher
 
-defineProperty("vbe_std", globalPropertyi("tu154b2/custom/gauges/alt/vbe_std_left"))  -- включение стандартного давления
+defineProperty("vbe_std", globalPropertyi("sim/custom/gauges/alt/vbe_left_p_push"))  -- включение стандартного давления
 -- time
 defineProperty("frame_time", globalPropertyf("tu154b2/custom/time/frame_time")) -- flight time
 
@@ -79,7 +80,7 @@ defineProperty("digitsImage", loadImage("black_digit_strip.png", 12, 195, 40, 78
 defineProperty("bold_digitsImage", loadImage("bold_digit_strip.png", 12, 195, 40, 784))
 
 -- sounds
-local switcher_sound = loadSample(moduleDirectory .. '/Custom Sounds/metal_switch.wav')
+--local switcher_sound = loadSample(moduleDirectory .. '/Custom Sounds/metal_switch.wav')
 local vbe_alarm_snd = loadSample(moduleDirectory .. '/Custom Sounds/vbe_alarm.wav')
 
 local power = true
@@ -125,16 +126,16 @@ function update()
 	
 	local passed = get(frame_time)
 	local num = get(gauge_num)
-	-- check switchers and make it sound
-	if get(vbe_on) ~= switcher_last then
+	-- -- check switchers and make it sound
+	-- if get(vbe_on) ~= switcher_last then
 		
-	end
-	switcher_last = get(vbe_on)
+	-- end
+	-- switcher_last = get(vbe_on)
 	
 	-- check power
 	power = get(bus27_volt) > 13 and get(vbe_on) == 1 and get(fail) < 6
 	
-	
+	flight_level = get(vbe_flightlevel)
 	-- set brightness
 	if not power then 
 		brightness = 0
@@ -156,32 +157,29 @@ if MASTER then
 	mod_but_last = mod_but
 	
 	set(vbe_mode, mode) 
-end
 	
 	-- check pressure knob rotation
-	local press_knob_now = get(press_knob)
+	-- local press_knob_now = get(press_knob)
 
-	while press_knob_now > 11 do
-		press_knob_now = press_knob_now - 10
-	end
-	while press_knob_now < -1 do
-		press_knob_now = press_knob_now + 10
-	end
+	-- while press_knob_now > 11 do
+		-- press_knob_now = press_knob_now - 10
+	-- end
+	-- while press_knob_now < -1 do
+		-- press_knob_now = press_knob_now + 10
+	-- end
 	
-	set(press_knob, press_knob_now)
+	-- set(press_knob, press_knob_now)
 	
 	-- set new pressure
 	press = get(pressure)
 	
-if MASTER then 
+	-- local press_knob_diff = press_knob_now - press_knob_last
 	
-	local press_knob_diff = press_knob_now - press_knob_last
+	-- press_knob_last = press_knob_now
 	
-	press_knob_last = press_knob_now
-	
-	if power and math.abs(press_knob_diff) < 5 then
-		press = press + press_knob_diff
-	end
+	-- if power and math.abs(press_knob_diff) < 5 then
+		-- press = press + press_knob_diff
+	-- end
 	-- limit pressure
 	if press > 1080 then press = 1080
 	elseif press < 700 then press = 700 end
@@ -189,46 +187,43 @@ if MASTER then
 	
 	set(pressure, press) 
 
-end
-	
-	
-	-- check FL knob rotation
-	flight_level = get(vbe_flightlevel)
+	-- local fl_knob_now = get(fl_knob)
 
-if MASTER then 	
-	local fl_knob_now = get(fl_knob)
-
-	while fl_knob_now > 11 do
-		fl_knob_now = fl_knob_now - 10
-	end
-	while fl_knob_now < -1 do
-		fl_knob_now = fl_knob_now + 10
-	end
+	-- while fl_knob_now > 11 do
+		-- fl_knob_now = fl_knob_now - 10
+	-- end
+	-- while fl_knob_now < -1 do
+		-- fl_knob_now = fl_knob_now + 10
+	-- end
 	
-	set(fl_knob, fl_knob_now)
+	-- set(fl_knob, fl_knob_now)
 	
-	local fl_knob_diff = fl_knob_now - fl_knob_last
+	-- local fl_knob_diff = fl_knob_now - fl_knob_last
 	
-	fl_knob_last = fl_knob_now
+	-- fl_knob_last = fl_knob_now
 	
 		
-	if power and math.abs(fl_knob_diff) < 5 then
-		if mode == 0 then
-			flight_level = flight_level + fl_knob_diff * 100
-		else
-			flight_level = flight_level + fl_knob_diff * 30.4799990246
-		end
-	end
+	-- if power and math.abs(fl_knob_diff) < 5 then
+		-- if mode == 0 then
+			-- flight_level = flight_level + fl_knob_diff * 100
+		-- else
+			-- flight_level = flight_level + fl_knob_diff * 30.4799990246
+		-- end
+	-- end
 	
-	if flight_level > 12100 then flight_level = 12100
+	if flight_level > 12200 then flight_level = 12200
 	elseif flight_level < 0 then flight_level = 0 end
 
 	-- set(db1,flight_level)
+	if get(h_push) > 0 then
+		flight_level = 0
+	end
 	set(vbe_flightlevel, flight_level) 
 	
 
 
 	if mode == 0 then
+		flight_level = math.floor(flight_level / 100 ) * 100
 		flight_level_show = flight_level
 	else
 		flight_level_show = math.floor(flight_level *3.28084/100 + 0.5)*100
@@ -246,8 +241,8 @@ if MASTER then
 	--local press_inHg = press * 0.0295300586467
 	
 	if power and not staticFail and get(kontur_90th) == 1 then
-		local temperature=get(temp)
-		local p_s=get(p_stat)
+		-- local temperature=get(temp)
+		-- local p_s=get(p_stat)
 		--if get(real_alt)==0 and get(kontur_90th)~=0 then --use default altimeters if realistic altimeter option is off
 		if num==0 then
 			set(qnh_set,press*0.02953)

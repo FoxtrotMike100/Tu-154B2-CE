@@ -83,7 +83,7 @@ flap_mid_R = globalPropertyf("sim/flightmodel/controls/wing2r_fla2def") -- middl
 elevator_L = globalPropertyf("sim/flightmodel/controls/hstab1_elv1def") -- Degrees, positive is trailing-edge down.
 elevator_R = globalPropertyf("sim/flightmodel/controls/hstab2_elv1def") -- Degrees, positive is trailing-edge down.
 rudder = globalPropertyf("sim/flightmodel/controls/vstab2_rud1def") -- degrees, positive is trailing-edge left
-stab_ratio = globalPropertyf("sim/cockpit2/controls/elevator_trim") -- sim pitch trimmer
+stab_angle = globalPropertyf("sim/flightmodel2/controls/stabilizer_deflection_degrees") -- sim pitch trimmer
 
 --stap_pos_real = globalPropertyf("sim/flightmodel2/wing/elevator2_deg[0]") -- sim stab position
 --elev_pos_real = globalPropertyf("sim/flightmodel2/wing/elevator1_deg[0]") -- sim elevator position
@@ -646,10 +646,10 @@ end
 	--if HS1 > 0.01 or HS2 > 0.01 or HS3 > 0.01 then
 	pitch_pos_act = pitch_pos_act + (pitch_cmd - pitch_pos_act) * math.max(HS1 * buster_1_ON, HS2 * buster_2_ON, HS3 * buster_3_ON) * passed * (7-get(ias_L)*0.002)
 	--end
-	local stab_pos = get(stab_ratio)
+	local stab_pos = - get(stab_angle)
 	-- elevator effectiveness as a function of stab AoA (XP apparently doesn't model this correctly)
 	
-	local stab_aoa=get(ua)-(stab_pos*5.5+1.5)
+	local stab_aoa=get(ua) - stab_pos-- -(stab_pos*5.5+1.5)
 	if pitch_pos_act<0 then
 		stab_aoa=-stab_aoa
 	end
@@ -668,6 +668,7 @@ end
 	
 	elev_left = -pitch_pos_act * 29 
 	elev_right = -pitch_pos_act * 29
+	stab_pos = (stab_pos - 1.5) / 5.5
 	if elev_left>16-stab_pos*1.5 then
 		elev_left = 16-stab_pos*1.5 
 	end

@@ -185,14 +185,14 @@ function update()
 	
 	
 	-- set results
-	if get(ismaster)~=1 then
-		set(uvid_needle_left, uvid_alt_act * 360 / 1000)
-		set(uvid_feet_counter, uvid_alt_act)
-		set(uvid_hundreads_counter, alt_dr_100)
-		set(uvid_thousands_counter, alt_dr_1000)
-		set(uvid_tens_thousands_counter, alt_dr_10th)
-		set(vem_altitude,vem_alt_act)
-	end
+	--if get(ismaster)~=1 then
+	set(uvid_needle_left, uvid_alt_act * 360 / 1000)
+	set(uvid_feet_counter, uvid_alt_act)
+	set(uvid_hundreads_counter, alt_dr_100)
+	set(uvid_thousands_counter, alt_dr_1000)
+	set(uvid_tens_thousands_counter, alt_dr_10th)
+	set(vem_altitude,vem_alt_act)
+	--end
 	set(uvid_pressure_one, press_1)
 	set(uvid_pressure_ten, press_10)
 	set(uvid_pressure_hund, press_100)

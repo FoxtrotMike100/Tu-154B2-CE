@@ -3,7 +3,7 @@
 -- sources
 defineProperty("vvi_L", globalPropertyf("sim/cockpit2/gauges/indicators/vvi_fpm_pilot")) -- vertical speed in ft/min
 defineProperty("vvi_R", globalPropertyf("sim/cockpit2/gauges/indicators/vvi_fpm_copilot"))
-defineProperty("vvi_cab", globalPropertyf("sim/cockpit2/pressurization/indicators/cabin_vvi_fpm"))
+--defineProperty("vvi_cab", globalPropertyf("sim/cockpit2/pressurization/indicators/cabin_vvi_fpm"))
 -- get(vvi) * 0.00508 -- m/s
 defineProperty("ias_L", globalPropertyf("sim/cockpit2/gauges/indicators/airspeed_kts_pilot")) -- indicated airspeed in KTS
 defineProperty("ias_R", globalPropertyf("sim/cockpit2/gauges/indicators/airspeed_kts_copilot"))
@@ -189,7 +189,7 @@ local kus_tas_act_ENG = 0
 local var75_act = 0
 local var30_L_act = 0
 local var30_R_act = 0
-local var30_cabin_act = 0
+--local var30_cabin_act = 0
 
 local left_MSL = 0
 local right_MSL = 0
@@ -243,8 +243,6 @@ local MASTER = get(ismaster) ~= 1
 	static_pressure = passed/(T_stat+passed)*get(p_stat)+static_pressure*T_stat/(T_stat+passed)
 	local p_dyn = get(p_stat)*math.pow(1+(1.4-1)/2*math.pow(get(true_mach),2),1.4/(1.4-1))
 	dynamic_pressure = passed/(T_m+passed)*p_dyn + dynamic_pressure*T_m/(T_m+passed)-- total pressure actually
-	set(p_stat_smoothed,static_pressure)
-	set(p_q_smoothed,dynamic_pressure)
 	local staticFail_left = get(static_fail_L) == 6
 	local staticFail_right = get(static_fail_R) == 6	
 	if not staticFail_left then
@@ -380,7 +378,7 @@ local MASTER = get(ismaster) ~= 1
 		var75_act = passed/(T+passed)*(var) +var75_act*T/(T+passed)
 		var30_L_act = passed/(T+passed)*(var_L) +var30_L_act*T/(T+passed)
 		var30_R_act = passed/(T+passed)*(var_R) +var30_R_act*T/(T+passed)
-		var30_cabin_act = var30_cabin_act + (interpolate(var30_tbl, get(vvi_cab) * 0.00508) - var30_cabin_act) * passed * 0.08
+		--var30_cabin_act = var30_cabin_act + (interpolate(var30_tbl, get(vvi_cab) * 0.00508) - var30_cabin_act) * passed * 0.08
 	end
 	
 	
@@ -417,28 +415,29 @@ local MASTER = get(ismaster) ~= 1
 	if press_diff < -0.03 then press_diff = -0.03
 	elseif press_diff > 0.95 then press_diff = 0.95 end
 	
-
-if MASTER then 
-	-- set results
-	set(kus_ias_left, kus_ias_act_L)
-	set(kus_tas_left, kus_tas_act_L)
-	set(ias_left, ias_cpt_act)
-	set(ias_right, ias_copil_act)
-	set(kus_ias_right, kus_ias_act_R)
-	set(kus_tas_right, kus_tas_act_R)
-	
-	set(kus_ias_eng, kus_ias_act_ENG)
-	set(kus_tas_eng, kus_tas_act_ENG)
-	set(var75, var75_act)
-	set(var30_L, var30_L_act)
-	set(var30_R, var30_R_act)
 	set(vd15_alt_left, cpt_VM15_alt_act)
 	set(vd15_alt_right, copt_VM15_alt_act)
 	set(vd15_alt_eng, eng_VM15_alt_act)
-	set(cabin_alt, cab_alt)
-	
-	set(cabin_diff, press_diff)
-end
+	if MASTER then 
+		-- set results
+		set(p_stat_smoothed,static_pressure)
+		set(p_q_smoothed,dynamic_pressure)
+		set(kus_ias_left, kus_ias_act_L)
+		set(kus_tas_left, kus_tas_act_L)
+		set(ias_left, ias_cpt_act)
+		set(ias_right, ias_copil_act)
+		set(kus_ias_right, kus_ias_act_R)
+		set(kus_tas_right, kus_tas_act_R)
+		
+		set(kus_ias_eng, kus_ias_act_ENG)
+		set(kus_tas_eng, kus_tas_act_ENG)
+		set(var75, var75_act)
+		set(var30_L, var30_L_act)
+		set(var30_R, var30_R_act)
+		set(cabin_alt, cab_alt)
+		
+		set(cabin_diff, press_diff)
+	end
 	--set(var30_cabin, var30_cabin_act)
 	
 	-- alts

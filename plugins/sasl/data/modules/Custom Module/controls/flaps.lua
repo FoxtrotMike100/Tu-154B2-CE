@@ -1,75 +1,75 @@
 -- this is flaps, slats and hor-stab logic
 
-defineProperty("external_view", globalPropertyi("sim/graphics/view/view_is_external")) -- enviroment
+external_view = globalPropertyi("sim/graphics/view/view_is_external") -- enviroment
 -- sim positions
-defineProperty("flap_inn_L", globalPropertyf("sim/flightmodel/controls/wing1l_fla1def")) -- inner flaps left
-defineProperty("flap_inn_R", globalPropertyf("sim/flightmodel/controls/wing1r_fla1def")) -- inner flaps right
+flap_inn_L = globalPropertyf("sim/flightmodel/controls/wing1l_fla1def") -- inner flaps left
+flap_inn_R = globalPropertyf("sim/flightmodel/controls/wing1r_fla1def") -- inner flaps right
 
-defineProperty("flap_mid_L", globalPropertyf("sim/flightmodel/controls/wing2l_fla2def")) -- middle flaps left
-defineProperty("flap_mid_R", globalPropertyf("sim/flightmodel/controls/wing2r_fla2def")) -- middle flaps right
+flap_mid_L = globalPropertyf("sim/flightmodel/controls/wing2l_fla2def") -- middle flaps left
+flap_mid_R = globalPropertyf("sim/flightmodel/controls/wing2r_fla2def") -- middle flaps right
 
---defineProperty("slats", globalPropertyf("sim/flightmodel/controls/slatrat")) -- slats position. this one works
-defineProperty("slats", globalPropertyf("sim/flightmodel2/controls/slat1_deploy_ratio")) -- slats position. this one works too
+--slats = globalPropertyf("sim/flightmodel/controls/slatrat") -- slats position. this one works
+slats = globalPropertyf("sim/flightmodel2/controls/slat1_deploy_ratio") -- slats position. this one works too
 
-defineProperty("stab_ratio", globalPropertyf("sim/cockpit2/controls/elevator_trim")) -- sim pitch trimmer
-defineProperty("stab_pos", globalPropertyf("sim/flightmodel2/controls/stabilizer_deflection_degrees")) -- stab position
+stab_ratio = globalPropertyf("sim/cockpit2/controls/elevator_trim") -- sim pitch trimmer
+stab_pos = globalPropertyf("sim/flightmodel2/controls/stabilizer_deflection_degrees") -- stab position
 -- controls
-defineProperty("sim_flap_ratio", globalPropertyf("sim/cockpit2/controls/flap_ratio")) -- sim flaps ratio control. use for axis and commands
+sim_flap_ratio = globalPropertyf("sim/cockpit2/controls/flap_ratio") -- sim flaps ratio control. use for axis and commands
 
-defineProperty("flaps_lever", globalPropertyf("tu154b2/custom/controll/flaps_lever")) -- sim flaps ratio control. use for axis and commands
-defineProperty("flaps_sel", globalPropertyi("tu154b2/custom/switchers/flaps_sel")) -- выбор режимов работы закрылков. -1 - выкл, 0 - авт, +1 - ручное
+flaps_lever = globalPropertyf("tu154b2/custom/controll/flaps_lever") -- sim flaps ratio control. use for axis and commands
+flaps_sel = globalPropertyi("tu154b2/custom/switchers/flaps_sel") -- выбор режимов работы закрылков. -1 - выкл, 0 - авт, +1 - ручное
 
-defineProperty("slat_man", globalPropertyi("tu154b2/custom/switchers/slat_man")) -- ручное управление предкрылками. -1 - уборка, 0 выкл, +1 - выпуск
-defineProperty("slat_man_cap", globalPropertyi("tu154b2/custom/switchers/slat_man_cap")) -- крышка ручного урпавления предкрылками
+slat_man = globalPropertyi("tu154b2/custom/switchers/slat_man") -- ручное управление предкрылками. -1 - уборка, 0 выкл, +1 - выпуск
+slat_man_cap = globalPropertyi("tu154b2/custom/switchers/slat_man_cap") -- крышка ручного урпавления предкрылками
 
-defineProperty("stab_man_cap", globalPropertyi("tu154b2/custom/controll/stab_man_cap")) -- крышка управления стабилизатором
-defineProperty("stab_manual", globalPropertyi("tu154b2/custom/controll/stab_manual")) -- уплавение стабилизатором. 0 - нейтр, +1 - кабрирование
-defineProperty("stab_setting", globalPropertyi("tu154b2/custom/controll/stab_setting")) -- положение центровки для стаба. 0 - З, 1 - С, 2 - П	1
+stab_man_cap = globalPropertyi("tu154b2/custom/controll/stab_man_cap") -- крышка управления стабилизатором
+stab_manual = globalPropertyi("tu154b2/custom/controll/stab_manual") -- уплавение стабилизатором. 0 - нейтр, +1 - кабрирование
+stab_setting = globalPropertyi("tu154b2/custom/controll/stab_setting") -- положение центровки для стаба. 0 - З, 1 - С, 2 - П	1
 
 -- other sources
 
 -- hydraulics
-defineProperty("gs_press_1", globalPropertyf("tu154b2/custom/hydro/gs_press_1")) -- давление в ГС1
-defineProperty("gs_press_2", globalPropertyf("tu154b2/custom/hydro/gs_press_2")) -- давление в ГС2
-defineProperty("gs_press_3", globalPropertyf("tu154b2/custom/hydro/gs_press_3")) -- давление в ГС3
+gs_press_1 = globalPropertyf("tu154b2/custom/hydro/gs_press_1") -- давление в ГС1
+gs_press_2 = globalPropertyf("tu154b2/custom/hydro/gs_press_2") -- давление в ГС2
+gs_press_3 = globalPropertyf("tu154b2/custom/hydro/gs_press_3") -- давление в ГС3
 
-defineProperty("frame_time", globalPropertyf("tu154b2/custom/time/frame_time")) -- time of frame
+frame_time = globalPropertyf("tu154b2/custom/time/frame_time") -- time of frame
 
 -- power
-defineProperty("bus27_volt_left", globalPropertyf("tu154b2/custom/elec/bus27_volt_left")) -- напряжение сети 27
-defineProperty("bus27_volt_right", globalPropertyf("tu154b2/custom/elec/bus27_volt_right")) -- напряжение сети 27
+bus27_volt_left = globalPropertyf("tu154b2/custom/elec/bus27_volt_left") -- напряжение сети 27
+bus27_volt_right = globalPropertyf("tu154b2/custom/elec/bus27_volt_right") -- напряжение сети 27
 
-defineProperty("bus36_volt_left", globalPropertyf("tu154b2/custom/elec/bus36_volt_left")) -- напряжение сети 36в лев
-defineProperty("bus36_volt_right", globalPropertyf("tu154b2/custom/elec/bus36_volt_right")) -- напряжение сети 36в прав
+bus36_volt_left = globalPropertyf("tu154b2/custom/elec/bus36_volt_left") -- напряжение сети 36в лев
+bus36_volt_right = globalPropertyf("tu154b2/custom/elec/bus36_volt_right") -- напряжение сети 36в прав
 
-defineProperty("bus115_1_volt", globalPropertyf("tu154b2/custom/elec/bus115_1_volt"))
-defineProperty("bus115_3_volt", globalPropertyf("tu154b2/custom/elec/bus115_3_volt"))
+bus115_1_volt = globalPropertyf("tu154b2/custom/elec/bus115_1_volt")
+bus115_3_volt = globalPropertyf("tu154b2/custom/elec/bus115_3_volt")
 
-defineProperty("ctr_115_1_cc", globalPropertyf("tu154b2/custom/control/ctr_115_1_cc")) -- нагрузка на сеть
-defineProperty("ctr_115_3_cc", globalPropertyf("tu154b2/custom/control/ctr_115_3_cc")) -- нагрузка на сеть
+ctr_115_1_cc = globalPropertyf("tu154b2/custom/control/ctr_115_1_cc") -- нагрузка на сеть
+ctr_115_3_cc = globalPropertyf("tu154b2/custom/control/ctr_115_3_cc") -- нагрузка на сеть
 
 -- Smart Copilot
-defineProperty("ismaster", globalPropertyf("scp/api/ismaster")) -- Master. 0 = plugin not found, 1 = slave 2 = master
-defineProperty("hascontrol_1", globalPropertyf("scp/api/hascontrol_1")) -- Have control. 0 = plugin not found, 1 = no control 2 = has control
+ismaster = globalPropertyf("scp/api/ismaster") -- Master. 0 = plugin not found, 1 = slave 2 = master
+hascontrol_1 = globalPropertyf("scp/api/hascontrol_1") -- Have control. 0 = plugin not found, 1 = no control 2 = has control
 
 
 -- failures
-defineProperty("flap_fail_left", globalPropertyi("tu154b2/custom/failures/flap_fail_left")) -- 
-defineProperty("flap_fail_right", globalPropertyi("tu154b2/custom/failures/flap_fail_right")) -- 
+flap_fail_left = globalPropertyi("tu154b2/custom/failures/flap_fail_left") -- 
+flap_fail_right = globalPropertyi("tu154b2/custom/failures/flap_fail_right") -- 
 
-defineProperty("stab_eng_fail", globalPropertyi("tu154b2/custom/failures/stab_eng_fail")) -- 
-defineProperty("stab_automatic_fail", globalPropertyi("tu154b2/custom/failures/stab_automatic_fail")) -- 
-defineProperty("slats_fail", globalPropertyi("tu154b2/custom/failures/slats_fail")) -- 
+stab_eng_fail = globalPropertyi("tu154b2/custom/failures/stab_eng_fail") -- 
+stab_automatic_fail = globalPropertyi("tu154b2/custom/failures/stab_automatic_fail") -- 
+slats_fail = globalPropertyi("tu154b2/custom/failures/slats_fail") -- 
 
 
 -- spoilers sources
-defineProperty("deflection_mtr_2", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]")) -- 
-defineProperty("deflection_mtr_3", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]")) -- 
-defineProperty("revers_L", globalPropertyf("tu154b2/custom/controlls/revers_L")) -- рычаг реверса лев
-defineProperty("revers_R", globalPropertyf("tu154b2/custom/controlls/revers_R")) -- рычаг реверса прав
-defineProperty("spd_brk_inn_L", globalProperty("sim/flightmodel2/wing/speedbrake1_deg[0]")) -- inner speedbrake left Degrees
-defineProperty("spd_brk_inn_R", globalProperty("sim/flightmodel2/wing/speedbrake1_deg[1]")) -- inner speedbrake right Degrees
-defineProperty("kontur_on", globalPropertyf("tu154b2/custom/b2/kontur_on")) -- inner speedbrake right Degrees
+deflection_mtr_2 = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]") -- 
+deflection_mtr_3 = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]") -- 
+revers_L = globalPropertyf("tu154b2/custom/controlls/revers_L") -- рычаг реверса лев
+revers_R = globalPropertyf("tu154b2/custom/controlls/revers_R") -- рычаг реверса прав
+spd_brk_inn_L = globalProperty("sim/flightmodel2/wing/speedbrake1_deg[0]") -- inner speedbrake left Degrees
+spd_brk_inn_R = globalProperty("sim/flightmodel2/wing/speedbrake1_deg[1]") -- inner speedbrake right Degrees
+kontur_on = globalPropertyf("tu154b2/custom/b2/kontur_on") -- inner speedbrake right Degrees
 flaps_power = globalPropertyi("sim/custom/b2/flaps_power")
 drive_1 = globalPropertyi("tu154b2/custom/controlls/flap_chan_1")
 drive_2 = globalPropertyi("tu154b2/custom/controlls/flap_chan_2")
@@ -77,11 +77,12 @@ drive_2 = globalPropertyi("tu154b2/custom/controlls/flap_chan_2")
 
 flaps_cmd_up = findCommand("sim/flight_controls/flaps_up")
 flaps_cmd_down = findCommand("sim/flight_controls/flaps_down")
-defineProperty("pilot_Z", globalPropertyf("sim/aircraft/view/acf_peZ"))
-defineProperty("pilot_X", globalPropertyf("sim/aircraft/view/acf_peX"))
-defineProperty("pilot_head", globalPropertyi("sim/graphics/view/pilots_head_psi"))
+pilot_Z = globalPropertyf("sim/aircraft/view/acf_peZ")
+pilot_X = globalPropertyf("sim/aircraft/view/acf_peX")
+pilot_head = globalPropertyi("sim/graphics/view/pilots_head_psi")
 
---defineProperty("db1", globalPropertyf("tu154b2/custom/controlls/debug1"))
+
+--db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
 
 local flaps_sound_L = loadSample(moduleDirectory .. '/Custom Sounds/flaps_hnd_L.wav')
 local flaps_sound_R = loadSample(moduleDirectory .. '/Custom Sounds/flaps_hnd_R.wav')
@@ -550,7 +551,7 @@ if MASTER then
 	
 	--stab_dirr = 0
 	--stab_pos_cmd = 0
-	set(stab_ratio, stab_pos_now / 5.5)
+	--set(stab_ratio, stab_pos_now / 5.5)
 	set(stab_pos,-stab_pos_now*1-1.5)
 	set(ctr_115_1_cc, CC_115_1)
 	set(ctr_115_3_cc, CC_115_3)

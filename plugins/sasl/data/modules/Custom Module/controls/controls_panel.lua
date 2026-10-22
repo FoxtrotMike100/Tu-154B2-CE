@@ -87,7 +87,7 @@ gears_green_right_eng = globalPropertyf("tu154b2/custom/lights/gears_green_right
 -- sources
 elevator_L = globalPropertyf("tu154b2/custom/controlls/elev_L_phys") -- Degrees, positive is trailing-edge down.
 --defineProperty("elevator_R", globalPropertyf("sim/flightmodel/controls/hstab2_elv1def")) -- Degrees, positive is trailing-edge down.
-stab_pos = globalPropertyf("sim/flightmodel2/controls/elevator_trim") -- sim pitch trimmer
+stab_pos = globalPropertyf("sim/flightmodel2/controls/stabilizer_deflection_degrees") -- sim pitch trimmer
 flap_inn_L = globalPropertyf("sim/flightmodel/controls/wing1l_fla1def") -- inner flaps left
 flap_inn_R = globalPropertyf("sim/flightmodel/controls/wing1r_fla1def") -- inner flaps right
 slats = globalPropertyf("sim/flightmodel2/controls/slat1_deploy_ratio") -- slats position. this one works too
@@ -256,7 +256,7 @@ end
 
 local stab_work_lit = false
 local stab_work_timer = 0
-local stab_pos_last = get(stab_pos)
+local stab_pos_last = - (get(stab_pos) + 1.5)
 
 local forcer_lit = false
 local forcer_timer = 0
@@ -293,7 +293,7 @@ local function lamps()
 	local lamps_brt = math.max((math.max(get(bus27_volt_left), get(bus27_volt_right)) - 10) / 18.5, 0)
 	
 	local stab_work_brt = 0
-	local stab_pos_now = get(stab_pos)
+	local stab_pos_now = - (get(stab_pos) + 1.5)
 	
 	--print(stab_pos_now, stab_pos_now - stab_pos_last)
 	if math.abs(stab_pos_now - stab_pos_last) > 0.01 * passed then 
@@ -571,7 +571,7 @@ local function gauges()
 	--print(get(stab_pos))
 	
 	if get(bus36_volt_left) > 30 then
-		stabil_ind = get(stab_pos) * 5.5
+		stabil_ind = - (get(stab_pos) + 1.5)
 		elev_ind = -get(elevator_L)
 		flap_ind_L = get(flap_inn_L)
 		flap_ind_R = get(flap_inn_R)
