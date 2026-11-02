@@ -114,7 +114,9 @@ fire_vlv_open_1 = globalPropertyf("tu154b2/custom/fuel/fire_vlv_open_1") -- по
 fire_vlv_open_2 = globalPropertyf("tu154b2/custom/fuel/fire_vlv_open_2") -- пожарный кран открыт
 fire_vlv_open_3 = globalPropertyf("tu154b2/custom/fuel/fire_vlv_open_3") -- пожарный кран открыт
 
-starter_disc_fail = globalPropertyi("tu154b2/custom/radio/starter_disconncet_fail")
+starter_disc_fail_1 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_1")
+starter_disc_fail_2 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_2")
+starter_disc_fail_3 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_3")
 
 apd_working_1 = globalPropertyf("tu154b2/custom/start/apd_working_1") -- работа системы запуска
 apd_working_2 = globalPropertyf("tu154b2/custom/start/apd_working_2") -- работа системы запуска
@@ -323,15 +325,15 @@ if get(ismaster) ~= 1 then
 			
 			if sys_data_tbl.starter_fail_1 ~= 1 and get(apd_working_1) > 0 then 
 				sys_data_tbl.starter_fail_1 = bool2int(math.random() < 0.0001 * FAIL * 0.3) 
-				set(starter_disc_fail,1)
+				set(starter_disc_fail_1,sys_data_tbl.starter_fail_1)
 			end
 			if sys_data_tbl.starter_fail_2 ~= 1 and get(apd_working_2) > 0 then 
 				sys_data_tbl.starter_fail_2 = bool2int(math.random() < 0.0001 * FAIL * 0.3) 
-				set(starter_disc_fail,1)
+				sset(starter_disc_fail_2,sys_data_tbl.starter_fail_2)
 			end
 			if sys_data_tbl.starter_fail_3 ~= 1 and get(apd_working_3) > 0 then 
 				sys_data_tbl.starter_fail_3 = bool2int(math.random() < 0.0001 * FAIL * 0.3) 
-				set(starter_disc_fail,1)
+				set(starter_disc_fail_3,sys_data_tbl.starter_fail_3)
 			end
 			
 		

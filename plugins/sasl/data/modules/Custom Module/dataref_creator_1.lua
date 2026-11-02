@@ -44,10 +44,10 @@ createGlobalPropertyi("tu154b2/custom/anim/table_up_R", 0) -- поднять с�
 createGlobalPropertyi("tu154b2/custom/anim/gpu_present", 0) -- РАП присутствует
 createGlobalPropertyf("tu154b2/custom/anim/gpu_work", 0) -- РАП работает. поднятие крышки выхлопа
 createGlobalPropertyf("tu154b2/custom/anim/ground_stuff_angle", 0) -- коррекция угла по тангажу для техники
-createGlobalPropertyf("tu154b2/custom/anim/window_ice_1", 0) -- уровень льда на стеклах
-createGlobalPropertyf("tu154b2/custom/anim/window_ice_2", 0) -- уровень льда на стеклах
-createGlobalPropertyf("tu154b2/custom/anim/window_ice_3", 0) -- уровень льда на стеклах
-createGlobalPropertyf("tu154b2/custom/anim/window_ice_4", 0) -- уровень льда на остальных стеклах
+-- createGlobalPropertyf("tu154b2/custom/anim/window_ice_1", 0) -- уровень льда на стеклах
+-- createGlobalPropertyf("tu154b2/custom/anim/window_ice_2", 0) -- уровень льда на стеклах
+-- createGlobalPropertyf("tu154b2/custom/anim/window_ice_3", 0) -- уровень льда на стеклах
+-- createGlobalPropertyf("tu154b2/custom/anim/window_ice_4", 0) -- уровень льда на остальных стеклах
 createGlobalPropertyi("tu154b2/custom/anim/gear_blocks", 0) -- установка блоков шасси
 createGlobalPropertyi("tu154b2/custom/anim/sensors_caps", 0) -- установка крышек датчиков
 createGlobalPropertyi("tu154b2/custom/anim/engine_caps", 0) -- установка крышек двигателей

@@ -20065,7 +20065,8 @@ ATTR_manip_wheel 1.000000
 TRIS 19797 6
 ANIM_end
 ANIM_begin
-ATTR_manip_toggle hand 0.000000 1.000000 sim/custom/radio/spu2_on
+ATTR_manip_drag_axis rotate_medium 0.000000 0.000000 -0.100000 0.000000 5.000000 tu154b2/custom/switchers/spu_2_source
+ATTR_manip_wheel 1.000000
 TRIS 19803 6
 ANIM_end
 ANIM_begin
@@ -21216,4 +21217,442 @@ ANIM_end
 ANIM_begin
 ATTR_manip_toggle up_down 1.000000 0.000000 sim/custom/b2/elev_trimm_2_pk
 TRIS 3366 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans 0.015 -0.01 0.085 0.015 -0.01 0.085 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu2_volume1
+ATTR_manip_wheel 0.080000
+TRIS 18729 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans 0.035 -0.01 0.135 0.035 -0.01 0.135 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu2_volume2
+ATTR_manip_wheel 0.080000
+TRIS 18729 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans 0.035 -0.07 0.14 0.035 -0.07 0.14 0.000000 0.000000 none
+ATTR_manip_toggle up_down 1.000000 0.000000 sim/custom/radio/spu2_on
+TRIS 18729 6
+ANIM_end
+
+ANIM_begin
+ANIM_hide 0.000000 0.00000 tu154b2/custom/radio/spu_select
+ANIM_trans 0.015 -0.01 -0.025 0.015 -0.01 -0.025 0.000000 0.000000 none
+ATTR_manip_radio hand 0 tu154b2/custom/radio/spu_select
+TRIS 2910 6
+ANIM_end
+
+ANIM_begin
+ANIM_hide 1.000000 1.00000 tu154b2/custom/radio/spu_select
+ANIM_trans 0.035 -0.087 0.105 0.035 -0.087 0.105 0.000000 0.000000 none
+ATTR_manip_radio hand 1 tu154b2/custom/radio/spu_select
+TRIS 18729 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 -0.005 -0.127 -0.01 -0.005 -0.127 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 0.000000 0.000000 -0.100000 0.000000 5.000000 tu154b2/custom/switchers/spu_3_source
+ATTR_manip_wheel 1.000000
+TRIS 19863 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 0.005 -0.221 -0.01 0.005 -0.221 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu3_volume1
+ATTR_manip_wheel 0.080000
+TRIS 18705 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 0.005 -0.165 -0.01 0.005 -0.165 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu3_volume2
+ATTR_manip_wheel 0.080000
+TRIS 18705 6
+ANIM_end
+
+ANIM_begin
+ANIM_hide 2.000000 2.00000 tu154b2/custom/radio/spu_select
+ANIM_trans 0.04 -0.055 -0.195 0.04 -0.055 -0.195 0.000000 0.000000 none
+ATTR_manip_radio hand 2 tu154b2/custom/radio/spu_select
+TRIS 18705 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 -0.06 -0.02 -0.01 -0.06 -0.02 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu4_volume1
+ATTR_manip_wheel 0.080000
+TRIS 18453 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 -0.06 0.037 -0.01 -0.06 0.037 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 1.000000 tu154b2/custom/radio/spu4_volume2
+ATTR_manip_wheel 0.080000
+TRIS 18453 6
+ANIM_end
+
+ANIM_begin
+ANIM_trans -0.01 -0.09 0.008 -0.01 -0.09 0.008 0.000000 0.000000 none
+ATTR_manip_drag_axis rotate_medium 0.000000 0.000000 -0.100000 0.000000 5.000000 tu154b2/custom/switchers/spu_4_source
+ATTR_manip_wheel 1.000000
+TRIS 18453 6
+ANIM_end
+
+ANIM_begin
+ANIM_hide 3.000000 3.00000 tu154b2/custom/radio/spu_select
+ANIM_trans -0.01 -0.14 0.008 -0.01 -0.14 0.008 0.000000 0.000000 none
+ATTR_manip_radio hand 3 tu154b2/custom/radio/spu_select
+TRIS 18453 6
+ANIM_end
+
+
+
+
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/enabled
+
+ANIM_trans 1.632468  0 0 1.632468  0 0 0.000000 0.000000 none
+			ANIM_trans_begin tu154b2/custom/anim/cockpit_window_right
+			ANIM_trans_key 0.000000 0.000000 0.000000 0.000000
+			ANIM_trans_key 0.200000 0.000000 0.000000 0.000000
+			ANIM_trans_key 0.400000 0.000000 0.000000 0.000000
+			ANIM_trans_key 1.000000 0.146900 -0.048700 0.388100
+			ANIM_trans_end
+			ANIM_trans -0.816234 -1.492600 -21.641899 -0.816234 -1.492600 -21.641899 0.000000 0.000000 none
+			ANIM_rotate_begin 0.013665 0.000000 0.999907 tu154b2/custom/anim/cockpit_window_right
+			ANIM_rotate_key 0.000000 0.000000
+			ANIM_rotate_key 0.200000 0.000000
+			ANIM_rotate_key 0.400000 -5.340000
+			ANIM_rotate_key 1.000000 -5.510000
+			ANIM_rotate_end
+			ANIM_trans 0.816234 1.492600 21.641899 0.816234 1.492600 21.641899 0.000000 0.000000 none
+			ANIM_trans -0.829900 -1.492600 -21.641899 -0.829900 -1.492600 -21.641899 0.000000 0.000000 none
+			ANIM_rotate_begin 0.000000 1.000000 0.000000 tu154b2/custom/anim/cockpit_window_right
+			ANIM_rotate_key 0.000000 -0.000000
+			ANIM_rotate_key 0.200000 -0.000000
+			ANIM_rotate_key 0.400000 -7.550000
+			ANIM_rotate_key 1.000000 -7.840000
+			ANIM_rotate_end
+			ANIM_trans 0.829900 1.492600 21.641899 0.829900 1.492600 21.641899 0.000000 0.000000 none
+			ANIM_trans -0.802567 -1.492600 -21.641899 -0.802567 -1.492600 -21.641899 0.000000 0.000000 none
+			ANIM_rotate_begin 1.000000 0.000000 0.000000 tu154b2/custom/anim/cockpit_window_right
+			ANIM_rotate_key 0.000000 0.000000
+			ANIM_rotate_key 0.200000 0.000000
+			ANIM_rotate_key 0.400000 3.240000
+			ANIM_rotate_key 1.000000 -0.000000
+			ANIM_rotate_end
+			ANIM_trans 0.802567 1.492600 21.641899 0.802567 1.492600 21.641899 0.000000 0.000000 none
+			
+			ANIM_trans -0.906769  -1.46306 -21.3681 -0.906769 -1.46306 -21.3681 0.000000 0.000000 none
+			ANIM_rotate 0.000000 1.000000 0.000000 246 246 0.000000 0.000000 none
+			ANIM_trans 0.787769  1.46306 21.2471 0.787769  1.46306 21.2471 0.000000 0.000000 none
+
+
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/power
+ANIM_begin
+ANIM_hide 0.000000 200.000000 sim/custom/t154_efb/page
+ANIM_show 1.000000 1.000000 sim/custom/t154_efb/page
+ANIM_begin
+ATTR_draw_enable
+ATTR_cockpit
+ATTR_reset
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 10400.000000 tu154b2/custom/payload/cargo_2
+ATTR_manip_wheel 100.000000
+TRIS 21813 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 12900.000000 tu154b2/custom/payload/cargo_1
+ATTR_manip_wheel 100.000000
+TRIS 21819 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 18.000000 tu154b2/custom/payload/zone_1
+ATTR_manip_wheel 1.000000
+TRIS 21825 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 370.000000 tu154b2/custom/payload/various
+ATTR_manip_wheel 370.000000
+TRIS 21831 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 200.000000 tu154b2/custom/payload/kitchens
+ATTR_manip_wheel 50.000000
+TRIS 21837 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 44.000000 tu154b2/custom/payload/zone_2
+ATTR_manip_wheel 1.000000
+TRIS 21843 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 48.000000 tu154b2/custom/payload/zone_4
+ATTR_manip_wheel 1.000000
+TRIS 21849 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 42.000000 tu154b2/custom/payload/zone_5
+ATTR_manip_wheel 1.000000
+TRIS 21855 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 12.000000 tu154b2/custom/payload/zone_6
+ATTR_manip_wheel 1.000000
+TRIS 21861 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 200.000000 sim/custom/t154_efb/page
+ANIM_show 11.000000 11.000000 sim/custom/t154_efb/page
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 9500.000000 tu154b2/custom/payload/tank_2R
+ATTR_manip_wheel 25.000000
+TRIS 21867 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 9500.000000 tu154b2/custom/payload/tank_2L
+ATTR_manip_wheel 25.000000
+TRIS 21873 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 6595.000488 tu154b2/custom/payload/tank_4
+ATTR_manip_wheel 25.000000
+TRIS 21879 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 3300.000000 tu154b2/custom/payload/tank_1
+ATTR_manip_wheel 25.000000
+TRIS 21885 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 5404.999512 tu154b2/custom/payload/tank_3R
+ATTR_manip_wheel 25.000000
+TRIS 21891 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_medium 2.000000 0.000000 0.000000 0.000000 5404.999512 tu154b2/custom/payload/tank_3L
+ATTR_manip_wheel 25.000000
+TRIS 21897 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 200.000000 sim/custom/t154_efb/page
+ANIM_show 2.000000 2.000000 sim/custom/t154_efb/page
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 5000.000000 tu154b2/custom/payload/nav_fuel
+ATTR_manip_wheel 100.000000
+TRIS 21903 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 -500.000000 500.000000 sim/custom/t154_efb/fc_wind_corr_alt
+ATTR_manip_wheel 10.000000
+TRIS 21909 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 200.000000 390.000000 tu154b2/custom/payload/alt_fl
+ATTR_manip_wheel 10.000000
+TRIS 21915 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 5000.000000 tu154b2/custom/payload/alt_dist
+ATTR_manip_wheel 100.000000
+TRIS 21921 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 1000.000000 tu154b2/custom/payload/taxi_fuel
+ATTR_manip_wheel 100.000000
+TRIS 21927 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 -500.000000 500.000000 sim/custom/t154_efb/fc_wind_corr
+ATTR_manip_wheel 10.000000
+TRIS 21933 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 200.000000 390.000000 tu154b2/custom/payload/main_fl
+ATTR_manip_wheel 10.000000
+TRIS 21939 6
+ANIM_end
+ANIM_begin
+ATTR_manip_drag_axis rotate_small 2.000000 0.000000 0.000000 0.000000 5000.000000 tu154b2/custom/payload/main_dist
+ATTR_manip_wheel 100.000000
+TRIS 21945 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_8
+ANIM_begin
+ATTR_draw_disable
+ATTR_no_cockpit
+ATTR_manip_toggle button 0.000000 0.000000 sim/custom/t154_efb/popup_8
+TRIS 21951 6
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+ATTR_shiny_rat 0.970000
+TRIS 21957 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_1
+ANIM_begin
+TRIS 21963 6
+ANIM_end
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_light_level_reset
+ATTR_reset
+ATTR_manip_command button sim/FMS/CDU_popup
+TRIS 21969 6
+ANIM_end
+ANIM_begin
+ATTR_draw_disable
+ATTR_no_cockpit
+ATTR_manip_toggle button 0.000000 1.000000 tu154b2/custom/panels/show_phone
+TRIS 21975 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 1.000000 tu154b2/custom/panels/show_absu_panel
+TRIS 21981 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 1.000000 tu154b2/custom/panels/show_checklist_panel
+TRIS 21987 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 1.000000 tu154b2/custom/panels/show_nvu_panel
+TRIS 21993 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 1.000000 tu154b2/custom/panels/show_ohvd_panel
+TRIS 21999 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_5
+ANIM_begin
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+ATTR_shiny_rat 0.970000
+TRIS 22005 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_3
+ANIM_begin
+TRIS 22011 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_4
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_light_level_reset
+ATTR_reset
+ATTR_manip_command down t154_efb/vol_dn
+TRIS 22017 6
+ANIM_end
+ANIM_begin
+ATTR_manip_command up t154_efb/vol_up
+TRIS 22023 6
+ANIM_end
+ANIM_begin
+ATTR_draw_disable
+ATTR_no_cockpit
+ATTR_manip_toggle button 0.000000 0.000000 tu154b2/custom/sounds_voulme
+TRIS 22029 6
+ANIM_end
+ANIM_begin
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+ATTR_shiny_rat 0.970000
+TRIS 22035 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_2
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_draw_disable
+ATTR_light_level_reset
+ATTR_no_cockpit
+ATTR_reset
+ATTR_manip_toggle button 1.000000 1.000000 sim/custom/t154_efb/efb_power_mode
+TRIS 22041 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 2.000000 2.000000 sim/custom/t154_efb/efb_power_mode
+TRIS 22047 6
+ANIM_end
+ANIM_begin
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+ATTR_shiny_rat 0.970000
+TRIS 22053 6
+ANIM_end
+ANIM_end
+ANIM_begin
+ANIM_hide 0.000000 0.000000 sim/custom/t154_efb/popup_9
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_draw_disable
+ATTR_light_level_reset
+ATTR_no_cockpit
+ATTR_reset
+ATTR_manip_toggle button 1.000000 1.000000 tu154b2/custom/lang/hide_rus_objects
+TRIS 22059 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 0.000000 tu154b2/custom/lang/hide_rus_objects
+TRIS 22065 6
+ANIM_end
+ANIM_begin
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+ATTR_shiny_rat 0.970000
+TRIS 22071 6
+ANIM_end
+ANIM_end
+ANIM_end
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_draw_disable
+ATTR_light_level_reset
+ATTR_no_cockpit
+ATTR_manip_toggle button 0.000000 1.000000 sim/custom/t154_efb/cable_connect Toggle power cable
+TRIS 22077 6
+ANIM_end
+ANIM_begin
+ATTR_manip_toggle button 0.000000 1.000000 sim/custom/t154_efb/enabled Toggle iPad
+TRIS 22083 6
+ANIM_end
+ANIM_begin
+ATTR_solid_camera
+ATTR_draw_enable
+ATTR_light_level 0.000000 1.000000 avitab/brightness 1000.000000
+ATTR_cockpit
+TRIS 22089 6
+ANIM_end
+ANIM_begin
+ATTR_no_solid_camera
+ATTR_draw_disable
+ATTR_light_level_reset
+ATTR_no_cockpit
+ATTR_manip_push button 1.000000 0.000000 sim/custom/t154_efb/power_btn Toggle iPad screen
+TRIS 22095 6
+ANIM_end
 ANIM_end

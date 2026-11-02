@@ -2,36 +2,34 @@
 size = {2048, 2048}
 
 -- sim variable
-defineProperty("window_height",globalPropertyi("sim/graphics/view/window_height"))
-defineProperty("window_width",globalPropertyi("sim/graphics/view/window_width"))
-defineProperty("external",globalPropertyi("sim/graphics/view/view_is_external"))
+window_height = globalPropertyi("sim/graphics/view/window_height")
+window_width = globalPropertyi("sim/graphics/view/window_width")
+external = globalPropertyi("sim/graphics/view/view_is_external")
 
-defineProperty("show_gns",globalPropertyi("tu154b2/custom/anim/show_gns"))
-defineProperty("show_RXP",globalPropertyi("tu154b2/custom/anim/RXP"))
+show_gns = globalPropertyi("tu154b2/custom/anim/show_gns")
 
 
 -- panels variables
-defineProperty("show_load_panel",globalPropertyi("tu154b2/custom/panels/show_load_panel")) -- показать панель загрузки
-defineProperty("show_absu_panel",globalPropertyi("tu154b2/custom/panels/show_absu_panel")) -- показать панель АБСУ
-defineProperty("show_ohvd_panel",globalPropertyi("tu154b2/custom/panels/show_ohvd_panel")) -- показать панель верхней панели
-defineProperty("show_nvu_panel",globalPropertyi("tu154b2/custom/panels/show_nvu_panel")) -- показать панель НВУ
-defineProperty("show_checklist_panel",globalPropertyi("tu154b2/custom/panels/show_checklist_panel")) -- показать панель НВУ
-defineProperty("show_ground_panel",globalPropertyi("tu154b2/custom/panels/show_ground_panel")) -- показать панель наземного обслуживания
-defineProperty("show_phone",globalPropertyi("tu154b2/custom/panels/show_phone")) -- показать панель телефона
-defineProperty("show_cam",globalPropertyi("tu154b2/custom/panels/show_cam")) -- показать панель камеры
-defineProperty("show_palette",globalPropertyi("tu154b2/custom/panels/show_palette")) -- показать панель камеры
-defineProperty("show_fail_panel",globalPropertyi("tu154b2/custom/panels/show_fail_panel")) -- показать панель отказов
+show_load_panel = globalPropertyi("tu154b2/custom/panels/show_load_panel") -- показать панель загрузки
+show_absu_panel = globalPropertyi("tu154b2/custom/panels/show_absu_panel") -- показать панель АБСУ
+show_ohvd_panel = globalPropertyi("tu154b2/custom/panels/show_ohvd_panel") -- показать панель верхней панели
+show_nvu_panel = globalPropertyi("tu154b2/custom/panels/show_nvu_panel") -- показать панель НВУ
+show_checklist_panel = globalPropertyi("tu154b2/custom/panels/show_checklist_panel") -- показать панель НВУ
+show_ground_panel = globalPropertyi("tu154b2/custom/panels/show_ground_panel") -- показать панель наземного обслуживания
+show_phone = globalPropertyi("tu154b2/custom/panels/show_phone") -- показать панель телефона
+show_cam = globalPropertyi("tu154b2/custom/panels/show_cam") -- показать панель камеры
+show_palette = globalPropertyi("tu154b2/custom/panels/show_palette") -- показать панель камеры
+show_fail_panel = globalPropertyi("tu154b2/custom/panels/show_fail_panel") -- показать панель отказов
 cockpit_80s = globalPropertyi("sim/custom/b2/kontur_70th")
 
-
---defineProperty("KLN90visible", globalPropertyi("tu154b2/custom/xap/KLN90/visible"))
+--KLN90visible = globalPropertyi("tu154b2/custom/xap/KLN90/visible")
 
 
 -- Smart Copilot
-defineProperty("ismaster", globalPropertyf("tu154b2/crew/ismaster")) -- Master. 0 = plugin not found, 1 = slave 2 = master
-defineProperty("hascontrol_1", globalPropertyf("tu154b2/crew/hascontrol_1")) -- Have control. 0 = plugin not found, 1 = no control 2 = has control
+ismaster = globalPropertyf("tu154b2/crew/ismaster") -- Master. 0 = plugin not found, 1 = slave 2 = master
+hascontrol_1 = globalPropertyf("tu154b2/crew/hascontrol_1") -- Have control. 0 = plugin not found, 1 = no control 2 = has control
 
-defineProperty("control_thro_other", globalPropertyf("tu154b2/custom/SC/control_thro_other")) -- другой человек упраляет РУД-ами
+control_thro_other = globalPropertyf("tu154b2/custom/SC/control_thro_other") -- другой человек упраляет РУД-ами
 
 chk_cmd = sasl.createCommand("t154/panels/toggle_checklist", "Toggle Checklist")
 nvu_cmd = sasl.createCommand("t154/panels/toggle_nvu", "Toggle NVU Panel")
@@ -379,7 +377,7 @@ local misc_ext = false
 		  
 			-- onMouseDown = function() 
 				-- if get(show_gns) == 1 then  -- GNS
-					-- commandOnce(findCommand("sim/GPS/g430n1_popup"))
+					-- commandOnce(findCommand("sim/GPS/g430n1_popup")
 					-- set(KLN90visible, 0)
 				-- elseif get(show_gns) == 0 then -- KLN
 					-- set(KLN90visible, 1 - get(KLN90visible))
@@ -777,8 +775,8 @@ function update()
 	-- camera_panel.visible = false
 	-- palette.visible = false
 	fails_panel:setIsVisible(get(show_fail_panel) == 1)
-	load_button:setIsVisible(get(cockpit_80s)==0)
-	gnd_button:setIsVisible(get(cockpit_80s)==0)
+	load_button:setIsVisible(get(cockpit_80s)==0 or get(ismaster) > 0)
+	gnd_button:setIsVisible(get(cockpit_80s)==0 or get(ismaster) > 0)
 	thro_button:setIsVisible(get(ismaster) > 0)
 	
 	

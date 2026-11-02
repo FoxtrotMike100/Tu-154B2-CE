@@ -131,6 +131,9 @@ fail_3 = globalPropertyf("tu154b2/custom/engine/startfail_3")
 heater_cur = globalPropertyf("tu154b2/custom/engines/heater_current")
 flt_idle = globalPropertyf("tu154b2/custom/engines/flight_idle")
 airstart = globalPropertyi("tu154b2/custom/engines/airstart")
+starter_disc_fail_1 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_1")
+starter_disc_fail_2 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_2")
+starter_disc_fail_3 = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_3")
 -- db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
 -- db2 = globalPropertyf("tu154b2/custom/controlls/debug2")
 -- db3 = globalPropertyf("tu154b2/custom/controlls/debug2")
@@ -194,6 +197,9 @@ local overtemp_3=0
 local failstart_1=0
 local failstart_2=0
 local failstart_3=0
+local heater_cur_1 = 0
+local heater_cur_2 = 0
+local heater_cur_3 = 0
 local eng_start_press_t = {{ -100000, 0.0 },    -- bugs walkaround
                   {  0, 00 }, -- zero pressure
 				  {  70, 0.35 }, --
@@ -461,8 +467,7 @@ function update()
 	if eng1_starting_air then 
 		if time_now - eng1_start_time < START_SEQ_TIME - 20 then
 			set(sim_ignition1, 1) 
-			set(sim_igniter1, 1)	
-			set(heater_cur,50)			
+			set(sim_igniter1, 1)		
 			--commandBegin(starter_1)
 			set(fuel_in_1, stop_1)
 		else
@@ -526,8 +531,7 @@ function update()
 	if eng2_starting_air then 
 		if time_now - eng2_start_time < START_SEQ_TIME -20 then
 			set(sim_ignition2, 1) 
-			set(sim_igniter2, 1)	
-			set(heater_cur,50)			
+			set(sim_igniter2, 1)		
 			--commandBegin(starter_2)
 			set(fuel_in_2, stop_2)
 		else
@@ -589,8 +593,7 @@ function update()
 	if eng3_starting_air then 
 		if time_now - eng3_start_time < START_SEQ_TIME - 20 then
 			set(sim_ignition3, 1) 
-			set(sim_igniter3, 1)	
-			set(heater_cur,50)			
+			set(sim_igniter3, 1)			
 			--commandBegin(starter_3)
 			set(fuel_in_3, stop_3)
 		else
@@ -659,7 +662,7 @@ function update()
 		failstart_3=get(fail_3)
 	end
 	if eng1_starting or (burn_1>0 and rpm1<=54.2 and sys_data_tbl.eng_fire_timer_1 < 20) then
-		set(heater_cur,50*math.max(heat,air_start)*bool2int(eng1_starting or eng1_starting_air)*get(sim_ignition1))
+		heater_cur_1 = 50*math.max(heat,air_start)*bool2int(eng1_starting or eng1_starting_air)*get(sim_ignition1)
 		set(fuel_1,interpolate(fuel_table,rpm1)-eng1_rt)
 		-- fuel is flooding the engine during a failed start
 		if failstart_1==1 and burn_1>0 then
@@ -671,13 +674,18 @@ function update()
 		local a=-c_aero*dens*math.pow(rpm1,2)+c_q*q-c_f+c_burn*(1-math.min(1,overtemp_1)*0.5)*interpolate(burn_tbl,rpm1)*burn_1*(1-eng1_rt)*(1-failstart_1)+c_starter*interpolate(strt_tbl,rpm1)*get(start_run_1)
 		start_1=start_1+a/M_rot*passed
 		set(eng_rpm1,start_1)
-		start_2=rpm2
-		start_3=rpm3
 		if heat>0 then
 			failstart_1=0
 		end
-	elseif eng2_starting or (burn_2>0 and rpm2<=54.2 and sys_data_tbl.eng_fire_timer_2 < 20) then
-		set(heater_cur,50*math.max(heat,air_start)*bool2int(eng2_starting or eng2_starting_air)*get(sim_ignition2))
+	else
+		set(fuel_1,1-eng1_rt)
+		start_1 = rpm1
+		if not eng1_starting_air then
+			heater_cur_1 = 0
+		end
+	end
+	if eng2_starting or (burn_2>0 and rpm2<=54.2 and sys_data_tbl.eng_fire_timer_2 < 20) then
+		heater_cur_2 = 50*math.max(heat,air_start)*bool2int(eng2_starting or eng2_starting_air)*get(sim_ignition2)
 		set(fuel_2,interpolate(fuel_table,rpm2)-eng2_rt)
 		if failstart_2==1 and burn_2>0 then
 			overtemp_2=overtemp_2+passed
@@ -692,13 +700,18 @@ function update()
 		end
 		start_2=start_2+a/M_rot*passed
 		set(eng_rpm2,start_2)
-		start_1=rpm1
-		start_3=rpm3
 		if heat>0 then
 			failstart_2=0
 		end
-	elseif eng3_starting or (burn_3>0 and rpm3<=54.2 and sys_data_tbl.eng_fire_timer_3 < 20) then
-		set(heater_cur,50*math.max(heat,air_start)*bool2int(eng3_starting or eng3_starting_air)*get(sim_ignition3))
+	else
+		set(fuel_2,1-eng2_rt)
+		start_2 = rpm2
+		if not eng2_starting_air then
+			heater_cur_2 = 0
+		end
+	end
+	if eng3_starting or (burn_3>0 and rpm3<=54.2 and sys_data_tbl.eng_fire_timer_3 < 20) then
+		heater_cur_3 = 50*math.max(heat,air_start)*bool2int(eng3_starting or eng3_starting_air)*get(sim_ignition3)
 		set(fuel_3,interpolate(fuel_table,rpm3)-eng3_rt)
 		if failstart_3==1 and burn_3>0 then
 			overtemp_3=overtemp_3+passed
@@ -713,36 +726,31 @@ function update()
 		end
 		start_3=start_3+a/M_rot*passed
 		set(eng_rpm3,start_3)
-		start_1=rpm1
-		start_2=rpm2
 		if heat>0 then
 			failstart_3=0
 		end
 	else
-		if air_start == 0 then
-			set(heater_cur,0)
-		end
-		set(fuel_1,1-eng1_rt)
-		set(fuel_2,1-eng2_rt)
 		set(fuel_3,1-eng3_rt)
-		start_1=rpm1
-		start_2=rpm2
-		start_3=rpm3
+		start_3 = rpm3
+		if not eng3_starting_air then
+			heater_cur_3 = 0
+		end
 	end
-	
+
+	set(heater_cur,heater_cur_1 + heater_cur_2 + heater_cur_3)
 			
 	-- starter overspeed and desintigration timer
-	if (sys_data_tbl.starter_fail_1 > 0 and ((starter_press>0.5 and eng_select == 1) or get(eng_airvalve_1) == 1)) or eng1_starting then
+	if (get(starter_disc_fail_1) > 0 and ((starter_press>0.5 and eng_select == 1) or get(eng_airvalve_1) == 1)) or eng1_starting then
 		starter_rpm_1 = starter_rpm_1 + (rpm1 - starter_rpm_1) * passed
 	elseif starter_rpm_1 > 0.1 then
 		starter_rpm_1 = starter_rpm_1 - starter_rpm_1 * passed * 0.05
 	end
-	if (sys_data_tbl.starter_fail_2 > 0 and ((starter_press>0.5 and eng_select == 2) or get(eng_airvalve_2) == 1)) or eng2_starting then
+	if (get(starter_disc_fail_2) > 0 and ((starter_press>0.5 and eng_select == 2) or get(eng_airvalve_2) == 1)) or eng2_starting then
 		starter_rpm_2 = starter_rpm_2 + (rpm2 - starter_rpm_2) * passed
 	elseif starter_rpm_2 > 0.1 then
 		starter_rpm_2 = starter_rpm_2 - starter_rpm_2 * passed * 0.05
 	end
-	if (sys_data_tbl.starter_fail_3 > 0 and ((starter_press>0.5 and eng_select == 3) or get(eng_airvalve_3) == 1)) or eng3_starting then
+	if (get(starter_disc_fail_3) > 0 and ((starter_press>0.5 and eng_select == 3) or get(eng_airvalve_3) == 1)) or eng3_starting then
 		starter_rpm_3 = starter_rpm_3 + (rpm3 - starter_rpm_3) * passed 
 	elseif starter_rpm_3 > 0.1 then
 		starter_rpm_3 = starter_rpm_3 - starter_rpm_3 * passed * 0.05
@@ -757,7 +765,13 @@ function update()
 	if starter_rpm_3 > 45 then
 		sys_data_tbl.starter_ovspd_timer_3 = sys_data_tbl.starter_ovspd_timer_3 + passed * math.pow(rpm3,3) / 800000
 	end
-
+	sys_data_tbl.starter_rpm_1 = starter_rpm_1
+	sys_data_tbl.starter_rpm_2 = starter_rpm_2
+	sys_data_tbl.starter_rpm_3 = starter_rpm_3
+	
+	sys_data_tbl.eng_airstart_1 = bool2int(eng1_starting_air)
+	sys_data_tbl.eng_airstart_2 = bool2int(eng2_starting_air)
+	sys_data_tbl.eng_airstart_3 = bool2int(eng3_starting_air)
 	
 	if get(ismaster) ~= 1 then 	
 		-- excess fuel is purged from the engine
@@ -779,13 +793,6 @@ function update()
 		set(fail_1,failstart_1)
 		set(fail_2,failstart_2)
 		set(fail_3,failstart_3)		
-		sys_data_tbl.starter_rpm_1 = starter_rpm_1
-		sys_data_tbl.starter_rpm_2 = starter_rpm_2
-		sys_data_tbl.starter_rpm_3 = starter_rpm_3
-		
-		sys_data_tbl.eng_airstart_1 = bool2int(eng1_starting_air)
-		sys_data_tbl.eng_airstart_2 = bool2int(eng2_starting_air)
-		sys_data_tbl.eng_airstart_3 = bool2int(eng3_starting_air)
 		
 	end
 

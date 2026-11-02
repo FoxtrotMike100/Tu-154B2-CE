@@ -3,81 +3,81 @@ local crew_master = globalPropertyf("tu154b2/crew/ismaster")
 -- this is hydraulic panel
 
 -- gauges
-defineProperty("pressure_ind_1", globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_1")) -- индикатор давления гидросистемы 1
-defineProperty("pressure_ind_2", globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_2")) -- индикатор давления гидросистемы 2
-defineProperty("pressure_ind_3", globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_3")) -- индикатор давления гидросистемы 3
-defineProperty("pressure_ind_emerg", globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_emerg")) -- индикатор давления аварийного торможения
+pressure_ind_1 = globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_1") -- индикатор давления гидросистемы 1
+pressure_ind_2 = globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_2") -- индикатор давления гидросистемы 2
+pressure_ind_3 = globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_3") -- индикатор давления гидросистемы 3
+pressure_ind_emerg = globalPropertyf("tu154b2/custom/gauges/hydro/pressure_ind_emerg") -- индикатор давления аварийного торможения
 
-defineProperty("qty_12", globalPropertyf("tu154b2/custom/gauges/hydro/qty_12")) -- гидробаки
-defineProperty("qty_3", globalPropertyf("tu154b2/custom/gauges/hydro/qty_3")) -- гидробаки
+qty_12 = globalPropertyf("tu154b2/custom/gauges/hydro/qty_12") -- гидробаки
+qty_3 = globalPropertyf("tu154b2/custom/gauges/hydro/qty_3") -- гидробаки
 
-defineProperty("gear_brake_press_L", globalPropertyf("tu154b2/custom/gauges/console/gear_brake_press_L")) -- давление тормозов лев
-defineProperty("gear_brake_press_R", globalPropertyf("tu154b2/custom/gauges/console/gear_brake_press_R")) -- давление тормозов прав
+gear_brake_press_L = globalPropertyf("tu154b2/custom/gauges/console/gear_brake_press_L") -- давление тормозов лев
+gear_brake_press_R = globalPropertyf("tu154b2/custom/gauges/console/gear_brake_press_R") -- давление тормозов прав
 
 
 -- controls
-defineProperty("lamp_test_hydro", globalPropertyi("tu154b2/custom/buttons/lamp_test_hydro")) -- кнопка проверки ламп на панели гидросистемы
-defineProperty("lamp_test_front", globalPropertyi("tu154b2/custom/buttons/lamp_test_front")) -- кнопка проверки ламп на панели гидросистемы
+lamp_test_hydro = globalPropertyi("tu154b2/custom/buttons/lamp_test_hydro") -- кнопка проверки ламп на панели гидросистемы
+lamp_test_front = globalPropertyi("tu154b2/custom/buttons/lamp_test_front") -- кнопка проверки ламп на панели гидросистемы
 
-defineProperty("qty_test_12", globalPropertyi("tu154b2/custom/buttons/hydro/qty_test_12")) -- контроль уровня
-defineProperty("qty_test_3", globalPropertyi("tu154b2/custom/buttons/hydro/qty_test_3")) -- контроль уровня
+qty_test_12 = globalPropertyi("tu154b2/custom/buttons/hydro/qty_test_12") -- контроль уровня
+qty_test_3 = globalPropertyi("tu154b2/custom/buttons/hydro/qty_test_3") -- контроль уровня
 
-defineProperty("accum_fill", globalPropertyi("tu154b2/custom/buttons/hydro/accum_fill")) -- зарядка аккумулятора
+accum_fill = globalPropertyi("tu154b2/custom/buttons/hydro/accum_fill") -- зарядка аккумулятора
 
 
-defineProperty("connect2to1", globalPropertyi("tu154b2/custom/switchers/hydro/connect2to1")) -- подключение 2 ГС на 1 ГС
-defineProperty("connect2to1_cap", globalPropertyi("tu154b2/custom/switchers/hydro/connect2to1_cap")) -- подключение 2 ГС на 1 ГС
-defineProperty("pump_2", globalPropertyi("tu154b2/custom/switchers/hydro/pump_2")) -- подключение 2 ГС на 1 ГС
-defineProperty("pump_3", globalPropertyi("tu154b2/custom/switchers/hydro/pump_3")) -- подключение 2 ГС на 1 ГС
+connect2to1 = globalPropertyi("tu154b2/custom/switchers/hydro/connect2to1") -- подключение 2 ГС на 1 ГС
+connect2to1_cap = globalPropertyi("tu154b2/custom/switchers/hydro/connect2to1_cap") -- подключение 2 ГС на 1 ГС
+pump_2 = globalPropertyi("tu154b2/custom/switchers/hydro/pump_2") -- подключение 2 ГС на 1 ГС
+pump_3 = globalPropertyi("tu154b2/custom/switchers/hydro/pump_3") -- подключение 2 ГС на 1 ГС
 
 -- time
-defineProperty("frame_time", globalPropertyf("tu154b2/custom/time/frame_time")) -- flight time
+frame_time = globalPropertyf("tu154b2/custom/time/frame_time") -- flight time
 
 -- lamps
-defineProperty("eng_hydr_fail_1", globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_1")) -- низкое давление ГС 1.панель БИ
-defineProperty("eng_hydr_fail_2", globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_2")) -- низкое давление ГС 2.панель БИ
-defineProperty("eng_hydr_fail_3", globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_3")) -- низкое давление ГС 3.панель БИ
-defineProperty("eng_hydr_fail_4", globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_4")) -- низкое давление ГС аварийн.панель БИ
+eng_hydr_fail_1 = globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_1") -- низкое давление ГС 1.панель БИ
+eng_hydr_fail_2 = globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_2") -- низкое давление ГС 2.панель БИ
+eng_hydr_fail_3 = globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_3") -- низкое давление ГС 3.панель БИ
+eng_hydr_fail_4 = globalPropertyf("tu154b2/custom/lights/small/eng_hydr_fail_4") -- низкое давление ГС аварийн.панель БИ
 
-defineProperty("front_hydr_fail_1", globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_1")) -- низкое давление ГС 1.передняя панель
-defineProperty("front_hydr_fail_2", globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_2")) -- низкое давление ГС 2.передняя панель
-defineProperty("front_hydr_fail_3", globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_3")) -- низкое давление ГС 3.передняя панель
-defineProperty("front_hydr_fail_4", globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_4")) -- низкое давление ГС аварийн.передняя панель
+front_hydr_fail_1 = globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_1") -- низкое давление ГС 1.передняя панель
+front_hydr_fail_2 = globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_2") -- низкое давление ГС 2.передняя панель
+front_hydr_fail_3 = globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_3") -- низкое давление ГС 3.передняя панель
+front_hydr_fail_4 = globalPropertyf("tu154b2/custom/lights/small/front_hydr_fail_4") -- низкое давление ГС аварийн.передняя панель
 
 
 -- sources
-defineProperty("bus27_volt_left", globalPropertyf("tu154b2/custom/elec/bus27_volt_left")) -- напряжение сети 27
-defineProperty("bus27_volt_right", globalPropertyf("tu154b2/custom/elec/bus27_volt_right")) -- напряжение сети 27
+bus27_volt_left = globalPropertyf("tu154b2/custom/elec/bus27_volt_left") -- напряжение сети 27
+bus27_volt_right = globalPropertyf("tu154b2/custom/elec/bus27_volt_right") -- напряжение сети 27
 
-defineProperty("bus36_volt_right", globalPropertyf("tu154b2/custom/elec/bus36_volt_right")) -- напряжение сети 36в прав
-defineProperty("bus36_volt_pts250_1", globalPropertyf("tu154b2/custom/elec/bus36_volt_pts250_1")) -- напряжение сети 36 ПТС 1
+bus36_volt_right = globalPropertyf("tu154b2/custom/elec/bus36_volt_right") -- напряжение сети 36в прав
+bus36_volt_pts250_1 = globalPropertyf("tu154b2/custom/elec/bus36_volt_pts250_1") -- напряжение сети 36 ПТС 1
 
 
-defineProperty("gs_press_1", globalPropertyf("tu154b2/custom/hydro/gs_press_1")) -- давление в ГС1
-defineProperty("gs_press_2", globalPropertyf("tu154b2/custom/hydro/gs_press_2")) -- давление в ГС2
-defineProperty("gs_press_3", globalPropertyf("tu154b2/custom/hydro/gs_press_3")) -- давление в ГС3
-defineProperty("gs_press_4", globalPropertyf("tu154b2/custom/hydro/gs_press_4")) -- давление в ГС4
+gs_press_1 = globalPropertyf("tu154b2/custom/hydro/gs_press_1") -- давление в ГС1
+gs_press_2 = globalPropertyf("tu154b2/custom/hydro/gs_press_2") -- давление в ГС2
+gs_press_3 = globalPropertyf("tu154b2/custom/hydro/gs_press_3") -- давление в ГС3
+gs_press_4 = globalPropertyf("tu154b2/custom/hydro/gs_press_4") -- давление в ГС4
 
-defineProperty("gs_qty_12_show", globalPropertyf("tu154b2/custom/hydro/gs_qty_12_show")) -- остаток масла в гидробаке
-defineProperty("gs_qty_3_show", globalPropertyf("tu154b2/custom/hydro/gs_qty_3_show")) -- остаток масла в гидробаке
+gs_qty_12_show = globalPropertyf("tu154b2/custom/hydro/gs_qty_12_show") -- остаток масла в гидробаке
+gs_qty_3_show = globalPropertyf("tu154b2/custom/hydro/gs_qty_3_show") -- остаток масла в гидробаке
 
-defineProperty("l_brake_add", globalPropertyf("tu154b2/custom/brakes/int_brakes_L")) -- реальное положение тормоза
-defineProperty("r_brake_add", globalPropertyf("tu154b2/custom/brakes/int_brakes_R")) -- реальное положение тормоза
+l_brake_add = globalPropertyf("tu154b2/custom/brakes/int_brakes_L") -- реальное положение тормоза
+r_brake_add = globalPropertyf("tu154b2/custom/brakes/int_brakes_R") -- реальное положение тормоза
 
 -- failures
-defineProperty("rel_lbrakes", globalPropertyi("sim/operation/failures/rel_lbrakes")) -- Left Brakes
-defineProperty("rel_rbrakes", globalPropertyi("sim/operation/failures/rel_rbrakes")) -- Right Brakes
+rel_lbrakes = globalPropertyi("sim/operation/failures/rel_lbrakes") -- Left Brakes
+rel_rbrakes = globalPropertyi("sim/operation/failures/rel_rbrakes") -- Right Brakes
 
-defineProperty("gear2_deflect", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]"))  -- vertical deflection of left gear
-defineProperty("gear3_deflect", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]"))  -- vertical deflection of right gear
-defineProperty("pilot_Z", globalPropertyf("sim/aircraft/view/acf_peZ"))
-defineProperty("pilot_X", globalPropertyf("sim/aircraft/view/acf_peX"))
-defineProperty("pilot_head", globalPropertyi("sim/graphics/view/pilots_head_psi"))
--- defineProperty("db1", globalPropertyf("tu154b2/custom/controlls/debug1"))
--- defineProperty("db2", globalPropertyf("tu154b2/custom/controlls/debug2"))
--- defineProperty("db3", globalPropertyf("tu154b2/custom/controlls/debug3"))
--- defineProperty("db4", globalPropertyf("tu154b2/custom/controlls/debug4"))
--- defineProperty("db5", globalPropertyf("tu154b2/custom/controlls/debug5"))
+gear2_deflect = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]")  -- vertical deflection of left gear
+gear3_deflect = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]")  -- vertical deflection of right gear
+pilot_Z = globalPropertyf("sim/aircraft/view/acf_peZ")
+pilot_X = globalPropertyf("sim/aircraft/view/acf_peX")
+pilot_head = globalPropertyi("sim/graphics/view/pilots_head_psi")
+-- db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
+-- db2 = globalPropertyf("tu154b2/custom/controlls/debug2")
+-- db3 = globalPropertyf("tu154b2/custom/controlls/debug3")
+-- db4 = globalPropertyf("tu154b2/custom/controlls/debug4")
+-- db5 = globalPropertyf("tu154b2/custom/controlls/debug5")
 local panel_x=0.727
 local panel_z=-21.171
 local dist_gain=5
@@ -218,7 +218,7 @@ end
 
 local function lamps_front()
 	local lamps_brt = math.max(( get(bus27_volt_left) - 10) / 18.5, 0)
-	local test_btn = 0 --get(lamp_test_front) * lamps_brt
+	local test_btn = get(lamp_test_front) * lamps_brt
 	
 	local front_hydr_fail_1_brt = 0
 	if press_1 < 100 then front_hydr_fail_1_brt = 1 end

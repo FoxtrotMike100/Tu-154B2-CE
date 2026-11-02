@@ -365,9 +365,9 @@ local function lamps()
 
 	local power_sw = get(fire_main_switch)
 	local test_btn = get(lamp_test) * math.max((get(bus27_volt_right) - 10) / 18.5, 0) * power_sw
-	local test_btn_2 = get(lamp_test_2) * math.max((get(bus27_volt_right) - 10) / 18.5, 0)-- * power_sw
 	
-	local test_btn_frnt = get(lamp_test) * math.max((get(bus27_volt_right) - 10) / 18.5, 0) * power_sw
+	local test_btn = get(lamp_test) * math.max((get(bus27_volt_right) - 10) / 18.5, 0) * power_sw
+	local test_btn_frnt = get(lamp_test_front) * math.max((get(bus27_volt_right) - 10) / 18.5, 0)
 	
 	
 	local day_night = 1 - get(day_night_set) * 0.25
@@ -521,10 +521,12 @@ local function lamps()
 	-- end
 		
 	local fire_lamp_brt = 0
+	local fire_lamp_brt_front = 0
 	--if fire_lit then fire_lamp_brt = 1 end
-	fire_lamp_brt = math.max(fire_det * lamps_brt * day_night, test_btn_frnt)
+	fire_lamp_brt = math.max(fire_det * lamps_brt * day_night, test_btn)
+	fire_lamp_brt_front = math.max(fire_det * lamps_brt * day_night, test_btn,test_btn_frnt)
 	set(fire_lamp, fire_lamp_brt)
-	set(fire_lamp_front, fire_lamp_brt)
+	set(fire_lamp_front, fire_lamp_brt_front)
 
 
 

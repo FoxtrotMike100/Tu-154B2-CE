@@ -484,28 +484,28 @@ createGlobalPropertyi("tu154b2/custom/panels/show_palette", 0) -- показат
 createGlobalPropertyi("tu154b2/custom/panels/show_fail_panel", 0) -- показать палетку отказов
 createGlobalPropertyf("tu154b2/custom/misc/cg_pos_actual", 0) -- актуальное положение CG
 createGlobalPropertyf("tu154b2/custom/misc/weight_actual", 0) -- актуальная масса
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1", 0) -- светимость маски с дождем на стекле
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2", 0) -- светимость маски с дождем на стекле
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_1_L", 0) -- светимость маски с дождем на левом стекле сектор 1
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_2_L", 0) -- светимость маски с дождем на левом стекле сектор 2
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_3_L", 0) -- светимость маски с дождем на левом стекле сектор 3
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_4_L", 0) -- светимость маски с дождем на левом стекле сектор 4
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_5_L", 0) -- светимость маски с дождем на левом стекле сектор 5
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_1_L", 0) -- светимость маски с дождем на левом стекле сектор 1
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_2_L", 0) -- светимость маски с дождем на левом стекле сектор 2
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_3_L", 0) -- светимость маски с дождем на левом стекле сектор 3
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_4_L", 0) -- светимость маски с дождем на левом стекле сектор 4
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_5_L", 0) -- светимость маски с дождем на левом стекле сектор 5
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_1_R", 0) -- светимость маски с дождем на левом стекле сектор 1
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_2_R", 0) -- светимость маски с дождем на левом стекле сектор 2
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_3_R", 0) -- светимость маски с дождем на левом стекле сектор 3
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_4_R", 0) -- светимость маски с дождем на левом стекле сектор 4
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_5_R", 0) -- светимость маски с дождем на левом стекле сектор 5
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_1_R", 0) -- светимость маски с дождем на левом стекле сектор 1
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_2_R", 0) -- светимость маски с дождем на левом стекле сектор 2
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_3_R", 0) -- светимость маски с дождем на левом стекле сектор 3
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_4_R", 0) -- светимость маски с дождем на левом стекле сектор 4
-createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_5_R", 0) -- светимость маски с дождем на левом стекле сектор 5
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1", 0) -- светимость маски с дождем на стекле
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2", 0) -- светимость маски с дождем на стекле
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_1_L", 0) -- светимость маски с дождем на левом стекле сектор 1
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_2_L", 0) -- светимость маски с дождем на левом стекле сектор 2
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_3_L", 0) -- светимость маски с дождем на левом стекле сектор 3
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_4_L", 0) -- светимость маски с дождем на левом стекле сектор 4
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_5_L", 0) -- светимость маски с дождем на левом стекле сектор 5
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_1_L", 0) -- светимость маски с дождем на левом стекле сектор 1
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_2_L", 0) -- светимость маски с дождем на левом стекле сектор 2
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_3_L", 0) -- светимость маски с дождем на левом стекле сектор 3
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_4_L", 0) -- светимость маски с дождем на левом стекле сектор 4
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_5_L", 0) -- светимость маски с дождем на левом стекле сектор 5
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_1_R", 0) -- светимость маски с дождем на левом стекле сектор 1
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_2_R", 0) -- светимость маски с дождем на левом стекле сектор 2
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_3_R", 0) -- светимость маски с дождем на левом стекле сектор 3
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_4_R", 0) -- светимость маски с дождем на левом стекле сектор 4
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_1_w_5_R", 0) -- светимость маски с дождем на левом стекле сектор 5
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_1_R", 0) -- светимость маски с дождем на левом стекле сектор 1
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_2_R", 0) -- светимость маски с дождем на левом стекле сектор 2
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_3_R", 0) -- светимость маски с дождем на левом стекле сектор 3
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_4_R", 0) -- светимость маски с дождем на левом стекле сектор 4
+-- createGlobalPropertyf("tu154b2/custom/anim/rain_glass_2_w_5_R", 0) -- светимость маски с дождем на левом стекле сектор 5
 createGlobalPropertyf("tu154b2/custom/anim/net_rain_ratio", 0) -- актуальное количество осадков на стеклах
 createGlobalPropertyf("tu154b2/custom/misc/water_level", 0) -- уровень воды
 createGlobalPropertyf("tu154b2/custom/gauges/alt/vbe_flightlevel_left", 0) -- установленная высота на ВБЭ
@@ -802,6 +802,13 @@ createGlobalPropertyi("tu154b2/custom/taws/phase",0)
 createGlobalPropertyi("tu154b2/custom/tcas/vvi_left",0)
 createGlobalPropertyi("tu154b2/custom/controlls/flap_chan_1", 0)
 createGlobalPropertyi("tu154b2/custom/controlls/flap_chan_2", 0)
+createGlobalPropertyf("tu154b2/custom/radio/spu2_volume1", 0.5)
+createGlobalPropertyf("tu154b2/custom/radio/spu2_volume2", 1)
+createGlobalPropertyf("tu154b2/custom/radio/spu3_volume1", 0.5)
+createGlobalPropertyf("tu154b2/custom/radio/spu3_volume2", 1)
+createGlobalPropertyf("tu154b2/custom/radio/spu4_volume1", 0.5)
+createGlobalPropertyf("tu154b2/custom/radio/spu4_volume2", 1)
+createGlobalPropertyi("tu154b2/custom/radio/spu_select", 0)
 --createGlobalPropertyf("tu154b2/custom/rls/rls_drift_angle",0)
 -- createGlobalPropertyi("tu154b2/custom/gauges/eng/opora_sel_vibro",0)
 -- createGlobalPropertyi("tu154b2/custom/gauges/eng/vibro_pwr1",0)

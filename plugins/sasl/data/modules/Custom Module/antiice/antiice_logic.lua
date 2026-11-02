@@ -1,174 +1,174 @@
 -- this is antiice logic.
 
 -- controls
-defineProperty("soi21_on", globalPropertyi("tu154b2/custom/switchers/eng/soi21_on")) -- выключатель СОИ 21
-defineProperty("soi21_test", globalPropertyi("tu154b2/custom/buttons/eng/soi21_test")) -- проверка СОИ 21
+soi21_on = globalPropertyi("tu154b2/custom/switchers/eng/soi21_on") -- выключатель СОИ 21
+soi21_test = globalPropertyi("tu154b2/custom/buttons/eng/soi21_test") -- проверка СОИ 21
 
 
-defineProperty("antiice_slats", globalPropertyi("tu154b2/custom/switchers/eng/antiice_slats")) -- противообледенители
-defineProperty("antiice_eng_1", globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_1")) -- противообледенители
-defineProperty("antiice_eng_2", globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_2")) -- противообледенители
-defineProperty("antiice_eng_3", globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_3")) -- противообледенители
-defineProperty("antiice_wing", globalPropertyi("tu154b2/custom/switchers/eng/antiice_wing")) -- противообледенители
+antiice_slats = globalPropertyi("tu154b2/custom/switchers/eng/antiice_slats") -- противообледенители
+antiice_eng_1 = globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_1") -- противообледенители
+antiice_eng_2 = globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_2") -- противообледенители
+antiice_eng_3 = globalPropertyi("tu154b2/custom/switchers/eng/antiice_eng_3") -- противообледенители
+antiice_wing = globalPropertyi("tu154b2/custom/switchers/eng/antiice_wing") -- противообледенители
 
-defineProperty("window_heat_1", globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_1")) -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
-defineProperty("window_heat_2", globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_2")) -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
-defineProperty("window_heat_3", globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_3")) -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
+window_heat_1 = globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_1") -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
+window_heat_2 = globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_2") -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
+window_heat_3 = globalPropertyi("tu154b2/custom/switchers/ovhd/window_heat_3") -- обогрев стекол. -1 - слабо, 0 - выкл, 1 - сильно
 
-defineProperty("pitot_heat_1", globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_1")) -- обогрев ППД лев
-defineProperty("pitot_heat_2", globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_2")) -- обогрев ППД прав
-defineProperty("pitot_heat_3", globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_3")) -- обогрев ППД АБСУ
+pitot_heat_1 = globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_1") -- обогрев ППД лев
+pitot_heat_2 = globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_2") -- обогрев ППД прав
+pitot_heat_3 = globalPropertyi("tu154b2/custom/switchers/ovhd/pitot_heat_3") -- обогрев ППД АБСУ
 
 
 
 
 
 -- power
-defineProperty("bus27_volt_left", globalPropertyf("tu154b2/custom/elec/bus27_volt_left"))
-defineProperty("bus27_volt_right", globalPropertyf("tu154b2/custom/elec/bus27_volt_right"))
-defineProperty("bus115_1_volt", globalPropertyf("tu154b2/custom/elec/bus115_1_volt"))
-defineProperty("bus115_2_volt", globalPropertyf("tu154b2/custom/elec/bus115_2_volt"))
-defineProperty("bus115_3_volt", globalPropertyf("tu154b2/custom/elec/bus115_3_volt"))
+bus27_volt_left = globalPropertyf("tu154b2/custom/elec/bus27_volt_left")
+bus27_volt_right = globalPropertyf("tu154b2/custom/elec/bus27_volt_right")
+bus115_1_volt = globalPropertyf("tu154b2/custom/elec/bus115_1_volt")
+bus115_2_volt = globalPropertyf("tu154b2/custom/elec/bus115_2_volt")
+bus115_3_volt = globalPropertyf("tu154b2/custom/elec/bus115_3_volt")
 
 -- sources
-defineProperty("window_ice", globalPropertyf("sim/flightmodel/failures/window_ice")) -- ratio of icing on the windshield
+window_ice = globalPropertyf("sim/flightmodel/failures/window_ice") -- ratio of icing on the windshield
 
---defineProperty("hot_tube_t", globalPropertyf("tu154b2/custom/bleed/hot_tube_t")) -- температура горячего воздуха в трубопроводе
+--hot_tube_t = globalPropertyf("tu154b2/custom/bleed/hot_tube_t") -- температура горячего воздуха в трубопроводе
 
-defineProperty("rpm_high_1", globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_1")) -- обороты турбины высокого давления №1
-defineProperty("rpm_high_2", globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_2")) -- обороты турбины высокого давления №2
-defineProperty("rpm_high_3", globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_3")) -- обороты турбины высокого давления №3
+rpm_high_1 = globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_1") -- обороты турбины высокого давления №1
+rpm_high_2 = globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_2") -- обороты турбины высокого давления №2
+rpm_high_3 = globalPropertyf("tu154b2/custom/gauges/engine/rpm_high_3") -- обороты турбины высокого давления №3
 
---defineProperty("eng_airvalve_1", globalPropertyf("tu154b2/custom/bleed/eng_airvalve_1")) -- открытие отбора воздуха от двигателя
---defineProperty("eng_airvalve_2", globalPropertyf("tu154b2/custom/bleed/eng_airvalve_2")) -- открытие отбора воздуха от двигателя
---defineProperty("eng_airvalve_3", globalPropertyf("tu154b2/custom/bleed/eng_airvalve_3")) -- открытие отбора воздуха от двигателя
+--eng_airvalve_1 = globalPropertyf("tu154b2/custom/bleed/eng_airvalve_1") -- открытие отбора воздуха от двигателя
+--eng_airvalve_2 = globalPropertyf("tu154b2/custom/bleed/eng_airvalve_2") -- открытие отбора воздуха от двигателя
+--eng_airvalve_3 = globalPropertyf("tu154b2/custom/bleed/eng_airvalve_3") -- открытие отбора воздуха от двигателя
 
-defineProperty("termo", globalPropertyf("sim/weather/temperature_ambient_c")) -- тепература воздуха
+termo = globalPropertyf("sim/weather/temperature_ambient_c") -- тепература воздуха
 --termo_in = globalProperty("tu154b2/custom/gauges/airbleed/cockpit_temp") -- тепература воздуха
 termo_tube = globalProperty("tu154b2/custom/bleed/cockpit_tube_t")
-defineProperty("ai_fuid_to", globalPropertyi("sim/custom/t154gnd/ai_fluid_timeout_set")) -- тепература воздуха
+ai_fuid_to = globalPropertyi("sim/custom/t154gnd/ai_fluid_timeout_set") -- тепература воздуха
 
-defineProperty("snow_on_fuse", globalPropertyf("sim/custom/t154gnd/snow_fuse"))
-
-
-defineProperty("stat_1", globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_pilot"))
-defineProperty("stat_2", globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_copilot"))
-defineProperty("stat_3", globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_standby"))
-defineProperty("tat", globalPropertyi("sim/cockpit2/ice/ice_TAT_heat_on"))
-defineProperty("tat2", globalPropertyi("sim/cockpit2/ice/ice_TAT_heat_on_copilot"))
-defineProperty("so_heat", globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on_stby"))
+snow_on_fuse = globalPropertyf("sim/custom/t154gnd/snow_fuse")
 
 
+stat_1 = globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_pilot")
+stat_2 = globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_copilot")
+stat_3 = globalPropertyi("sim/cockpit2/ice/ice_static_heat_on_standby")
+tat = globalPropertyi("sim/cockpit2/ice/ice_TAT_heat_on")
+tat2 = globalPropertyi("sim/cockpit2/ice/ice_TAT_heat_on_copilot")
+so_heat = globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on_stby")
 
 
-defineProperty("frame_time", globalPropertyf("tu154b2/custom/time/frame_time")) -- flight time
 
-defineProperty("IAS", globalPropertyf("sim/flightmodel/position/indicated_airspeed")) 
 
-defineProperty("deflection_mtr_2", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]")) -- 
---defineProperty("deflection_mtr_3", globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]")) -- 
+frame_time = globalPropertyf("tu154b2/custom/time/frame_time") -- flight time
+
+IAS = globalPropertyf("sim/flightmodel/position/indicated_airspeed") 
+
+deflection_mtr_2 = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[1]") -- 
+--deflection_mtr_3 = globalProperty("sim/flightmodel2/gear/tire_vertical_deflection_mtr[2]") -- 
 
 -- failures
---defineProperty("ppd_3_heat_fail", globalPropertyi("tu154b2/custom/antiice/ppd_3_heat_fail"))
+--ppd_3_heat_fail = globalPropertyi("tu154b2/custom/antiice/ppd_3_heat_fail")
 
 
-defineProperty("rel_ice_inlet_heat1", globalPropertyi("sim/operation/failures/rel_ice_inlet_heat"))
-defineProperty("rel_ice_inlet_heat2", globalPropertyi("sim/operation/failures/rel_ice_inlet_heat2"))
-defineProperty("rel_ice_inlet_heat3", globalPropertyi("sim/operation/failures/rel_ice_inlet_heat3"))
+rel_ice_inlet_heat1 = globalPropertyi("sim/operation/failures/rel_ice_inlet_heat")
+rel_ice_inlet_heat2 = globalPropertyi("sim/operation/failures/rel_ice_inlet_heat2")
+rel_ice_inlet_heat3 = globalPropertyi("sim/operation/failures/rel_ice_inlet_heat3")
 
-defineProperty("rel_ice_pitot_heat1", globalPropertyi("sim/operation/failures/rel_ice_pitot_heat1"))
-defineProperty("rel_ice_pitot_heat2", globalPropertyi("sim/operation/failures/rel_ice_pitot_heat2"))
-defineProperty("rel_ice_pitot_heat3", globalPropertyi("sim/operation/failures/rel_ice_pitot_heat_stby"))
+rel_ice_pitot_heat1 = globalPropertyi("sim/operation/failures/rel_ice_pitot_heat1")
+rel_ice_pitot_heat2 = globalPropertyi("sim/operation/failures/rel_ice_pitot_heat2")
+rel_ice_pitot_heat3 = globalPropertyi("sim/operation/failures/rel_ice_pitot_heat_stby")
 
-defineProperty("rel_ice_surf_heat", globalPropertyi("sim/operation/failures/rel_ice_surf_heat"))
-defineProperty("rel_ice_surf_heat2", globalPropertyi("sim/operation/failures/rel_ice_surf_heat2"))
+rel_ice_surf_heat = globalPropertyi("sim/operation/failures/rel_ice_surf_heat")
+rel_ice_surf_heat2 = globalPropertyi("sim/operation/failures/rel_ice_surf_heat2")
 
-defineProperty("rio_fail", globalPropertyi("tu154b2/custom/failures/rio_fail"))
+rio_fail = globalPropertyi("tu154b2/custom/failures/rio_fail")
 
-defineProperty("window_heat_fail_1", globalPropertyi("tu154b2/custom/failures/window_heat_fail_1"))
-defineProperty("window_heat_fail_2", globalPropertyi("tu154b2/custom/failures/window_heat_fail_2"))
-defineProperty("window_heat_fail_3", globalPropertyi("tu154b2/custom/failures/window_heat_fail_3"))
+window_heat_fail_1 = globalPropertyi("tu154b2/custom/failures/window_heat_fail_1")
+window_heat_fail_2 = globalPropertyi("tu154b2/custom/failures/window_heat_fail_2")
+window_heat_fail_3 = globalPropertyi("tu154b2/custom/failures/window_heat_fail_3")
 
 -- results
-defineProperty("ice_detected", globalPropertyi("tu154b2/custom/antiice/ice_detected")) -- обнаружен лед
-defineProperty("ice_detect_ok", globalPropertyi("tu154b2/custom/antiice/ice_detect_ok")) -- система СОИ работает
+ice_detected = globalPropertyi("tu154b2/custom/antiice/ice_detected") -- обнаружен лед
+ice_detect_ok = globalPropertyi("tu154b2/custom/antiice/ice_detect_ok") -- система СОИ работает
 
-defineProperty("ice_window_heat_on", globalPropertyi("sim/cockpit2/ice/ice_window_heat_on")) -- обогрев стекла в симе
+ice_window_heat_on = globalPropertyi("sim/cockpit2/ice/ice_window_heat_on") -- обогрев стекла в симе
 
-defineProperty("window_ice_1", globalPropertyf("tu154b2/custom/anim/window_ice_1")) -- уровень льда на стеклах
-defineProperty("window_ice_2", globalPropertyf("tu154b2/custom/anim/window_ice_2")) -- уровень льда на стеклах
-defineProperty("window_ice_3", globalPropertyf("tu154b2/custom/anim/window_ice_3")) -- уровень льда на стеклах
-defineProperty("window_ice_4", globalPropertyf("tu154b2/custom/anim/window_ice_4")) -- уровень льда на стеклах
+-- window_ice_1 = globalPropertyf("tu154b2/custom/anim/window_ice_1") -- уровень льда на стеклах
+-- window_ice_2 = globalPropertyf("tu154b2/custom/anim/window_ice_2") -- уровень льда на стеклах
+-- window_ice_3 = globalPropertyf("tu154b2/custom/anim/window_ice_3") -- уровень льда на стеклах
+-- window_ice_4 = globalPropertyf("tu154b2/custom/anim/window_ice_4") -- уровень льда на стеклах
 
-defineProperty("inlet_heat_1", globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[0]")) -- 
-defineProperty("inlet_heat_2", globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[1]")) -- 
-defineProperty("inlet_heat_3", globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[2]")) -- 
+inlet_heat_1 = globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[0]") -- 
+inlet_heat_2 = globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[1]") -- 
+inlet_heat_3 = globalProperty("sim/cockpit2/ice/ice_inlet_heat_on_per_engine[2]") -- 
 
-defineProperty("sim_pitot_heat_1", globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_pilot")) -- 
-defineProperty("sim_pitot_heat_2", globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_copilot")) -- 
-defineProperty("sim_pitot_heat_3", globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_standby")) -- 
+sim_pitot_heat_1 = globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_pilot") -- 
+sim_pitot_heat_2 = globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_copilot") -- 
+sim_pitot_heat_3 = globalPropertyi("sim/cockpit2/ice/ice_pitot_heat_on_standby") -- 
 
-defineProperty("AOA_heat_on", globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on")) -- 
-defineProperty("AOA_heat_on_copilot", globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on_copilot")) --
+AOA_heat_on = globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on") -- 
+AOA_heat_on_copilot = globalPropertyi("sim/cockpit2/ice/ice_AOA_heat_on_copilot") --
 
-defineProperty("wings_heat_on", globalPropertyi("sim/cockpit2/ice/ice_surfce_heat_on")) --
-defineProperty("stab_heat_on", globalPropertyi("sim/cockpit2/ice/ice_tail_heat_on"))
+wings_heat_on = globalPropertyi("sim/cockpit2/ice/ice_surfce_heat_on") --
+stab_heat_on = globalPropertyi("sim/cockpit2/ice/ice_tail_heat_on")
 
-defineProperty("frm_ice", globalPropertyf("sim/flightmodel/failures/frm_ice")) --
-defineProperty("frm_ice2", globalPropertyf("sim/flightmodel/failures/frm_ice2")) --
+frm_ice = globalPropertyf("sim/flightmodel/failures/frm_ice") --
+frm_ice2 = globalPropertyf("sim/flightmodel/failures/frm_ice2") --
 
-defineProperty("wing_heating", globalPropertyi("tu154b2/custom/antiice/wing_heating")) -- работает обогрев крыла
-defineProperty("slat_heating", globalPropertyi("tu154b2/custom/antiice/slat_heating")) -- работает обогрев крыла
+wing_heating = globalPropertyi("tu154b2/custom/antiice/wing_heating") -- работает обогрев крыла
+slat_heating = globalPropertyi("tu154b2/custom/antiice/slat_heating") -- работает обогрев крыла
 
-defineProperty("ai_27_L_cc", globalPropertyf("tu154b2/custom/antiice/ai_27_L_cc")) -- нагрузка на сеть
-defineProperty("ai_27_R_cc", globalPropertyf("tu154b2/custom/antiice/ai_27_R_cc")) -- нагрузка на сеть
+ai_27_L_cc = globalPropertyf("tu154b2/custom/antiice/ai_27_L_cc") -- нагрузка на сеть
+ai_27_R_cc = globalPropertyf("tu154b2/custom/antiice/ai_27_R_cc") -- нагрузка на сеть
 
-defineProperty("ai_115_1_cc", globalPropertyf("tu154b2/custom/antiice/ai_115_1_cc")) -- нагрузка на сеть
-defineProperty("ai_115_2_cc_A", globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_A")) -- нагрузка на сеть
-defineProperty("ai_115_2_cc_B", globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_B")) -- нагрузка на сеть
-defineProperty("ai_115_2_cc_C", globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_C")) -- нагрузка на сеть
-defineProperty("ai_115_3_cc", globalPropertyf("tu154b2/custom/antiice/ai_115_3_cc")) -- нагрузка на сеть
+ai_115_1_cc = globalPropertyf("tu154b2/custom/antiice/ai_115_1_cc") -- нагрузка на сеть
+ai_115_2_cc_A = globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_A") -- нагрузка на сеть
+ai_115_2_cc_B = globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_B") -- нагрузка на сеть
+ai_115_2_cc_C = globalPropertyf("tu154b2/custom/antiice/ai_115_2_cc_C") -- нагрузка на сеть
+ai_115_3_cc = globalPropertyf("tu154b2/custom/antiice/ai_115_3_cc") -- нагрузка на сеть
 
-defineProperty("eng_heat_open_1", globalPropertyi("tu154b2/custom/antiice/eng_heat_open_1")) -- открыта заслонка обогрева двигателя
-defineProperty("eng_heat_open_2", globalPropertyi("tu154b2/custom/antiice/eng_heat_open_2")) -- открыта заслонка обогрева двигателя
-defineProperty("eng_heat_open_3", globalPropertyi("tu154b2/custom/antiice/eng_heat_open_3")) -- открыта заслонка обогрева двигателя
-defineProperty("stab_heat_open", globalPropertyi("tu154b2/custom/antiice/stab_heat_open"))
+eng_heat_open_1 = globalPropertyi("tu154b2/custom/antiice/eng_heat_open_1") -- открыта заслонка обогрева двигателя
+eng_heat_open_2 = globalPropertyi("tu154b2/custom/antiice/eng_heat_open_2") -- открыта заслонка обогрева двигателя
+eng_heat_open_3 = globalPropertyi("tu154b2/custom/antiice/eng_heat_open_3") -- открыта заслонка обогрева двигателя
+stab_heat_open = globalPropertyi("tu154b2/custom/antiice/stab_heat_open")
 
-defineProperty("left_ht", globalPropertyi("tu154b2/custom/antiice/left_window_heat"))
-defineProperty("right_ht", globalPropertyi("tu154b2/custom/antiice/ctr_window_heat"))
-defineProperty("ctr_ht", globalPropertyi("tu154b2/custom/antiice/right_window_heat"))
-defineProperty("left_rate", globalPropertyf("tu154b2/custom/antiice/left_window_rate"))
-defineProperty("right_rate", globalPropertyf("tu154b2/custom/antiice/ctr_window_rate"))
-defineProperty("ctr_rate", globalPropertyf("tu154b2/custom/antiice/right_window_rate"))
+left_ht = globalPropertyi("tu154b2/custom/antiice/left_window_heat")
+right_ht = globalPropertyi("tu154b2/custom/antiice/ctr_window_heat")
+ctr_ht = globalPropertyi("tu154b2/custom/antiice/right_window_heat")
+left_rate = globalPropertyf("tu154b2/custom/antiice/left_window_rate")
+right_rate = globalPropertyf("tu154b2/custom/antiice/ctr_window_rate")
+ctr_rate = globalPropertyf("tu154b2/custom/antiice/right_window_rate")
 sim_icing = globalPropertyf("sim/flightmodel/failures/ice_delta")
-defineProperty("stab_ice_1", globalPropertyf("sim/flightmodel/failures/tail_ice"))
-defineProperty("stab_ice_2", globalPropertyf("sim/flightmodel/failures/tail_ice2"))
-defineProperty("ice_probe", globalPropertyf("sim/flightmodel/failures/aoa_ice3"))
+stab_ice_1 = globalPropertyf("sim/flightmodel/failures/tail_ice")
+stab_ice_2 = globalPropertyf("sim/flightmodel/failures/tail_ice2")
+ice_probe = globalPropertyf("sim/flightmodel/failures/aoa_ice3")
 
 -- gauges
-defineProperty("wing_heat_t", globalPropertyf("tu154b2/custom/antiice/wing_heat_t")) -- температура обогрева крыла
-defineProperty("stab_heat_t", globalPropertyf("tu154b2/custom/antiice/stab_heat_t")) -- температура обогрева стабилизатора
-defineProperty("pos_blok", globalPropertyi("tu154b2/custom/elec/pos_block"))
-defineProperty("le_temp", globalPropertyf("sim/weather/aircraft/temperature_leadingedge_deg_c"))
-defineProperty("cockpit_temp", globalPropertyf("tu154b2/custom/bleed/cockpit_temp"))
-defineProperty("eng1_N2", globalProperty("sim/flightmodel/engine/ENGN_N2_[0]"))
-defineProperty("rest_ht", globalPropertyi("tu154b2/custom/antiice/cockpit_windows_heat"))
-defineProperty("rest_rate", globalPropertyf("tu154b2/custom/antiice/cockpit_windows_rate"))
-defineProperty("side_rate", globalPropertyf("tu154b2/custom/antiice/side_windows_rate"))
-defineProperty("ice_add", globalPropertyf("sim/flightmodel/failures/window_ice_added_delta"))
-defineProperty("ice_now", globalProperty("sim/flightmodel/failures/window_ice_per_window[1]"))
-defineProperty("snow_rat", globalPropertyf("sim/weather/aircraft/snow_on_aircraft_ratio"))
-defineProperty("tas", globalPropertyf("sim/flightmodel2/position/true_airspeed"))
+wing_heat_t = globalPropertyf("tu154b2/custom/antiice/wing_heat_t") -- температура обогрева крыла
+stab_heat_t = globalPropertyf("tu154b2/custom/antiice/stab_heat_t") -- температура обогрева стабилизатора
+pos_blok = globalPropertyi("tu154b2/custom/elec/pos_block")
+le_temp = globalPropertyf("sim/weather/aircraft/temperature_leadingedge_deg_c")
+cockpit_temp = globalPropertyf("tu154b2/custom/bleed/cockpit_temp")
+eng1_N2 = globalProperty("sim/flightmodel/engine/ENGN_N2_[0]")
+rest_ht = globalPropertyi("tu154b2/custom/antiice/cockpit_windows_heat")
+rest_rate = globalPropertyf("tu154b2/custom/antiice/cockpit_windows_rate")
+side_rate = globalPropertyf("tu154b2/custom/antiice/side_windows_rate")
+ice_add = globalPropertyf("sim/flightmodel/failures/window_ice_added_delta")
+ice_now = globalProperty("sim/flightmodel/failures/window_ice_per_window[1]")
+snow_rat = globalPropertyf("sim/weather/aircraft/snow_on_aircraft_ratio")
+tas = globalPropertyf("sim/flightmodel2/position/true_airspeed")
 mod_pos = globalPropertyi("sim/custom/b2/kontur_70th")
---defineProperty("nosewheel_turn_sel", globalPropertyi("tu154b2/custom/switchers/nosewheel_turn_sel")) -- переключатель угла поворота передней стойки. 0 - 10, 1 - 63
+--nosewheel_turn_sel = globalPropertyi("tu154b2/custom/switchers/nosewheel_turn_sel") -- переключатель угла поворота передней стойки. 0 - 10, 1 - 63
 -- Smart Copilot
-defineProperty("ismaster", globalPropertyf("tu154b2/crew/ismaster")) -- Master. 0 = plugin not found, 1 = slave 2 = master
-defineProperty("hascontrol_1", globalPropertyf("tu154b2/crew/hascontrol_1")) -- Have control. 0 = plugin not found, 1 = no control 2 = has control
--- defineProperty("db1", globalPropertyf("tu154b2/custom/controlls/debug1"))
--- defineProperty("db2", globalPropertyf("tu154b2/custom/controlls/debug2"))
--- defineProperty("db3", globalPropertyf("tu154b2/custom/controlls/debug3"))
--- defineProperty("db4", globalPropertyf("tu154b2/custom/controlls/debug4"))
--- defineProperty("db5", globalPropertyf("tu154b2/custom/controlls/debug5"))
+ismaster = globalPropertyf("tu154b2/crew/ismaster") -- Master. 0 = plugin not found, 1 = slave 2 = master
+hascontrol_1 = globalPropertyf("tu154b2/crew/hascontrol_1") -- Have control. 0 = plugin not found, 1 = no control 2 = has control
+-- db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
+-- db2 = globalPropertyf("tu154b2/custom/controlls/debug2")
+-- db3 = globalPropertyf("tu154b2/custom/controlls/debug3")
+-- db4 = globalPropertyf("tu154b2/custom/controlls/debug4")
+-- db5 = globalPropertyf("tu154b2/custom/controlls/debug5")
 
 local wing_heat_tbl = {{ -100, 0 },    -- bugs walkaround
 				  {  0, 0 }, -- 0.0-

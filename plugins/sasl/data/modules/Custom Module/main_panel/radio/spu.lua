@@ -2,62 +2,72 @@
 size = {140, 180}
 
 -- define property table
-defineProperty("audio_selection_com1", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_com1"))
-defineProperty("audio_selection_com2", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_com2"))
-defineProperty("audio_selection_nav1", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_nav1"))
-defineProperty("audio_selection_nav2", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_nav2"))
-defineProperty("audio_selection_adf1", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_adf1"))
-defineProperty("audio_selection_adf2", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_adf2"))
-defineProperty("audio_selection_dme1", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_dme1"))
-defineProperty("audio_selection_dme2", globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_dme2"))
-defineProperty("sd67_1_dme_res", globalPropertyi("sim/custom/b2/sd67_1_dme_reserv"))
-defineProperty("sd67_2_dme_res", globalPropertyi("sim/custom/b2/sd67_1_dme_reserv"))
-defineProperty("sd75_1_on", globalPropertyi("tu154b2/custom/switchers/ovhd/sd75_1_on"))
-defineProperty("sd75_2_on", globalPropertyi("tu154b2/custom/switchers/ovhd/sd75_2_on"))
-defineProperty("sd67_vol_1", globalPropertyf("tu154b2/custom/switchers/SD67_1_vol"))
-defineProperty("sd67_vol_2", globalPropertyf("tu154b2/custom/switchers/SD67_2_vol"))
-defineProperty("panel_80", globalPropertyi("sim/custom/b2/kontur_70th"))
---defineProperty("audio_dme_enabled", globalPropertyi("sim/cockpit2/radios/actuators/audio_dme_enabled"))
+audio_selection_com1 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_com1")
+audio_selection_com2 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_com2")
+audio_selection_nav1 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_nav1")
+audio_selection_nav2 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_nav2")
+audio_selection_adf1 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_adf1")
+audio_selection_adf2 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_adf2")
+audio_selection_dme1 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_dme1")
+audio_selection_dme2 = globalPropertyi("sim/cockpit2/radios/actuators/audio_selection_dme2")
+sd67_1_dme_res = globalPropertyi("sim/custom/b2/sd67_1_dme_reserv")
+sd67_2_dme_res = globalPropertyi("sim/custom/b2/sd67_1_dme_reserv")
+sd75_1_on = globalPropertyi("tu154b2/custom/switchers/ovhd/sd75_1_on")
+sd75_2_on = globalPropertyi("tu154b2/custom/switchers/ovhd/sd75_2_on")
+sd67_vol_1 = globalPropertyf("tu154b2/custom/switchers/SD67_1_vol")
+sd67_vol_2 = globalPropertyf("tu154b2/custom/switchers/SD67_2_vol")
+panel_80 = globalPropertyi("sim/custom/b2/kontur_70th")
+--audio_dme_enabled = globalPropertyi("sim/cockpit2/radios/actuators/audio_dme_enabled")
 
-defineProperty("com1_right_is_selected", globalPropertyi("sim/cockpit2/radios/actuators/com1_right_is_selected"))
-defineProperty("com2_right_is_selected", globalPropertyi("sim/cockpit2/radios/actuators/com2_right_is_selected"))
+com1_right_is_selected = globalPropertyi("sim/cockpit2/radios/actuators/com1_right_is_selected")
+com2_right_is_selected = globalPropertyi("sim/cockpit2/radios/actuators/com2_right_is_selected")
 
-defineProperty("VHF2Freq", globalPropertyf("sim/cockpit2/radios/actuators/com2_frequency_hz"))  -- set the frequency
-defineProperty("VHF1Freq", globalPropertyf("sim/cockpit2/radios/actuators/com1_frequency_hz"))  -- set the frequency
+VHF2Freq = globalPropertyf("sim/cockpit2/radios/actuators/com2_frequency_hz")  -- set the frequency
+VHF1Freq = globalPropertyf("sim/cockpit2/radios/actuators/com1_frequency_hz")  -- set the frequency
 
-defineProperty("spu_power_sw", globalPropertyi("tu154b2/custom/switchers/spu_1_power"))
-defineProperty("spu_mode", globalPropertyi("tu154b2/custom/switchers/spu_1_mode"))
-defineProperty("spu_source", globalPropertyi("tu154b2/custom/switchers/spu_1_source"))
-defineProperty("bus27_L", globalPropertyf("tu154b2/custom/elec/bus27_volt_left"))
-defineProperty("bus27_R", globalPropertyf("tu154b2/custom/elec/bus27_volt_right"))
+spu_power_sw = globalPropertyi("tu154b2/custom/switchers/ovhd/spu_on")
+spu_mode = globalPropertyi("tu154b2/custom/switchers/spu_1_mode")
+spu_source = globalPropertyi("tu154b2/custom/switchers/spu_1_source")
+spu2_source = globalPropertyi("tu154b2/custom/switchers/spu_2_source")
+spu3_source = globalPropertyi("tu154b2/custom/switchers/spu_3_source")
+spu4_source = globalPropertyi("tu154b2/custom/switchers/spu_4_source")
+bus27_L = globalPropertyf("tu154b2/custom/elec/bus27_volt_left")
+bus27_R = globalPropertyf("tu154b2/custom/elec/bus27_volt_right")
 
-defineProperty("vhf_1_on", globalPropertyi("tu154b2/custom/switchers/ovhd/vhf_1_on"))  -- power switch
-defineProperty("vhf_2_on", globalPropertyi("tu154b2/custom/switchers/ovhd/vhf_2_on"))  -- power switch
-
-
-defineProperty("ark_mode_1", globalPropertyi("tu154b2/custom/switchers/ovhd/ark_1_mode")) -- режим АРК 1 0 - выкл, 1 - комп, 2 - ант, 3 - рам
-defineProperty("ark_mode_2", globalPropertyi("tu154b2/custom/switchers/ovhd/ark_2_mode")) -- режим АРК 2 0 - выкл, 1 - комп, 2 - ант, 3 - рам
-
-defineProperty("ushdb_mode_1", globalPropertyi("tu154b2/custom/switchers/ovhd/ushdb_mode_1"))
-defineProperty("ushdb_mode_2", globalPropertyi("tu154b2/custom/switchers/ovhd/ushdb_mode_2"))
+vhf_1_on = globalPropertyi("tu154b2/custom/switchers/ovhd/vhf_1_on")  -- power switch
+vhf_2_on = globalPropertyi("tu154b2/custom/switchers/ovhd/vhf_2_on")  -- power switch
 
 
-defineProperty("com1_power", globalPropertyi("sim/cockpit2/radios/actuators/com1_power"))
-defineProperty("com2_power", globalPropertyi("sim/cockpit2/radios/actuators/com2_power"))
-defineProperty("audio_panel", globalPropertyi("sim/cockpit/switches/audio_panel_out"))
+ark_mode_1 = globalPropertyi("tu154b2/custom/switchers/ovhd/ark_1_mode") -- режим АРК 1 0 - выкл, 1 - комп, 2 - ант, 3 - рам
+ark_mode_2 = globalPropertyi("tu154b2/custom/switchers/ovhd/ark_2_mode") -- режим АРК 2 0 - выкл, 1 - комп, 2 - ант, 3 - рам
 
-defineProperty("nav1_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_nav1"))
-defineProperty("nav2_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_nav2"))
-defineProperty("adf1_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_adf1"))
-defineProperty("adf2_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_adf2"))
-defineProperty("dme1_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_dme1"))
-defineProperty("dme2_morse", globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_dme2"))
-defineProperty("ark_1_signal", globalPropertyf("tu154b2/custom/radio/ark15_L_signal"))
-defineProperty("ark_2_signal", globalPropertyf("tu154b2/custom/radio/ark15_R_signal"))
-defineProperty("spu_volume1", globalPropertyf("sim/custom/radio/spu_volume1_n"))
-defineProperty("spu_volume2", globalPropertyf("sim/custom/radio/spu_volume2_n"))
-defineProperty("vor1_signal", globalPropertyf("sim/cockpit2/radios/indicators/nav1_flag_from_to_pilot"))
-defineProperty("vor2_signal", globalPropertyf("sim/cockpit2/radios/indicators/nav2_flag_from_to_pilot"))
+ushdb_mode_1 = globalPropertyi("tu154b2/custom/switchers/ovhd/ushdb_mode_1")
+ushdb_mode_2 = globalPropertyi("tu154b2/custom/switchers/ovhd/ushdb_mode_2")
+
+
+com1_power = globalPropertyi("sim/cockpit2/radios/actuators/com1_power")
+com2_power = globalPropertyi("sim/cockpit2/radios/actuators/com2_power")
+audio_panel = globalPropertyi("sim/cockpit/switches/audio_panel_out")
+
+nav1_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_nav1")
+nav2_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_nav2")
+adf1_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_adf1")
+adf2_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_adf2")
+dme1_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_dme1")
+dme2_morse = globalPropertyi("sim/cockpit2/radios/indicators/morse_id_tone_dme2")
+ark_1_signal = globalPropertyf("tu154b2/custom/radio/ark15_L_signal")
+ark_2_signal = globalPropertyf("tu154b2/custom/radio/ark15_R_signal")
+spu_volume1 = globalPropertyf("sim/custom/radio/spu_volume1_n")
+spu_volume2 = globalPropertyf("sim/custom/radio/spu_volume2_n")
+spu2_volume1 = globalPropertyf("tu154b2/custom/radio/spu2_volume1")
+spu2_volume2 = globalPropertyf("tu154b2/custom/radio/spu2_volume2")
+spu3_volume1 = globalPropertyf("tu154b2/custom/radio/spu3_volume1")
+spu3_volume2 = globalPropertyf("tu154b2/custom/radio/spu3_volume2")
+spu4_volume1 = globalPropertyf("tu154b2/custom/radio/spu4_volume1")
+spu4_volume2 = globalPropertyf("tu154b2/custom/radio/spu4_volume2")
+spu_sel = globalPropertyf("tu154b2/custom/radio/spu_select")
+vor1_signal = globalPropertyf("sim/cockpit2/radios/indicators/nav1_flag_from_to_pilot")
+vor2_signal = globalPropertyf("sim/cockpit2/radios/indicators/nav2_flag_from_to_pilot")
 rsbn_rec = globalPropertyi("tu154b2/custom/failures/rsbn_rec")
 rsbn_dist = globalPropertyf("tu154b2/custom/rsbn/distance")
 psh_1=globalPropertyi("sim/custom/radios/vhf1_ps")
@@ -69,14 +79,14 @@ nav_2_type=globalPropertyi("sim/cockpit2/radios/indicators/nav2_type")
 nav_1_pow=globalPropertyi("sim/cockpit2/radios/actuators/nav1_power")
 nav_2_pow=globalPropertyi("sim/cockpit2/radios/actuators/nav2_power")
 
-defineProperty("n_id1", globalPropertys("sim/cockpit2/radios/indicators/adf1_nav_id"))
-defineProperty("n_id2", globalPropertys("sim/cockpit2/radios/indicators/adf2_nav_id"))
-defineProperty("v_id1", globalPropertys("sim/cockpit2/radios/indicators/nav1_nav_id"))
-defineProperty("v_id2", globalPropertys("sim/cockpit2/radios/indicators/nav2_nav_id"))
+n_id1 = globalPropertys("sim/cockpit2/radios/indicators/adf1_nav_id")
+n_id2 = globalPropertys("sim/cockpit2/radios/indicators/adf2_nav_id")
+v_id1 = globalPropertys("sim/cockpit2/radios/indicators/nav1_nav_id")
+v_id2 = globalPropertys("sim/cockpit2/radios/indicators/nav2_nav_id")
 
 rsbn_dot = globalPropertyi("tu154b2/custom/rsbn/morse_dot")
 rsbn_dash = globalPropertyi("tu154b2/custom/rsbn/morse_dash")
-defineProperty("db1", globalPropertyf("tu154b2/custom/controlls/debug1"))
+db1 = globalPropertyf("tu154b2/custom/controlls/debug1")
 
 
 local switch_sound = loadSample(moduleDirectory .. '/Custom Sounds/metal_switch.wav')
@@ -91,14 +101,11 @@ local noise=loadSample(moduleDirectory .. '/Custom Sounds/noise.wav')
 playSample(noise,true)
 setSampleGain(noise,0)
 
-local mode_last = get(spu_source)
 function update()
 
 	local mode = get(spu_source)
 	local power = get(spu_power_sw) == 1 and get(bus27_L) > 13
 		
-	--if mode ~= mode_last then playSample(switch_sound, false) end
-	mode_last = mode
 	-- check if signal is received
 	local ndb_left=bool2int(string.byte(string.sub(get(n_id1),1,1))~=0)
 	local ndb_right=bool2int(string.byte(string.sub(get(n_id2),1,1))~=0)
@@ -120,7 +127,24 @@ function update()
 	
 	local spu1=get(spu_volume1)
 	local spu2=get(spu_volume2)
-	local spu_volume=math.min(spu1,spu2)
+	local spu_select = get(spu_sel)
+	if spu_select == 1 then
+		mode = get(spu2_source)
+		spu1=get(spu2_volume1)
+		spu2=get(spu2_volume2)
+	elseif spu_select == 2 then
+		mode = get(spu3_source)
+		spu1=get(spu3_volume1)
+	    spu2=get(spu3_volume2)
+	elseif spu_select == 3 then
+		mode = get(spu4_source)
+		if mode > 1 then
+			mode = 6
+		end
+		spu1=get(spu4_volume1)
+	    spu2=get(spu4_volume2)
+	end
+	local spu_volume=math.min(spu1,spu2) * bool2int(power)
 	local sdvol_1=get(sd67_vol_1)
 	local sdvol_2=get(sd67_vol_2)
 	local rsbn=get(rsbn_rec)

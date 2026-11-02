@@ -1,6 +1,7 @@
 defineProperty("wiper", globalPropertyf("tu154b2/custom/switchers/wiper_right"))
 defineProperty("lamps", globalPropertyf("tu154b2/custom/buttons/lamp_test_front"))
 defineProperty("spu", globalPropertyf("sim/custom/radio/spu2_on"))
+defineProperty("spu_source", globalPropertyf("tu154b2/custom/switchers/spu_2_source"))
 defineProperty("pedal", globalPropertyf("sim/custom/other/pedal_right_sw"))
 defineProperty("gear", globalPropertyf("tu154b2/custom/controll/emerg_gear_ext"))
 
@@ -60,10 +61,10 @@ local gear_prev=0
 
 function update()
 
-	local changes_sw  = get(wiper)
+	local changes_sw  = get(wiper) + get(spu)
 	local changes_sw2 = get(pedal)
 	local changes_but = get(lamps)
-	local changes_rot = get(spu)
+	local changes_rot = get(spu_source)
 	local emer_gear=get(gear)
 	if changes_sw_prev~=changes_sw then 		
 		local z_pos=get(pilot_Z)

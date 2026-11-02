@@ -275,6 +275,8 @@ lamp_2 = globalPropertyi("tu154b2/custom/failures/lamp_4")
 lamp_3 = globalPropertyi("tu154b2/custom/failures/lamp_5")
 lamp_4 = globalPropertyi("tu154b2/custom/failures/lamp_6")
 
+spu_sw = globalPropertyi("tu154b2/custom/switchers/spu_3_source")
+
 
 local button_dn_L = loadSample(moduleDirectory .. '/Custom Sounds/absu_dn_L.wav')
 local button_up_L = loadSample(moduleDirectory .. '/Custom Sounds/absu_up_L.wav')
@@ -526,6 +528,7 @@ local changes_left_rot_sw_prev=0
 local changes_right_rot_sw_prev=0
 local changes_front_sw_prev=0
 local changes_eng_sw_prev=0
+local changes_spu_prev=0
 
 
 local function switchers()
@@ -537,6 +540,7 @@ local function switchers()
 	local changes_right_rot=get(absu_speed_mode)
 	local changes_front=get(ZK_select) + get(nav_select) + get(vbe_select)
 	local changes_eng=get(hydro_ra56_rud_1) + get(hydro_ra56_rud_2) + get(hydro_ra56_rud_3)+ get(hydro_ra56_ail_1) + get(hydro_ra56_ail_2) + get(hydro_ra56_ail_3)+ get(hydro_ra56_elev_1) + get(hydro_ra56_elev_2) + get(hydro_ra56_elev_3)+ get(hydro_circuit_auto_man) + get(hydro_long_control)+ get(gen_1_bus_auto) + get(gen_2_bus_auto) + get(gen_3_bus_auto)+get(vent)+get(trimm_1)+get(trimm_2)
+	local changes_spu=get(spu_sw)
 	
 	if changes_left_sw_prev~=changes_left then
 		local z_pos=get(pilot_Z)
@@ -645,6 +649,23 @@ local function switchers()
 		playSample(switcher_sound_R, false)
 	end
 	
+	if changes_spu_prev~=changes_spu then
+		local z_pos=get(pilot_Z)
+		local z_pos=get(pilot_Z)
+		local x_pos=get(pilot_X)
+		local plt_hdg=get(pilot_head)
+		local gain_L, gain_R = inn_balance (panel_eng_x, panel_eng_z, x_pos, z_pos , plt_hdg)
+		gain_L=gain_L*1000
+		gain_R=gain_R*1000
+		local dist=1
+		if z_pos-panel_eng_z~=0 then
+			dist=math.min(1,1/math.sqrt(math.pow(z_pos-panel_eng_z,2)+math.pow(x_pos-panel_eng_x,2))/dist_gain)
+		end
+		setSampleGain(rotary_sound_L,gain_L*dist)
+		setSampleGain(rotary_sound_R,gain_R*dist)
+		playSample(rotary_sound_L, false)
+		playSample(rotary_sound_R, false)
+	end
 	
 	changes_left_sw_prev=changes_left
 	changes_right_sw_prev=changes_right
@@ -652,6 +673,7 @@ local function switchers()
 	changes_right_rot_sw_prev=changes_right_rot
 	changes_front_sw_prev=changes_front
 	changes_eng_sw_prev=changes_eng
+	changes_spu_prev=changes_spu
 	
 	-- pitch wheel
 

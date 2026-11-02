@@ -336,7 +336,9 @@ customFails["TR 2 Switchover Fail"] = globalPropertyi("tu154b2/custom/failures/t
 customFails["SO-72 Fail"] = globalPropertyi("tu154b2/custom/failures/so72_fail")
 customFails["Main Heat Exchanger Leak"] = globalPropertyi("tu154b2/custom/failures/vvr_leak")
 
-customFails["Starter Disconnect Fail"] = globalPropertyi("tu154b2/custom/radio/starter_disconncet_fail")
+customFails["Starter 1 Disconnect Fail"] = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_1")
+customFails["Starter 2 Disconnect Fail"] = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_2")
+customFails["Starter 3 Disconnect Fail"] = globalPropertyi("tu154b2/custom/failures/starter_disconncet_fail_3")
 
 customFails["Cockpit Lamp 1 Fail"] = globalPropertyi("tu154b2/custom/failures/lamp_1")
 customFails["Cockpit Lamp 2 Fail"] = globalPropertyi("tu154b2/custom/failures/lamp_2")

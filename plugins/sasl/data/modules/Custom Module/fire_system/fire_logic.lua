@@ -366,7 +366,7 @@ if MASTER then
 		-- fire siren
 		if fire_1 or fire_2 or fire_3 or fire_4 or smoke_test_act > 0.6 + math.random()/10 then
 			set(fire_detected, 1)
-			set(fire_siren, get(fire_buzzer)-bool2int(test_group>0))
+			set(fire_siren, get(fire_buzzer))
 			if get(smoke_test1)+get(smoke_test2)+get(smoke_test3)+get(smoke_test4)>0 then
 				set(fire_bag1,1)
 			elseif get(smoke_test5)+get(smoke_test6)+get(smoke_test7)>0 then
@@ -378,16 +378,16 @@ if MASTER then
 			set(fire_siren, 0)
 		end
 		
-		if fire_1 and test_group==0 then set(engine_fire_state_1, 2)
+		if fire_1 then set(engine_fire_state_1, 2)
 		else set(engine_fire_state_1, 0) end
 		
-		if fire_2 and test_group==0 then set(engine_fire_state_2, 2)
+		if fire_2 then set(engine_fire_state_2, 2)
 		else set(engine_fire_state_2, 0) end
 		
-		if fire_3 and test_group==0 then set(engine_fire_state_3, 2)
+		if fire_3 then set(engine_fire_state_3, 2)
 		else set(engine_fire_state_3, 0) end
 		
-		if fire_4 and test_group==0 then set(engine_fire_state_4, 2)
+		if fire_4 then set(engine_fire_state_4, 2)
 		else set(engine_fire_state_4, 0) end
 		
 		set(fire_sys_cc, 0.8)
